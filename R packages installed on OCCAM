@@ -1,4 +1,6 @@
-          Package     Version
+R packages installed on OCCAM (updated to 2019-01-23)
+
+         Package     Version
                BH    1.69.0-1
          ClusterR       1.1.8
          DEoptimR       1.0-8
