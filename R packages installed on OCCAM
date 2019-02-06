@@ -1,6 +1,6 @@
-R packages installed on OCCAM (updated to 2019-01-23)
+R packages installed on OCCAM (updated to 2019-02-26)
 
-         Package     Version
+          Package     Version
                BH    1.69.0-1
          ClusterR       1.1.8
          DEoptimR       1.0-8
@@ -8,7 +8,7 @@ R packages installed on OCCAM (updated to 2019-01-23)
                FD      1.0-12
        FactoMineR        1.41
           Formula       1.2-3
-            Hmisc       4.1-1
+            Hmisc       4.2-0
           Kendall         2.2
      MatrixModels       0.4-1
      ModelMetrics       1.2.2
@@ -24,6 +24,7 @@ R packages installed on OCCAM (updated to 2019-01-23)
      RcppParallel       4.4.2
          RcppRoll       0.3.0
            Rraven       1.0.4
+            Rtsne        0.15
           SQUAREM   2017.10-1
      Sim.DiffProc         4.3
           SparseM        1.77
@@ -136,7 +137,7 @@ R packages installed on OCCAM (updated to 2019-01-23)
              lava       1.6.4
          lazyeval       0.2.1
             leaps         3.0
-             lme4      1.1-19
+             lme4      1.1-20
            locpol       0.7-0
  longitudinalData       2.4.1
           lpSolve      5.6.13
@@ -170,7 +171,7 @@ R packages installed on OCCAM (updated to 2019-01-23)
          openxlsx       4.1.0
           ordinal   2018.8-25
               pan         1.6
-          pbapply       1.3-4
+          pbapply       1.4-0
          pbkrtest       0.4-7
               pdc       1.0.3
           permute       0.9-4
@@ -193,7 +194,7 @@ R packages installed on OCCAM (updated to 2019-01-23)
          promises       1.0.1
             proxy      0.4-22
                ps       1.3.0
-            purrr       0.2.5
+            purrr       0.3.0
           pvclust       2.0-0
          quantreg        5.38
      randomForest      4.6-14
@@ -242,7 +243,7 @@ R packages installed on OCCAM (updated to 2019-01-23)
            ucminf       1.1-4
           usethis       1.4.0
              utf8       1.1.4
-            vegan       2.5-3
+            vegan       2.5-4
          vegclust       1.7.7
           viridis       0.5.1
       viridisLite       0.3.0
