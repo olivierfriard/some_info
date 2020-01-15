@@ -22,7 +22,7 @@ usage:
 dtwave_dist -d DIRECTORY [-c CPU] [-k HTK_CONFIG] [-w DTWAVE_PATH] [-v]
 ```
 
-**Examples of use**
+**Examples of use on OCCAM**
 
 ```
 occam-run -nnodeXX ofriard/acoustic dtwave_dist -d my_sounds_archive -c 6 -k config_htk
