@@ -40,7 +40,13 @@ occam-run -nnodeXX ofriard/acoustic praat_cc --directory my_sounds_archive --cpu
 In case of silenced WAV files (0.5 s of silence at the beginning and 0.5 s at the end):
 
 ```
-occam-run -nnodeXX ofriard/acoustic praat_cc -d my_sounds_archive -c 6 -o 1.tsv -c 1 -i 0.5 -f 0.5 -o out.tsv
+occam-run -nnodeXX ofriard/acoustic praat_cc -d my_sounds_archive -c 6 -i 0.5 -f 0.5 -o out.tsv
 ```
+or
+
+```
+occam-run -nnodeXX ofriard/acoustic praat_cc --directory my_sounds_archive --cpu 6 --initial-silence 0.5 --final-silence 0.5 -o out.tsv
+```
+
 
 
