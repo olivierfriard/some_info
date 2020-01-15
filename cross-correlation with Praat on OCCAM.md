@@ -2,10 +2,7 @@
 
 Apply to all WAV files of the specified directory
 
-Usage:
-
-praat_cc -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV
-
+```
 Cross-correlation with Praat
 
 optional arguments:
@@ -22,17 +19,28 @@ optional arguments:
   -f FINAL_SILENCE, --final-silence FINAL_SILENCE
                         indicate the silence duration (in s) at the end of the
                         sound
+```
 
+```
+Usage:
+
+praat_cc -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV
+```
 
 **Examples of use**
 
+```
 occam-run -nnodeXX ofriard/acoustic praat_cc -d my_sounds_archive -c 6 -o my_results.tsv
+```
 or
+```
 occam-run -nnodeXX ofriard/acoustic praat_cc --directory my_sounds_archive --cpu 6 --output my_results.tsv
+```
 
 In case of silenced WAV files (0.5 s of silence at the beginning and 0.5 s at the end):
 
+```
 occam-run -nnodeXX ofriard/acoustic praat_cc -d my_sounds_archive -c 6 -o 1.tsv -c 1 -o my_results.tsv -i 0.5 -f 0.5
-
+```
 
 
