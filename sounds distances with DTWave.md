@@ -27,7 +27,7 @@ dtwave_dist -d DIRECTORY [-c CPU] [-k HTK_CONFIG] [-w DTWAVE_PATH] [-v]
 ```
 occam-run -nnodeXX ofriard/acoustic dtwave_dist -d my_sounds_archive -c 6 -k config_htk
 ```
-The results will be saved in a file named my_sounds_archive.distances.tsv:
+If no output is specified, the results will be saved in a file with a name based on the directory name (my_sounds_archive.distances.tsv in the above example).
 
 
 
