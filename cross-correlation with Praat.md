@@ -27,7 +27,7 @@ Usage:
 praat_cc -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV
 ```
 
-**Examples of use**
+**Examples of use on OCCAM**
 
 ```
 occam-run -nnodeXX ofriard/acoustic praat_cc -d my_sounds_archive -c 6 -o my_results.tsv
