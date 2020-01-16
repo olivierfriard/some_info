@@ -30,9 +30,30 @@ occam-run -nnodeXX ofriard/acoustic dtwave_dist -d my_sounds_archive -c 6 -k con
 If no output is specified, the results will be saved in a file with a name based on the directory name (my_sounds_archive.distances.tsv in the above example).
 
 
-
 Specifying an output file:
 
 ```
 occam-run -nnodeXX ofriard/acoustic dtwave_dist -d my_sounds_archive -c 6 -k config_htk -o my_dtw_results.tsv
+```
+
+**Example of HTK config file**
+
+Frequences from 50 Hz to 3000 Hz, target rate 2.5 ms, window size 5 ms
+
+```
+SOURCEFORMAT = WAV
+TARGETKIND = MFCC_0 # MFCC + logEnergy
+TARGETRATE = 25000.0 # ie 2.5 ms
+WINDOWSIZE = 50000.0 # ie 5.0 ms
+SAVECOMPRESSED = F
+SAVEWITHCRC = F
+ZMEANSOURCE = T
+USEHAMMING = T
+PREEMCOEF = 0.97
+NUMCHANS = 26
+CEPLIFTER = 22
+NUMCEPS = 12
+ENORMALISE = T
+LOFREQ = 50
+HIFREQ = 3000
 ```
