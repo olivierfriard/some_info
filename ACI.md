@@ -23,3 +23,9 @@ Usage:
 aci -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV 
 ```
 
+**Examples of use on OCCAM**
+
+```
+occam-run -nnodeXX ofriard/acoustic aci -d my_sounds_archive -c 6 -o my_ACI_results.tsv
+```
+
