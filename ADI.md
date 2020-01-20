@@ -12,7 +12,7 @@ Options:
 		output file name [default= adi_out.tsv]
 
 	-m NUMBER, --max_freq=NUMBER
-		Maximum frequency to use when calculating the value
+		Maximum frequency to use when calculating the value (default: 10000)
 
 	-t NUMBER, --db_treshold=NUMBER
 		Threshold to use in the calculation (default: -50)
@@ -34,12 +34,16 @@ Options:
 ```
 Usage:
 
-adi -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV 
+adi -d SOUNDS_DIRECTORY_PATH [-c N_CORES] [-o OUTPUT.TSV] [-m MAX_FREQ] 
 ```
+The arguments between square brackets are optionnal
+
 
 **Examples of use on OCCAM**
 
 ```
 occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -c 6 -o my_ACI_results.tsv
+
+occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -c 6 -o my_ACI_results.tsv --shannon FALSE
 ```
 
