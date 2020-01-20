@@ -31,9 +31,8 @@ Options:
     
 ```
 
-```
 Usage:
-
+```
 adi -d SOUNDS_DIRECTORY_PATH [-c N_CORES] [-o OUTPUT.TSV] [-m MAX_FREQ] 
 ```
 The arguments between square brackets are optionnal
