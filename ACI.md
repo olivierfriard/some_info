@@ -17,10 +17,10 @@ Options:
 		FFT window to use (default: 512)
 
 	-o CHARACTER, --output=CHARACTER
-		output file name [default= out.txt]
+		output file name [default= aci_out.tsv]
 
 	-c NUMBER, --cpu=NUMBER
-		Number of cores to use
+		Number of cores to use (default: 1)
 
 	-h, --help
 		Show this help message and exit
@@ -31,6 +31,8 @@ Usage:
 
 aci -d SOUNDS_DIRECTORY_PATH [-o OUTPUT.TSV] [-c N_CORES] [-f FFT_window] [--min_freq MIN_FREQ] [--max_freq MAX_FREQ]
 ```
+The arguments between square brackets are optionnal
+
 
 **Examples of use on OCCAM**
 
