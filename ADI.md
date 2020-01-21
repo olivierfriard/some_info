@@ -41,8 +41,8 @@ The arguments between square brackets are optionnal
 **Examples of use on OCCAM**
 
 ```
-occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -c 6 -o my_ACI_results.tsv
+occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -c 6 -o my_ADI_results.tsv
 
-occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -c 6 -o my_ACI_results.tsv --shannon FALSE
+occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -c 6 -o my_ADI_results.tsv --shannon FALSE
 ```
 
