@@ -1,3 +1,5 @@
+**dtwave_dist**
+
 Sounds distances matrix with DTwave
 
 ```
@@ -33,7 +35,7 @@ If no output is specified, the results will be saved in a file with a name based
 Specifying an output file:
 
 ```
-occam-run -nnodeXX ofriard/acoustic dtwave_dist -d my_sounds_archive -c 6 -k config_htk -o my_dtw_results.tsv
+occam-run -nnodeXX ofriard/acoustic dtwave_dist -d my_sounds_archive -c 6 -k config_htk -o dtw_dist_results.tsv
 ```
 
 **Example of HTK config file**
