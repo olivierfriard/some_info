@@ -20,7 +20,7 @@ Arguments:
 ```
 Usage:
 
-rename_audiomoth_files -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV
+rename_audiomoth_files -d SOUNDS_DIRECTORY_PATH -t hours -r
 ```
 
 *Examples of use on OCCAM**
@@ -28,4 +28,4 @@ rename_audiomoth_files -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV
 ```
 occam-run -nnodeXX ofriard/acoustic rename_audiomoth_files -d sounds_archive -t 3
 ```
-
+This example will rename the audiomoth files adding 3 hours to the codified date/time
