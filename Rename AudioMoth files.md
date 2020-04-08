@@ -23,7 +23,7 @@ Usage:
 rename_audiomoth_files -d SOUNDS_DIRECTORY_PATH -t hours -r
 ```
 
-*Examples of use on OCCAM**
+**Examples of use on OCCAM**
 
 ```
 occam-run -nnodeXX ofriard/acoustic rename_audiomoth_files -d sounds_archive -t 3
