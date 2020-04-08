@@ -1,7 +1,7 @@
-*freq_bin**
+**Linear frequency bin with Praat**
 
 ```
-Linear frequency bin with Praat
+freq_bin
 
 Arguments:
 
