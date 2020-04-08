@@ -5,14 +5,14 @@ rename_audiomoth_files
 
 Arguments:
 
-  -h, --help            Show this help message and exit
+  -h, --help                    Show this help message and exit
 
   -d DIRECTORY, --directory DIRECTORY
-                        Directory of WAV files to be renamed
+                                Directory of WAV files to be renamed
 
-  -t, --timezone        Add/subtract time (in decimal hours)
+  -t HOURS, --timezone HOURS    Add/subtract time (in decimal hours)
   
-  -r, --recurse         Recurse sub-directories
+  -r, --recurse                 Recurse sub-directories
 
 
 ```
@@ -20,7 +20,7 @@ Arguments:
 ```
 Usage:
 
-rename_audiomoth_files -d SOUNDS_DIRECTORY_PATH -t hours -r
+rename_audiomoth_files -d SOUNDS_DIRECTORY_PATH -t HOURS -r
 ```
 
 **Examples of use on OCCAM**
