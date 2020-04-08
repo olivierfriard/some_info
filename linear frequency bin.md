@@ -31,7 +31,7 @@ Usage:
 freq_bin -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV
 ```
 
-*Examples of use on OCCAM**
+*Examples of use on OCCAM*
 
 ```
 occam-run -nnodeXX ofriard/acoustic freq_bin -d sounds_archive -o results.tsv 
