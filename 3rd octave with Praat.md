@@ -32,7 +32,7 @@ Usage:
 3rd_octave -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV -c N_CPU
 ```
 
-*Examples of use on OCCAM**
+*Examples of use on OCCAM*
 
 ```
 occam-run -nnodeXX ofriard/acoustic 3rd_octave -d my_sounds_archive -o my_results.tsv -c 6
