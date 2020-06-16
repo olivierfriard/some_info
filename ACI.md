@@ -1,13 +1,16 @@
 **aci**
 
-Acoustic Complexity Index
+Acoustic Complexity Index with check for short files
 
 ```
 Options:
 	-d CHARACTER, --directory=CHARACTER
 		sounds directory path
 
-	--min_freq=NUMBER
+        --pattern
+	        pattern for selecting files (default: *.wav)
+
+        --min_freq=NUMBER
 		miminum frequency to use when calculating the value (default: NA)
 
 	--max_freq=NUMBER
@@ -19,9 +22,6 @@ Options:
 	-o CHARACTER, --output=CHARACTER
 		output file name [default= aci_out.tsv]
 
-	-c NUMBER, --cpu=NUMBER
-		Number of cores to use (default: 1)
-
 	-h, --help
 		Show this help message and exit
 ```
@@ -29,16 +29,17 @@ Options:
 ```
 Usage:
 
-aci -d SOUNDS_DIRECTORY_PATH [-o OUTPUT.TSV] [-c N_CORES] [-f FFT_window] [--min_freq MIN_FREQ] [--max_freq MAX_FREQ]
+aci -d SOUNDS_DIRECTORY_PATH [--pattern "*.wav"] [-o OUTPUT.TSV] [-c N_CORES] [-f FFT_window] [--min_freq MIN_FREQ] [--max_freq MAX_FREQ]
 ```
-The arguments between square brackets are optionnal
+
+The arguments between square brackets are optionnal. If missing the default values will be used.
 
 
 **Examples of use on OCCAM**
 
 ```
-occam-run -nnodeXX ofriard/acoustic aci -d my_sounds_archive -c 6 -o my_ACI_results.tsv 
+occam-run -nnodeXX ofriard/acoustic aci -d my_sounds_archive --pattern *.WAV -o my_ACI_results.tsv 
 
-occam-run -nnodeXX ofriard/acoustic aci -d my_sounds_archive -c 6 --min_freq 1000 --max_freq 15000 -o my_ACI_results.tsv 
+occam-run -nnodeXX ofriard/acoustic aci -d my_sounds_archive --min_freq 1000 --max_freq 15000 -o my_ACI_results.tsv 
 ```
 
