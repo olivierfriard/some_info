@@ -1,11 +1,14 @@
 **ndsi**
 
-Normalized Difference Soundscape Index
+Normalized Difference Soundscape Index with check for short files
 
 ```
 Options:
 	-d CHARACTER, --directory=CHARACTER
 		sounds directory path
+
+        --pattern
+	        pattern for selecting files (default: *.wav)
 
 	-o CHARACTER, --output=CHARACTER
 		output file name [default= ndsi_out.tsv]
@@ -25,9 +28,6 @@ Options:
 	--bio_max=NUMBER
 		maximum value of the range of frequencies of the biophony (default: 11000)
 
-	-c NUMBER, --cpu=NUMBER
-		Number of cores to use
-
 	-h, --help
 		Show this help message and exit
 
@@ -38,7 +38,8 @@ Options:
 ```
 Usage:
 
-ndsi -d SOUNDS_DIRECTORY_PATH -c N_CORES -o OUTPUT.TSV 
+ndsi -d SOUNDS_DIRECTORY_PATH [--pattern "*.wav"] [-o OUTPUT.TSV]
+
 ```
 
 **Examples of use on OCCAM**
