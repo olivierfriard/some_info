@@ -2,6 +2,8 @@
 
 Acoustic Complexity Index with check for short files
 
+Analysis will run on a single core
+
 ```
 Options:
 	-d CHARACTER, --directory=CHARACTER
