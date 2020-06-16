@@ -39,7 +39,7 @@ Options:
 ```
 Usage:
 
-ndsi_multi -d SOUNDS_DIRECTORY_PATH [-c N_CORES] [-o OUTPUT.TSV] [--bio_min NUMBER] [--bio_max NUMBER] 
+ndsi_multi -d SOUNDS_DIRECTORY_PATH [-c N_CORES] [-o OUTPUT.TSV] [--bio_min NUMBER] [--bio_max NUMBER] [--anthro_min NUMBER] [--anthro_max NUMBER]
 ```
 
 The arguments between square brackets are optionnal. If missing the default values will be used.
