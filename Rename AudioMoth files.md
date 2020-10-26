@@ -14,13 +14,14 @@ Arguments:
   
   -r, --recurse                 Recurse sub-directories
 
+  -s, --serial-number           Add AudioMoth serial number to WAV files
 
 ```
 
 ```
 Usage:
 
-rename_audiomoth_files -d SOUNDS_DIRECTORY_PATH -t HOURS -r
+rename_audiomoth_files -d SOUNDS_DIRECTORY_PATH -t HOURS -r -s
 ```
 
 **Examples of use on OCCAM**
