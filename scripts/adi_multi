@@ -7,7 +7,6 @@
 # example: adi -d /home/sounds -o adi.tsv -c 2
 
 library("optparse")
-library("tuneR")  # required for readWave
 library("soundecology")
 
 option_list = list(
@@ -48,61 +47,16 @@ if (is.null(opt$shannon)) {
     shannon = opt$shannon
 }
 
+#print(opt$shannon)
+#print(shannon)
+#print(opt$max_freq)
 
-file.names <- Sys.glob(paste(opt$directory, '*.wav', sep="/"))
-
-# header
-sink(opt$output)
-cat(paste("FILENAME","SAMPLINGRATE","BIT","DURATION","CHANNELS","INDEX","MAX_FREQ","DB_THRESHOLD","FREQ_STEPS",
-          "LEFT_CHANNEL", "RIGHT_CHANNEL",
-          sep=","))
-cat("\n")
-sink()
-
-for(i in 1:length(file.names)){
-
-    sound = readWave(file.names[i])
-
-    # duration
-    duration = 0
-    if (length(sound@left))
-        {
-        duration = length(sound@left) / sound@samp.rate
-        }
-    else if (length(sound@right)) {
-       duration = length(sound@right) / sound@samp.rate
-    }
-
-    # channels
-    if (sound@stereo)
-        {channels = 2}
-    else
-        {channels = 1}
-
-    r = tryCatch(
-            {acoustic_diversity(sound, max_freq = opt$max_freq, db_threshold = opt$db_treshold, freq_step = opt$freq_step, shannon = shannon)},
-            error = function(e) 
-                        {
-                        x = list()
-                        x$adi_left = NA
-                        x$adi_right = NA
-                        return(x)
-                        }
-                )
-
-    sink(opt$output, append=TRUE)
-    cat(paste(basename(file.names[i]), 
-              sound@samp.rate,
-              sound@bit,
-              duration,
-              channels,
-              'acoustic_diversity',
-
-              opt$max_freq, opt$db_treshold, opt$freq_step, r$adi_left, r$adi_right, sep=","))
-    cat("\n")
-    sink()
-}
-
-
+multiple_sounds(directory=opt$directory,
+                resultfile=opt$output,
+                soundindex="acoustic_diversity",
+                max_freq=opt$max_freq,
+                db_threshold=opt$db_treshold,
+                shannon=shannon,
+                no_cores=opt$cpu)
 
 
