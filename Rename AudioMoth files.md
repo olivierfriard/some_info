@@ -30,13 +30,17 @@ rename_audiomoth_files -d SOUNDS_DIRECTORY_PATH -t HOURS -r -s -p PLACE_
 
 **Examples of use on OCCAM**
 
+This command will rename the audiomoth files adding 3 hours to the codified date/time:
+
 ```
 occam-run -nnode10 ofriard/acoustic rename_audiomoth_files -d sounds_archive -t 3
 ```
-This example will rename the audiomoth files adding 3 hours to the codified date/time
+
+
+This command will rename the audiomoth files and add 'maromiza_' as a prefix for each file name:
 
 ```
 occam-run -nnode10 ofriard/acoustic rename_audiomoth_files -d sounds_archive -p maromiza_
 ```
-This example will rename the audiomoth files and add 'maromiza_' as a prefix for each file name
+
 
