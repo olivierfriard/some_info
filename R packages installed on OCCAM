@@ -1,22 +1,21 @@
-R packages installed on OCCAM (updated to 2021-04-19)
+R packages installed on OCCAM (updated to 2021-08-03)
 
-           Package    Version
             abind      1.4-5
-             ade4     1.7-16
+             ade4     1.7-17
      adehabitatHR     0.4.19
      adehabitatLT     0.3.25
      adehabitatMA     0.3.14
          advclust        0.4
-        agricolae      1.3-3
+        agricolae      1.3-5
         AlgDesign      1.2.0
         apcluster      1.4.8
-              ape      5.4-1
+              ape        5.5
           askpass        1.1
        assertthat      0.2.1
             audio      0.1-7
         backports      1.2.1
         base64enc      0.1-3
-         bayesdfa      0.1.6
+         bayesdfa      1.1.0
                BH   1.75.0-0
         bigmemory     4.5.36
     bigmemory.sri      0.1.3
@@ -25,72 +24,76 @@ R packages installed on OCCAM (updated to 2021-04-19)
      bioacoustics      0.2.5
           Biobase     2.46.0
      BiocGenerics     0.32.0
-      BiocManager    1.30.12
+      BiocManager    1.30.16
       BiocVersion     3.10.1
        biomformat     1.14.0
        Biostrings     2.54.0
-           bitops      1.0-6
+              bit      4.0.4
+            bit64      4.0.5
+           bitops      1.0-7
+             blob      1.2.2
              brew      1.0-6
-             brio      1.1.1
-            broom      0.7.6
-            bslib      0.2.4
-           cachem      1.0.4
-            callr      3.6.0
+             brio      1.1.2
+            broom      0.7.9
+            bslib    0.2.5.1
+           cachem      1.0.5
+            callr      3.7.0
           candisc      0.8-5
-              car     3.0-10
+              car     3.0-11
           carData      3.0-4
-            caret     6.0-86
+            caret     6.0-88
           caTools     1.18.2
        cellranger      1.1.0
         checkmate      2.0.0
         CircStats      0.2-6
-         circular     0.4-93
          classInt      0.4-3
-              cli      2.4.0
+              cli      3.0.1
             clipr      0.7.1
-             clue     0.3-58
-         ClusterR      1.2.2
+             clue     0.3-59
+         ClusterR      1.2.5
       clustertend        1.5
               clv    0.3-2.2
           clValid        0.7
              coda     0.19-4
-       colorspace      2.0-0
+       colorspace      2.0-2
          combinat      0.0-8
        commonmark        1.7
           conquer      1.0.2
           corpcor      1.6.9
-         corrplot       0.84
+         corrplot       0.90
           cowplot      1.1.1
-            cpp11      0.2.7
+            cpp11      0.3.1
            crayon      1.4.1
-      credentials      1.3.0
+      credentials      1.3.1
         crosstalk      1.1.1
               ctv      0.8-5
-         cubature    2.0.4.1
-             curl        4.3
+         cubature    2.0.4.2
+             curl      4.3.2
        data.table     1.14.0
               DBI      1.1.1
+           dbplyr      2.1.1
            deldir     0.2-10
-       dendextend     1.14.0
-         DEoptimR      1.0-8
+       dendextend     1.15.1
+         DEoptimR      1.0-9
              desc      1.3.0
-         devtools      2.4.0
+         devtools      2.4.2
           diffobj      0.3.4
            digest     0.6.27
-          diptest     0.75-7
+          diptest     0.76-0
        doParallel     1.0.16
-            dplyr      1.0.5
-               DT       0.17
+            dplyr      1.0.7
+               DT       0.18
+           dtplyr      1.1.0
               dtw     1.22-3
          dtwclust      5.5.6
          dygraphs    1.1.1.6
-            e1071      1.7-6
+            e1071      1.7-8
           ellipse      0.4.2
-         ellipsis      0.3.1
+         ellipsis      0.3.2
          evaluate       0.14
        factoextra      1.0.7
        FactoMineR        2.4
-            fansi      0.4.2
+            fansi      0.5.0
            farver      2.1.0
           fastmap      1.1.0
                FD     1.0-12
@@ -101,67 +104,71 @@ R packages installed on OCCAM (updated to 2021-04-19)
           flexmix     2.3-17
           forcats      0.5.1
           foreach      1.5.1
-         forecast       8.14
+         forecast       8.15
           Formula      1.2-4
               fpc      2.2-9
          fracdiff      1.5-1
                fs      1.5.0
        functional        0.6
+           gargle      1.2.0
             gdata     2.18.0
           gdtools      0.2.3
          generics      0.1.0
          geometry      0.4.5
-             gert      1.3.0
-          ggplot2      3.3.3
+        geosphere     1.5-10
+             gert      1.3.1
+          ggplot2      3.3.5
            ggpubr      0.4.0
           ggrepel      0.9.1
             ggsci        2.9
-         ggsignif      0.6.1
+         ggsignif      0.6.2
          ggthemes      4.2.4
-               gh      1.2.1
+               gh      1.3.0
          gitcreds      0.1.1
              glue      1.4.2
               gmp      0.6-2
+      googledrive      2.0.0
+    googlesheets4      1.0.0
             gower      0.2.2
         gridExtra        2.3
-              gsw      1.0-5
+              gsw      1.0-6
            gtable      0.3.0
-           gtools      3.8.2
-            haven      2.3.1
+           gtools      3.9.2
+            haven      2.4.2
           heplots      1.3-8
-            highr        0.8
+            highr        0.9
             Hmisc      4.5-0
-              hms      1.0.0
-        htmlTable      2.1.0
+              hms      1.1.0
+        htmlTable      2.2.1
         htmltools    0.5.1.1
       htmlwidgets      1.5.3
-           httpuv      1.5.5
+           httpuv      1.6.1
              httr      1.4.2
+              ids      1.0.1
            igraph      1.2.6
              ineq     0.2-13
               ini      0.3.1
-           inline     0.3.17
+           inline     0.3.19
             ipred     0.9-11
           IRanges     2.20.2
-          isoband      0.2.4
+          isoband      0.2.5
         iterators     1.0.13
-             jpeg    0.1-8.1
-        jquerylib      0.1.3
+             jpeg      0.1-9
+        jquerylib      0.1.4
          jsonlite      1.7.2
-          Kendall        2.2
           kernlab     0.9-29
              klaR     0.6-15
-            knitr       1.31
+            knitr       1.33
          labeling      0.4.2
          labelled      2.8.0
-            later    1.1.0.1
+            later      1.2.0
      latticeExtra     0.6-29
              lava      1.6.9
          lazyeval      0.2.2
             leaps        3.1
         lifecycle      1.0.0
           linprog      0.9-2
-             lme4     1.1-26
+             lme4   1.1-27.1
            lmtest     0.9-38
            locpol      0.7-0
  longitudinalData      2.4.1
@@ -170,43 +177,44 @@ R packages installed on OCCAM (updated to 2021-04-19)
         lubridate     1.7.10
             magic      1.5-9
          magrittr      2.0.1
- manipulateWidget     0.10.1
          maptools      1.1-1
          markdown        1.1
      MatrixModels      0.5-0
-      matrixStats     0.58.0
+      matrixStats     0.60.0
           mcclust        1.0
            mclust      5.4.7
          MCMCglmm       2.32
           memoise      2.0.0
              mice     3.13.0
-             mime       0.10
+             mime       0.11
            miniUI    0.1.1.1
             minqa      1.2.4
            misc3d      0.9-0
      ModelMetrics    1.2.2.2
+           modelr      0.1.8
        modeltools     0.2-23
           moments       0.14
           monitoR      1.0.7
+             move      4.0.6
      multcompView      0.1-8
          multtest     2.42.0
           munsell      0.5.0
-          mvtnorm      1.1-1
-     NatureSounds      1.0.3
+          mvtnorm      1.1-2
+     NatureSounds      1.0.4
           NbClust        3.0
            nloptr    1.2.2.2
              nnls        1.4
          numDeriv 2016.8-1.1
-       OpenImageR      1.1.7
-          openssl      1.4.3
-         openxlsx      4.2.3
+       OpenImageR      1.1.9
+          openssl      1.4.4
+         openxlsx      4.2.4
           pbapply      1.4-3
          pbkrtest      0.5.1
               pdc      1.0.3
           permute      0.9-5
         phonTools    0.2-2.1
          phyloseq     1.30.0
-           pillar      1.5.1
+           pillar      1.6.2
            pixmap     0.4-12
          pkgbuild      1.2.0
         pkgconfig      2.0.3
@@ -221,52 +229,57 @@ R packages installed on OCCAM (updated to 2021-04-19)
            praise      1.0.0
       prettyunits      1.1.1
              pROC   1.17.0.1
-         processx      3.5.1
+         processx      3.5.2
           prodlim 2019.11.13
          progress      1.2.2
          promises    1.2.0.1
-            proxy     0.4-25
+            proxy     0.4-26
                ps      1.6.0
             purrr      0.3.4
           pvclust      2.2-0
          quadprog      1.5-8
          quantmod     0.4.18
-         quantreg       5.85
+         quantreg       5.86
         questionr      0.7.4
-          R.cache     0.14.0
+          R.cache     0.15.0
       R.methodsS3      1.8.1
              R.oo     1.24.0
           R.utils     2.10.1
                R6      2.5.0
      randomForest     4.6-14
    randomForestCI      1.0.0
-           ranger     0.12.1
+           ranger     0.13.1
          rappdirs      0.3.3
-           raster      3.4-5
+           raster     3.4-13
         rcmdcheck      1.3.3
      RColorBrewer      1.1-2
-             Rcpp      1.0.6
-    RcppArmadillo 0.10.2.2.0
+             Rcpp      1.0.7
+    RcppArmadillo 0.10.6.0.0
         RcppEigen  0.3.3.9.1
-     RcppParallel      5.0.3
+     RcppParallel      5.1.4
      RcppProgress      0.4.2
        RcppThread      1.0.0
             RCurl   1.98-1.3
-            readr      1.4.0
+            readr      2.0.0
            readxl      1.3.1
-          recipes     0.1.15
+          recipes     0.1.16
           rematch      1.0.1
          rematch2      2.1.2
-          remotes      2.3.0
+          remotes      2.4.0
+           reprex      2.0.0
          reshape2      1.4.4
-              rgl   0.105.22
+       reticulate       1.20
+            rgdal     1.5-23
+            rgeos      0.5-5
+              rgl   0.107.10
             rhdf5     2.30.1
          Rhdf5lib      1.8.0
-              rio     0.5.26
+              rio     0.5.27
             rjson     0.2.20
-            rlang     0.4.10
+            rlang     0.4.11
+        rmarkdown        2.9
             Rmisc        1.5
-       robustbase     0.93-7
+       robustbase     0.93-8
          roxygen2      7.1.1
         rprojroot      2.0.2
          RSpectra     0.16-0
@@ -274,69 +287,76 @@ R packages installed on OCCAM (updated to 2021-04-19)
        rstantools      2.1.1
           rstatix      0.7.0
        rstudioapi       0.13
-        rversions      2.0.2
+        rversions      2.1.1
+            rvest      1.0.1
+               s2      1.0.6
         S4Vectors     0.24.4
-             sass      0.3.1
+             sass      0.4.0
            scales      1.1.1
     scatterplot3d     0.3-41
-          seewave      2.1.6
+          seewave      2.1.8
+          selectr      0.4-2
       sessioninfo      1.1.1
             shiny      1.6.0
           shinyBS       0.61
           shinyjs      2.0.0
-           signal      0.7-6
-           smacof      2.1-2
-         soundgen      2.0.0
+           signal      0.7-7
+           smacof      2.1-3
       sourcetools      0.1.7
                sp      1.4-5
           SparseM       1.81
           SQUAREM     2021.1
       StanHeaders   2.21.0-7
-          statmod     1.4.35
-          stringi      1.5.3
+          stringi      1.7.3
           stringr      1.4.0
-           styler      1.4.1
+           styler      1.5.1
               sys        3.4
-      systemfonts      1.0.1
+      systemfonts      1.0.2
            tclust      1.4-2
           tensorA     0.36.2
-         testthat      3.0.2
-           tibble      3.1.0
+         testthat      3.0.4
+           tibble      3.1.3
             tidyr      1.1.3
-       tidyselect      1.1.0
+       tidyselect      1.1.1
+        tidyverse      1.3.1
              tiff      0.1-8
          timeDate   3043.102
+          tinytex       0.32
+              TMB     1.7.20
       trimcluster      0.1-5
           TSclust      1.3.1
            TSdist        3.7
           tseries    0.10-48
               TTR     0.24.2
             tuneR      1.3.3
-         unmarked      1.0.1
+             tzdb      0.1.2
+             umap    0.2.7.0
+         unmarked      1.1.1
              urca      1.3-0
           usethis      2.0.1
-             utf8      1.2.1
-               V8      3.4.0
-            vctrs      0.3.7
+             utf8      1.2.2
+             uuid      0.1-4
+               V8      3.4.2
+            vctrs      0.3.8
             vegan      2.5-7
-         vegclust      1.7.7
-          viridis      0.5.1
-      viridisLite      0.3.0
+         vegclust      2.0.0
+          viridis      0.6.1
+      viridisLite      0.4.0
+            vroom      1.5.3
             waldo      0.2.5
           warbleR     1.1.26
-          webshot      0.5.2
-          weights      1.0.1
+          weights      1.0.4
           whisker        0.4
-            withr      2.4.1
+            withr      2.4.2
+               wk      0.5.0
         wordcloud        2.6
-             xfun       0.22
+             xfun       0.24
              xml2      1.3.2
             xopen      1.0.0
            xtable      1.8-4
               xts     0.12.1
           XVector     0.26.0
              yaml      2.2.1
-              zip      2.1.1
+              zip      2.2.0
          zlibbioc     1.32.0
               zoo      1.8-9
-
