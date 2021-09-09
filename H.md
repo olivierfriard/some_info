@@ -11,7 +11,7 @@ Options:
 		output file name [default= out.txt]
 
         --channel NUMBER
-	        audio channel [default= 1] (left channel)
+	        audio channel [default= 1] (left channel: 1, right channel: 2)
 
         -w NUMBER, --wl
 	        window length
