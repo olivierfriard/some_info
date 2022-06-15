@@ -23,9 +23,6 @@ Options:
 	-s NUMBER, --shannon=NUMBER
 		Use the Shannon's diversity index to calculate the ADI (default: True)
 
-	-c NUMBER, --cpu=NUMBER
-		Number of cores to use (default: 1)
-
 	-h, --help
 		Show this help message and exit
     
@@ -33,7 +30,7 @@ Options:
 
 **Usage**
 ```
-adi -d SOUNDS_DIRECTORY_PATH [-c N_CORES] [-o OUTPUT.TSV] [-m MAX_FREQ] 
+adi -d SOUNDS_DIRECTORY_PATH [-o OUTPUT.TSV] [-m MAX_FREQ] 
 ```
 The arguments between square brackets are optionnal
 
@@ -41,8 +38,8 @@ The arguments between square brackets are optionnal
 **Examples of use on OCCAM**
 
 ```
-occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -c 6 -o my_ADI_results.tsv
+occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -o my_ADI_results.tsv
 
-occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -c 6 -o my_ADI_results.tsv --shannon FALSE
+occam-run -nnodeXX ofriard/acoustic adi -d my_sounds_archive -o my_ADI_results.tsv --shannon FALSE
 ```
 
