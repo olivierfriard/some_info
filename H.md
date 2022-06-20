@@ -26,13 +26,13 @@ Options:
 
 **Usage**
 ```
-h_multi -d SOUNDS_DIRECTORY_PATH -o OUTPUT.TSV
+h -d SOUNDS_DIRECTORY_PATH -o OUTPUT.TSV
 ```
 
 **Examples of use on OCCAM**
 
 ```
-occam-run -nnodeXX ofriard/acoustic h_multi -d my_sounds_archive -o my_H_results.tsv
+occam-run -nnodeXX ofriard/acoustic h -d my_sounds_archive -o my_H_results.tsv
 
-occam-run -nnodeXX ofriard/acoustic h_multi -d my_sounds_archive -o my_H_results.tsv --envt abs --channel 2
+occam-run -nnodeXX ofriard/acoustic h -d my_sounds_archive -o my_H_results.tsv --envt abs --channel 2
 ```
