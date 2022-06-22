@@ -25,9 +25,7 @@ RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
-
 RUN apt install praat -y
-
 
 RUN apt install -y lib32stdc++6
 RUN apt install -y sox
