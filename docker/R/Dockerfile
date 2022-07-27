@@ -48,16 +48,23 @@ RUN apt-get install -y tk8.6-dev
 RUN apt-get install -y libpcre2-dev
 RUN apt-get install -y libxml2-dev
 RUN apt-get install -y cmake
+RUN apt-get install -y libfftw3-dev
+RUN apt-get install -y libgmp3-dev
+RUN apt-get install -y libfribidi-dev
+RUN apt-get install -y libharfbuzz-dev
+
+# for rgdal
+RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
 # download R sources
 RUN apt-get install -y wget
 
 # Compile and install an R in portable version
 WORKDIR /tmp
-RUN wget https://cran.r-project.org/src/base/R-4/R-4.2.0.tar.gz -O R-4.2.0.tar.gz
+RUN wget https://cran.r-project.org/src/base/R-4/R-4.2.1.tar.gz -O R-4.2.1.tar.gz
 
-RUN tar zxf R-4.2.0.tar.gz
-WORKDIR R-4.2.0
+RUN tar zxf R-4.2.1.tar.gz
+WORKDIR R-4.2.1
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
 RUN make
@@ -73,7 +80,6 @@ COPY files/Rprofile.site /opt/PortableR/lib/R/etc
 
 RUN /opt/PortableR/bin/R --version
 RUN /opt/PortableR/bin/R -e "install.packages('littler')" && cd /bin && ln -s /opt/PortableR/lib/R/library/littler/bin/r .
-RUN /opt/PortableR/bin/R -e "install.packages('devtools')" 
 
 # Tag the image with the actual repo commit
 COPY BUILD_COMMIT /BUILD_COMMIT
@@ -85,6 +91,9 @@ COPY BUILD_COMMIT /BUILD_COMMIT
 CMD ["bash"]
 
 # install packages
-ADD optimized_install_packages.R /
+COPY files/optimized_install_packages.R /
+COPY files/packages_list.txt /
 RUN R -f /optimized_install_packages.R
+
+
 
