@@ -2,10 +2,13 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
 
            Package    Version
             AppDC      0.1.0
+         devtools      2.4.4
     githubinstall      0.2.2
          hardRain      0.1.2
           Kendall      2.2.1
           mockery      0.4.3
+          pkgdown      2.0.6
+             ragg      1.2.2
           seewave      2.2.0
            signal      0.7-7
             tuneR      1.4.0
@@ -114,7 +117,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
       fontawesome      0.3.0
           forcats      0.5.1
           foreach      1.5.2
-         forecast       8.16
+         forecast     8.17.0
           Formula      1.2-4
               fpc      2.2-9
          fracdiff      1.5-1
@@ -142,6 +145,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
          gitcreds      0.1.1
           globals     0.15.1
              glue      1.6.2
+              gmp      0.6-5
       googledrive      2.0.0
     googlesheets4      1.0.0
             gower      1.0.0
@@ -219,6 +223,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
        modeltools     0.2-23
           moments     0.14.1
           monitoR      1.0.7
+             move      4.1.8
      multcompView      0.1-8
          multtest     2.52.0
           munsell      0.5.0
@@ -281,6 +286,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
    randomForestCI      1.0.0
            ranger     0.14.1
          rappdirs      0.3.3
+           raster     3.5-21
         rcmdcheck      1.4.0
      RColorBrewer      1.1-3
              Rcpp      1.0.9
@@ -300,6 +306,8 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
            reprex      2.0.1
          reshape2      1.4.4
        reticulate       1.25
+            rgdal     1.5-32
+            rgeos      0.5-9
               rgl    0.109.6
             rhdf5     2.40.0
      rhdf5filters      1.8.0
@@ -346,6 +354,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
       systemfonts      1.0.4
            tclust      1.5-1
           tensorA     0.36.2
+            terra      1.6-3
          testthat      3.1.4
       textshaping      0.3.6
            tibble      3.1.8
