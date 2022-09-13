@@ -53,7 +53,7 @@ RUN apt-get install -y libgmp3-dev
 RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
 
-# for sf
+# for sf / stars
 RUN apt-get install -y libudunits2-dev
 
 # for rgdal
