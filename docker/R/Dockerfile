@@ -53,6 +53,9 @@ RUN apt-get install -y libgmp3-dev
 RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
 
+# for sf / stars
+RUN apt-get install -y libudunits2-dev
+
 # for rgdal
 RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
