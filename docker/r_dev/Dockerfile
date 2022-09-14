@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -78,11 +78,11 @@ RUN ln -s /opt/PortableR/bin/* .
 
 WORKDIR /
 
-#Setup CRAN mirror
+# Setup CRAN mirror
 COPY files/Rprofile.site /opt/PortableR/lib/R/etc
 
-RUN /opt/PortableR/bin/R --version
-RUN /opt/PortableR/bin/R -e "install.packages('littler')" && cd /bin && ln -s /opt/PortableR/lib/R/library/littler/bin/r .
+#RUN /opt/PortableR/bin/R --version
+#RUN /opt/PortableR/bin/R -e "install.packages('littler')" && cd /bin && ln -s /opt/PortableR/lib/R/library/littler/bin/r .
 
 # Tag the image with the actual repo commit
 COPY BUILD_COMMIT /BUILD_COMMIT
@@ -96,7 +96,6 @@ CMD ["bash"]
 # install packages
 COPY files/optimized_install_packages.R /
 COPY files/packages_list.txt /
-RUN R -f /optimized_install_packages.R
-
+RUN Rscript /optimized_install_packages.R
 
 
