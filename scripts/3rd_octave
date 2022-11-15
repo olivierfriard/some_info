@@ -90,10 +90,10 @@ def third_octave(file_name):
     for interval in FREQ_INTERVALS:
 
         try:
-            energy = 20 * math.log10(sound_spectrum.get_band_energy(interval[0], interval[1])/0.00002)
+            energy = 20 * math.log10(sound_spectrum.get_band_energy(interval[0], interval[1]) / 0.00002)
             energy_values.append(round(energy, 2))
         except:
-            print(f"Error on {file_name.stem} ", file=sys.stderr)
+            print(f"Error on {file_name}: {sound_spectrum.get_band_energy(interval[0], interval[1])=} ", file=sys.stderr)
             energy_values.append("NA")
 
     return energy_values
