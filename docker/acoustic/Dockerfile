@@ -83,7 +83,7 @@ RUN chmod +x /bin/dtwave_dist
 ADD scripts/dtwave_unix /bin
 RUN chmod +x /bin/dtwave_unix
 
-ADD ../../scripts/HCopy /bin
+ADD scripts/HCopy /bin
 RUN chmod +x /bin/HCopy
 
 # praat CC
