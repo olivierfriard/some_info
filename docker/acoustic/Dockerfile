@@ -77,21 +77,21 @@ RUN pip3 install opencv-python-headless
 
 
 # dtwave dist
-ADD dtwave_dist /bin
+ADD ../../scripts/dtwave_dist /bin
 RUN chmod +x /bin/dtwave_dist
 
-ADD dtwave_unix /bin
+ADD ../../scripts/dtwave_unix /bin
 RUN chmod +x /bin/dtwave_unix
 
-ADD HCopy /bin
+ADD ../../scripts/HCopy /bin
 RUN chmod +x /bin/HCopy
 
 # praat CC
-ADD praat_cc /bin
+ADD ../../scripts/praat_cc /bin
 RUN chmod +x /bin/praat_cc
 
 # 3rd octave wit praat
-ADD 3rd_octave /bin
+ADD ../../scripts/3rd_octave /bin
 RUN chmod +x /bin/3rd_octave
 ADD 3rd_octave_single /bin
 RUN chmod +x /bin/3rd_octave_single
@@ -105,34 +105,34 @@ RUN chmod +x /bin/3rd_octave_single
 # Acoustic indices
 
 # verify WAV (tuneR)
-ADD verify_wav /bin
+ADD ../../scripts/verify_wav /bin
 RUN chmod +x /bin/verify_wav
 
 # wav info
-ADD wav_info /bin
+ADD ../../scripts/wav_info /bin
 RUN chmod +x /bin/wav_info
 
 # ACI with R (soundecology)
-ADD aci /bin
+ADD ../../scripts/aci /bin
 RUN chmod +x /bin/aci
-ADD aci_multi /bin
+ADD ../../scripts/aci_multi /bin
 RUN chmod +x /bin/aci_multi
 
 
 # ACI with R (seewave)
-ADD aci_seewave /bin
+ADD ../../scripts/aci_seewave /bin
 RUN chmod +x /bin/aci_seewave
 
 
 # ADI with R
-ADD adi /bin
+ADD ../../scripts/adi /bin
 RUN chmod +x /bin/adi
 
-ADD adi_multi /bin
+ADD ../../scripts/adi_multi /bin
 RUN chmod +x /bin/adi_multi
 
 # NDSI with R
-ADD ndsi /bin
+ADD ../../scripts/ndsi /bin
 RUN chmod +x /bin/ndsi
 ADD ndsi_multi /bin
 RUN chmod +x /bin/ndsi_multi
@@ -144,24 +144,24 @@ RUN chmod +x /bin/ar
 
 
 # Total Entropy( (h) with R (seewave and soundecology)
-ADD h /bin
+ADD ../../scripts/h /bin
 RUN chmod +x /bin/h
 
-ADD h_multi /bin
+ADD ../../scripts/h_multi /bin
 RUN chmod +x /bin/h_multi
 
 
 # rename audiomoth files
-ADD rename_audiomoth_files /bin
+ADD ../../scripts/rename_audiomoth_files /bin
 RUN chmod +x /bin/rename_audiomoth_files
 
 
 # acoustic indices with python
 
 RUN pip3 install pyYAML
-ADD acoustic_indices_python/acoustic_index.py /
-ADD acoustic_indices_python/compute_indice.py /
-ADD acoustic_indices_python/ai_dir.py /
+ADD ../../scripts/acoustic_indices_python/acoustic_index.py /
+ADD ../../scripts/acoustic_indices_python/compute_indice.py /
+ADD ../../scripts/acoustic_indices_python/ai_dir.py /
 
 
 
