@@ -1,0 +1,143 @@
+#!/usr/bin/python3
+"""
+3rd octave single core
+"""
+
+FREQ_INTERVALS = [
+(11.2, 14.1),
+(14.1, 17.8),
+(17.8, 22.4),
+(22.4, 28.2),
+(28.2, 35.5),
+(35.5, 44.7),
+(44.7, 56.2),
+(56.2, 70.8),
+(70.8, 89.1),
+(89.1, 112),
+(112, 141),
+(141, 178),
+(178, 224),
+(224, 282),
+(282, 355),
+(355, 447),
+(447, 562),
+(562, 708),
+(708, 891),
+(891, 1122),
+(1122, 1413),
+(1413, 1778),
+(1778, 2239),
+(2239, 2818),
+(2818, 3548),
+(3548, 4467),
+(4467, 5623),
+(5623, 7079),
+(7079, 8913),
+(8913, 11220),
+(11220, 14130),
+(14130, 17780),
+(17780, 22390)
+ ]
+
+__version__ = "1"
+__version_date__ = "2020-05-15"
+
+import argparse
+import math
+import pathlib
+import sys
+import concurrent.futures
+import parselmouth
+from parselmouth.praat import call
+
+parser = argparse.ArgumentParser(prog="3rd_octave_single",
+                                 usage="\n3rd_octave_single -d sounds_directory_path -o OUTPUT.tsv",
+                                 description="3rd octave with Praat (single core)")
+parser.add_argument("-d", "--directory", required=True, action="store", dest="directory", help="Set directory of WAVE files")
+# parser.add_argument("-c", "--cpu", action="store", dest="cpu", default=1, type=int, help="Set number of CPU/cores to use (default 1)")
+parser.add_argument("-o", "--output", action="store", dest="output", help="Set path for the output file")
+parser.add_argument("-v", "--version", action='version', version=f"%(prog)s v.{__version__} {__version_date__}")
+parser.add_argument("-i", "--initial-silence", action='store', dest="initial_silence", default=0, type=float,
+                    help="indicate the silence duration (in s) at the beginning of the sound")
+parser.add_argument("-f", "--final-silence", action='store', dest="final_silence", default=0, type=float,
+                    help="indicate the silence duration (in s) at the end of the sound")
+
+args = parser.parse_args()
+
+if not args.directory:
+    print('Sounds directory not found!')
+    sys.exit(3)
+
+'''
+if args.cpu:
+    try:
+        CPU = int(args.cpu)
+        print(f"Number of CPU to use: {CPU}")
+        MAX_WORKER = CPU
+    except:
+        print("cpu must be an integer")
+        sys.exit(5)
+else:
+    print("No CPU")
+    sys.exit(5)
+'''
+
+
+def third_octave(sound):
+
+    energy_values = [round(sound.duration, 3)]
+    sound_spectrum = sound.to_spectrum()
+    for interval in FREQ_INTERVALS:
+
+        try:
+            energy = 20 * math.log10(sound_spectrum.get_band_energy(interval[0], interval[1])/0.00002)
+            energy_values.append(round(energy, 2))
+        except:
+            print(f"Error on {file_name.stem} ", file=sys.stderr)
+            energy_values.append("NA")
+
+    return energy_values
+
+
+# header
+header = ["file name", "duration"]
+for interval in FREQ_INTERVALS:
+    header.append(f"{interval[0]}_{interval[1]}_dB")
+out = "\t".join(header) + "\n"
+
+files_list = sorted(list(pathlib.Path(args.directory).glob("*.wav")))
+
+out = ""
+for file_name in files_list:
+
+    if args.initial_silence or args.final_silence:
+        dummy_sound = parselmouth.Sound(str(file_name)) 
+        try:
+            sound = dummy_sound.extract_part(args.initial_silence,
+                                             dummy_sound.duration - args.final_silence,
+                                             parselmouth.WindowShape.RECTANGULAR, 1, False)
+
+        except Exception:
+            print((f"Error on {file_name.stem} parselmouth.PraatError: Extracted Sound would contain no samples. "
+                   " Sound: part not extracted."),
+                   file=sys.stderr)
+            sys.exit(4)
+    else:
+        sound = parselmouth.Sound(str(file_name))
+
+        out += f"{file_name}\t" + ("\t".join([str(x) for x in third_octave(sound)]))
+        print(f"{file_name}\t" + ("\t".join([str(x) for x in third_octave(sound)])))
+
+
+if args.output:
+    try:
+        with open(args.output, "w") as f_out:
+            f_out.write(out)
+    except Exception:
+        print(f"\nError saving results in {args.output}.\nFile {args.directory}.tsv created.", file=sys.stderr)
+        with open(f"{args.directory}.tsv", "w") as f_out:
+            f_out.write(out)
+
+else:
+    print(out)
+
