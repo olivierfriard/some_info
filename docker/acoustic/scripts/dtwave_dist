@@ -1,0 +1,203 @@
+#!/usr/bin/python3
+
+"""
+dtwave_dist
+'make distances matrix using dtwave '
+"""
+
+import argparse
+import glob
+import os
+import sys
+
+__version__ = "3"
+__version_date__ = "2020-01-15"
+
+try:
+    import numpy as np
+except:
+    print("numpy module not found")
+    sys.exit(1)
+
+try:
+    import pandas as pd
+except:
+    print("pandas module not found")
+    sys.exit(2)
+
+print("Make sounds distances matrix with DTwave\n")
+
+parser = argparse.ArgumentParser(prog="Distances matrix with DTwave",
+                                 usage="\ndtwave_dist -d DIRECTORY [-c CPU] [-k HTK_CONFIG] [-w DTWAVE_PATH] [-v]",
+                                 description="Sounds distances with DTwave")
+parser.add_argument("-d", "--directory", required=True, help="Set directory of WAVE files")
+parser.add_argument("-c", "--cpu", help="Set number of CPU/cores to use (default 1)", default=1, type=int)
+parser.add_argument("-k", "--htk_config", required=True, help="HTK configuration file")
+parser.add_argument("-w", "--dtwave_path", help="Set path for dtwave prog", default="dtwave_unix")
+parser.add_argument("-o", "--output", action="store", dest="output", help="Set path for the output file")
+parser.add_argument("-v", "--version", action='version', version=f"%(prog)s v.{__version__} ({__version_date__})")
+
+
+args = parser.parse_args()
+
+if not args.directory:
+    print('Sounds directory not found!')
+    sys.exit(3)
+
+if not os.path.isdir(args.directory):
+    print('{} is not a directory'.format(args.directory))
+    sys.exit(1)
+
+if not args.htk_config:
+    print('HTK configuration file not found')
+    sys.exit(2)
+
+if args.dtwave_path:
+    '''
+    if not os.path.isfile(args.dtwave_path):
+        print("{} not found as dtwave path".format(args.dtwave_path))
+        sys.exit(4)
+    '''
+    DTWAVE_PATH = args.dtwave_path
+
+if args.cpu:
+    try:
+        CPU = int(args.cpu)
+        print("CPU: ",CPU)
+    except:
+        print("cpu must be an integer")
+        sys.exit(5)
+
+
+os.system(f'find {args.directory} -name "*.wav" -exec HCopy -C {args.htk_config} {{}} {{}}.htk \;')
+
+
+# files combinations
+files_list = glob.glob(args.directory + '/*.htk')
+
+if not files_list:
+    print('HTK files not found!', file=sys.stderr)
+    sys.exit()
+
+files_list.sort()
+
+if os.path.isfile("{dir}.dtwave_jobs".format(dir=args.directory)):
+    print("removing '{dir}.dtwave_jobs' file".format(dir=args.directory))
+    os.system("rm {dir}.dtwave_jobs*".format(dir=args.directory))
+    print("Done")
+
+nrows = 0
+with open("{dir}.dtwave_jobs".format(dir=args.directory), "w", encoding='utf-8') as f_out:
+    for file1 in files_list:
+        for file2 in files_list[files_list.index(file1) : ]:
+
+            f_out.write("""echo "{file1_basename};{file2_basename}" >> {dir_}.dtwave_results; {dtwave_path} -c "{file1}" "{file2}" >> {dir_}.dtwave_results\n""".format(
+                    dir_=args.directory,
+                    file1_basename=os.path.splitext(os.path.basename(file1))[0],
+                    file2_basename=os.path.splitext(os.path.basename(file2))[0],
+                    file1=file1,
+                    file2=file2,
+                    dtwave_path=DTWAVE_PATH))
+            nrows += 1
+
+
+def bash(filename):
+    return os.system("bash {}".format(filename))
+
+# launch dtwave
+if os.path.isfile('{dir}.dtwave_results'.format(dir=args.directory)):
+    print("removing '{dir}.dtwave_results*' file".format(dir=args.directory))
+    os.system('rm {dir}.dtwave_results*'.format(dir=args.directory))
+    print("Done")
+
+if CPU == 1:
+    os.system("bash {dir_}.dtwave_jobs || true".format(dir_=args.directory))
+else:
+    os.system("cd {path}; split -a 4 -d -l {length} {dir_}.dtwave_jobs {base_dir}_dtwave_jobs_".format(path=os.path.dirname(os.path.realpath(args.directory)),
+                                                                                                    dir_=args.directory,
+                                                                                                    base_dir=os.path.basename(args.directory),
+                                                                                                    length=nrows // CPU +1))
+
+    from multiprocessing import Pool
+
+    works = []
+    for idx, f in enumerate(list(glob.glob("{path}/{base_dir}_dtwave_jobs_*".format(path=os.path.dirname(os.path.realpath(args.directory)),
+                                                                    base_dir=os.path.basename(args.directory))))):
+        os.system("sed -i 's/.dtwave_results/.dtwave_results{idx}/g' {f}".format(f=f, idx=idx))
+
+        works.append(f)
+
+    p = Pool(CPU)
+    values = p.map(bash, works)
+
+    p.close()
+    p.join()
+
+
+#Organize results in a matrix
+
+def only_file_name(s):
+    return os.path.splitext(os.path.basename(s))[0]
+
+all_sounds = [only_file_name(s) for s in sorted(glob.glob("{dir_}/*.wav".format(dir_=args.directory)))]
+
+init = np.full((len(all_sounds),len(all_sounds)), -1.0)
+
+d = pd.DataFrame(data=init, index=all_sounds, columns=all_sounds)
+
+files = glob.glob("{dir_}.dtwave_results*".format(dir_=args.directory))
+
+s1, s2 = "", ""
+for file_name in files:
+    with open(file_name) as f:
+        for row in f:
+            if ";" in row:
+                #try:
+                s1, s2 = row.strip().split(";")
+                #except:
+                #pass
+            if ";" not in row and s1 and s2:
+                dist = row.strip() #.replace("DISTANCE=", "")
+                d[only_file_name(s1)][only_file_name(s2)] = float(dist)
+                d[only_file_name(s2)][only_file_name(s1)] = float(dist)
+                s1, s2 = "", ""
+
+d.fillna(-1)
+
+
+flag_delete = False
+if args.output:
+    try:
+        d.to_csv(f"{args.output}", sep="\t")
+        flag_delete = True
+    except Exception:
+        print(f"\nError saving results in {args.output}")
+        args.output = ""
+
+if not args.output:
+    try:
+        d.to_csv(f"{args.directory}.dtwave_distances.tsv", sep="\t")
+        print(f"File {args.directory}.dtwave_distances.tsv created.")
+        flag_delete = True
+    except Exception:
+        print(f"\nError saving results in {args.directory}.dtwave_distances.tsv")
+
+# clear temporary files
+if flag_delete:
+    try:
+        os.remove(f"{args.directory}.dtwave_jobs")
+    except:
+        print(f"error: {args.directory}.dtwave_jobs not deleted")
+
+    for f in glob.glob(f"{args.directory}_dtwave_jobs_*"):
+        try:
+            os.remove(f)
+        except:
+            print(f"error: {f} not deleted")
+
+    for f in glob.glob(f"{args.directory}.dtwave_results*"):
+        try:
+            os.remove(f)
+        except:
+            print(f"error: {f} not deleted")
+    
