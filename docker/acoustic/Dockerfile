@@ -134,12 +134,12 @@ RUN chmod +x /bin/adi_multi
 # NDSI with R
 ADD scripts/ndsi /bin
 RUN chmod +x /bin/ndsi
-ADD ndsi_multi /bin
+ADD scripts/ndsi_multi /bin
 RUN chmod +x /bin/ndsi_multi
 
 
 # AR with R (seewave)
-ADD ar /bin
+ADD scripts/ar /bin
 RUN chmod +x /bin/ar
 
 
