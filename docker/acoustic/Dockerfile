@@ -93,7 +93,7 @@ RUN chmod +x /bin/praat_cc
 # 3rd octave wit praat
 ADD scripts/3rd_octave /bin
 RUN chmod +x /bin/3rd_octave
-ADD 3rd_octave_single /bin
+ADD scripts/3rd_octave_single /bin
 RUN chmod +x /bin/3rd_octave_single
 
 
