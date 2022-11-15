@@ -1,0 +1,137 @@
+"""
+rename audiomoth file
+
+"""
+
+import os
+import sys
+import argparse
+import pathlib
+import itertools
+import datetime
+
+parser = argparse.ArgumentParser(
+    prog="rename_audiomoth_files",
+    usage="\nrename_audiomoth_files -d sounds_directory_path",
+    description="Rename audiomoth files with metadata",
+)
+
+parser.add_argument(
+    "-d", "--directory", required=True, action="store", dest="directory", help="Set directory of WAVE files"
+)
+parser.add_argument(
+    "-r", "--recurse", action="store_true", dest="recurse", default=False, help="recurse sub-directories"
+)
+parser.add_argument(
+    "-t", "--timezone", action="store", dest="timezone", default=0, help="Add/subtract time (in decimal hours)"
+)
+parser.add_argument(
+    "-s",
+    "--serial-number",
+    action="store_true",
+    dest="serial",
+    default=False,
+    help="Add AudioMoth serial number to WAV file",
+)
+parser.add_argument(
+    "-p", "--prefix", action="store", dest="prefix", default="", help="Text to add at the beginning og the new filename"
+)
+
+
+args = parser.parse_args()
+
+if not args.directory:
+    print("Sounds directory not found!")
+    sys.exit(3)
+
+if not os.path.isdir(args.directory):
+    print(f"{args.directory} is not a directory")
+    sys.exit(1)
+
+print(f"Sound files directory path: {args.directory}")
+
+# check time zone if any
+if args.timezone:
+    try:
+        hours = float(args.timezone)
+    except:
+        print(f"Error in timezone argument: {args.timezone}")
+        sys.exit(2)
+
+if args.recurse:
+    files_list = itertools.chain(
+        pathlib.Path(args.directory).rglob("*.wav"), pathlib.Path(args.directory).rglob("*.WAV")
+    )
+else:
+    files_list = itertools.chain(pathlib.Path(args.directory).glob("*.wav"), pathlib.Path(args.directory).glob("*.WAV"))
+
+if args.prefix:
+    prefix = args.prefix
+else:
+    prefix = ""
+
+
+for file_path in files_list:
+    dir_path = file_path.parent
+    file_name = file_path.stem
+
+    # check file name
+    try:
+        timestamp = int(file_name, 16)
+        if args.timezone:
+            timestamp = int(timestamp + float(hours) * 3600)
+    except:
+        timestamp = 0
+    timestamp_hex = ("_" + file_name) if timestamp else ""
+
+    # check metadata
+    with open(file_path, "rb") as f:
+        r = f.read(200)
+        if b"Recorded at" in r:
+            metadata = r[r.index(b"Recorded at") : r.index(b"state was ") + 14]
+        else:
+            metadata = b""
+
+    time_, date_, tz = "", "", ""
+    if b"Recorded at" in metadata:
+        time_, date_, tz = metadata[12 : 36 + 1].decode("utf-8").split(" ")
+
+        dt = datetime.datetime(
+            int(date_[6:10]), int(date_[3:5]), int(date_[0:2]), int(time_[0:2]), int(time_[3:5]), int(time_[6:8])
+        )
+
+        if args.timezone:
+            dt = dt + datetime.timedelta(hours=float(args.timezone))
+
+    am_number = ""
+
+    if b"by AudioMoth" in metadata:
+        am_number = (
+            metadata[metadata.index(b"by AudioMoth") + 13 : metadata.index(b"by AudioMoth") + 29].decode("utf-8") + "_"
+        )
+
+    if time_ and date_:
+        # check if serial number is required in file name (-s argument)
+        if not args.serial:
+            am_number = ""
+        new_file_name = f'{am_number}{dt.strftime("%Y-%m-%d_%H%M%S")}'
+
+    elif timestamp:
+        new_file_name = datetime.datetime.fromtimestamp(timestamp).isoformat()
+        new_file_name = new_file_name.replace("T", "_")
+        new_file_name = new_file_name.replace(":", "-")
+
+    else:
+        print(f"directory: {dir_path}  file name: {file_name}  not renamed")
+        continue
+
+    if dir_path:
+        new_file_path = dir_path / pathlib.Path(prefix + new_file_name).with_suffix(".wav")
+    else:
+        new_file_path = pathlib.Path(prefix + new_file_name).with_suffix(".wav")
+
+    if file_name != new_file_name:
+        file_path.rename(new_file_path)
+        print(f"directory: {dir_path}  file name: {file_name}  new file name: {new_file_name}")
+    else:
+        print(f"directory: {dir_path}  file name: {file_name}  already OK")
