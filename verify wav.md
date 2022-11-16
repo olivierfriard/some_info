@@ -1,6 +1,6 @@
 **verify_wav**
 
-Verify all wav in directory with readWave function of the tuneR package
+Verify all the wav files in directory with readWave function of the tuneR package
 
 ```
 Options:
