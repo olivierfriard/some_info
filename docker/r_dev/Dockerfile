@@ -27,13 +27,13 @@ ENV LANG en_US.UTF-8
 RUN apt-get install -y openmpi-*
 RUN apt-get install -y gfortran
 ##RUN apt-get install -y xpdf  # No available in 20.04
-RUN apt-get install -y firefox
+# RUN apt-get install -y firefox
 RUN apt-get install -y libreadline-dev
-RUN apt-get install -y texlive-latex-base
-RUN apt-get install -y texlive-fonts-recommended
-RUN apt-get install -y texlive-fonts-extra
-RUN apt-get install -y texlive-latex-extra
-RUN apt-get install -y texinfo
+#RUN apt-get install -y texlive-latex-base
+#RUN apt-get install -y texlive-fonts-recommended
+#RUN apt-get install -y texlive-fonts-extra
+#RUN apt-get install -y texlive-latex-extra
+#RUN apt-get install -y texinfo
 RUN apt-get install -y xorg-dev
 RUN apt-get install -y libbz2-dev
 RUN apt-get install -y liblzma-dev
@@ -64,10 +64,10 @@ RUN apt-get install -y wget
 
 # Compile and install an R in portable version
 WORKDIR /tmp
-RUN wget https://cran.r-project.org/src/base/R-4/R-4.2.1.tar.gz -O R-4.2.1.tar.gz
+RUN wget https://cran.r-project.org/src/base/R-4/R-4.2.2.tar.gz -O R-4.2.2.tar.gz
 
-RUN tar zxf R-4.2.1.tar.gz
-WORKDIR R-4.2.1
+RUN tar zxf R-4.2.2.tar.gz
+WORKDIR R-4.2.2
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
 RUN make
@@ -94,6 +94,9 @@ COPY BUILD_COMMIT /BUILD_COMMIT
 CMD ["bash"]
 
 # install packages
+
+# ARG R_REMOTES_NO_ERRORS_FROM_WARNINGS=false
+
 COPY files/optimized_install_packages.R /
 COPY files/packages_list.txt /
 RUN Rscript /optimized_install_packages.R
