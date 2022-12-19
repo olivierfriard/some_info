@@ -41,8 +41,10 @@ ADD install_packages.R /
 
 COPY Require_0.1.4.tar.gz /
 COPY SpaDES.tools_1.0.0.tar.gz /
+COPY fastshp_0.1-2.tar.gz /
 COPY NetLogoR_0.3.11.tar.gz /
 COPY pedantics_1.7.tar.gz /
+
 
 
 RUN R -f /install_packages.R
