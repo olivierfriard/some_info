@@ -15,6 +15,7 @@ RANN
 Rcpp
 RcppArmadillo
 RcppProgress
+reshape2
 gridExtra
 MetBrewer
 fs

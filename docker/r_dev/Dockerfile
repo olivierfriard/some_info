@@ -95,10 +95,11 @@ CMD ["bash"]
 
 # install packages
 
-# ARG R_REMOTES_NO_ERRORS_FROM_WARNINGS=false
+ARG R_REMOTES_NO_ERRORS_FROM_WARNINGS=false
+
 
 COPY files/optimized_install_packages.R /
 COPY files/packages_list.txt /
-RUN Rscript /optimized_install_packages.R
+RUN Rscript /install_packages.R
 
 
