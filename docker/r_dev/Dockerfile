@@ -95,7 +95,7 @@ CMD ["bash"]
 
 # install packages
 
-ARG R_REMOTES_NO_ERRORS_FROM_WARNINGS=false
+# ARG R_REMOTES_NO_ERRORS_FROM_WARNINGS=false
 
 
 COPY files/install_packages.R /
