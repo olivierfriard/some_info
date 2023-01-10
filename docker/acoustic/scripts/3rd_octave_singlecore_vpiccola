@@ -1,0 +1,107 @@
+#!/usr/bin/python3
+"""
+3rd octave single core
+"""
+
+FREQ_INTERVALS = [
+(354, 445),
+(445, 561),
+(512, 707),
+(707, 891),
+(891, 1122),
+(1122, 1414),
+(1414, 1782),
+(1782, 2245),
+(2245, 2828),
+(2828, 3564),
+(3564, 4490),
+(4490, 5657),
+(5657, 7127),
+(7127, 8980),
+(8990, 11314),
+(11314, 14254),
+(14254, 17959),
+(17959, 22627)
+ ]
+
+__version__ = "1"
+__version_date__ = "2022-12-22"
+
+import argparse
+import math
+import sys
+import concurrent.futures
+import parselmouth
+import pathlib as pl
+from parselmouth.praat import call
+
+parser = argparse.ArgumentParser(prog="3rd_octave_single_vf",
+                                 usage="\n3rd_octave_single -d sounds_directory_path -o OUTPUT.tsv",
+                                 description="3rd octave with Praat (single core)")
+parser.add_argument("-d", "--directory", required=True, action="store", dest="directory", help="Set directory of WAVE files")
+parser.add_argument("-o", "--output", action="store", dest="output", help="Set path for the output file")
+parser.add_argument("-p", "--pattern", action="store", dest="pattern", help="file selection pattern")
+parser.add_argument("-v", "--version", action='version', version=f"%(prog)s v.{__version__} {__version_date__}")
+
+args = parser.parse_args()
+
+if not args.directory:
+    print('Sounds directory not found!', file=sys.stderr)
+    sys.exit(3)
+
+if not args.pattern:
+    pattern = '*.wav'
+else:
+    pattern = args.pattern
+
+def third_octave(sound):
+
+    energy_values = [round(sound.duration, 3)]
+    sound_spectrum = sound.to_spectrum()
+    for interval in FREQ_INTERVALS:
+
+        try:
+            energy = 20 * math.log10(sound_spectrum.get_band_energy(interval[0], interval[1])/0.00002)
+            energy_values.append(round(energy, 2))
+        except:
+            print(f"Error on {file_name.stem} ", file=sys.stderr)
+            energy_values.append("NA")
+
+    return energy_values
+
+
+# header
+header = ["file name", "duration"]
+for interval in FREQ_INTERVALS:
+    header.append(f"{interval[0]}_{interval[1]}_dB")
+out = "\t".join(header) + "\n"
+
+files_list = sorted(list(pl.Path(args.directory).glob(pattern)))
+
+print(f"{len(files_list)} wav files", file=sys.stderr)
+
+out = ""
+for file_name in files_list:
+
+    sound = parselmouth.Sound(str(file_name))
+
+    file_output = f"{file_name.name}\t" + ("\t".join([str(x) for x in third_octave(sound)]))
+
+    '''out += file_output'''
+
+    if not args.output:
+        print(file_output)
+    else:
+        with open(args.output, "a") as f_out:
+            f_out.write(file_output + '\n')
+
+'''
+if args.output:
+    try:
+        with open(args.output, "w") as f_out:
+            f_out.write(out)
+    except Exception:
+        print(f"\nError saving results in {args.output}.\nFile {args.directory}.tsv created.", file=sys.stderr)
+        with open(f"{args.directory}.tsv", "w") as f_out:
+            f_out.write(out)
+'''
