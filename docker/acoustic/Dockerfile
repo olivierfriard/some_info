@@ -1,22 +1,24 @@
 # Docker for acoustic analysis
 
 # dtwave, praat, sox, ffmpeg, ffprobe
-# python: pandas, numpy, matplotlib, scipy, librosa, paarselmouth, opencv
-# R 3.6.3: soundecology, seewave
+# python: pandas, numpy, matplotlib, scipy, librosa, parselmouth, opencv
+# R 4.2.2: soundecology, seewave, hardRain
 
 
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install base system and devel tools
 RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
-  apt-get update && \
-  apt-get install -y apt-utils && \
-  apt-get -y upgrade && \
-  apt-get install -y locales && \
-  apt-get install -y libssl-dev libgit2-dev 
+  apt update && \
+  apt install -y apt-utils && \
+  apt -y upgrade && \
+  apt install -y locales && \
+  apt install -y libssl-dev libgit2-dev 
+
+RUN apt install -y wget
 
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
 	&& locale-gen en_US.utf8 \
@@ -36,33 +38,72 @@ RUN apt install -y ffmpeg
 
 
 # for R
+RUN apt install -y openmpi-*
+RUN apt install -y gfortran
+RUN apt install -y libreadline-dev
+RUN apt install -y xorg-dev
+RUN apt install -y libbz2-dev
+RUN apt install -y liblzma-dev
+RUN apt install -y libpcre3-dev
+RUN apt install -y libcurl4-openssl-dev
+RUN apt install -y libtiff-dev
+RUN apt install -y libjpeg-dev
+RUN apt install -y libicu-dev
+RUN apt install -y libcairo-dev
+RUN apt install -y default-jdk
+RUN apt install -y tk8.6-dev
+RUN apt install -y libpcre2-dev
+RUN apt install -y libxml2-dev
+
+
 RUN apt -y install libgdal-dev
-RUN apt -y install r-base  
 RUN apt -y install libxml2-dev libssl-dev libcurl4-openssl-dev
 RUN apt -y install libsndfile1-dev
 RUN apt -y install libfftw3-dev
 RUN apt -y install libtiff-dev
 RUN apt -y install libgmp3-dev
 RUN apt -y install libudunits2-dev
+RUN apt install -y libfribidi-dev
+RUN apt install -y libharfbuzz-dev
 
 RUN apt -y install flac
-
 RUN apt -y install rename
 RUN apt -y install mmv
 
+RUN apt install -y pypy
+RUN apt install -y python3-pip
 
+
+# Compile and install an R in portable version
+WORKDIR /tmp
+RUN wget https://cran.r-project.org/src/base/R-4/R-4.2.2.tar.gz -O R-4.2.2.tar.gz
+
+RUN tar zxf R-4.2.2.tar.gz
+WORKDIR R-4.2.2
+RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
+
+RUN make -j 8
+RUN make install
+
+WORKDIR /bin
+RUN ln -s /opt/PortableR/bin/* .
+WORKDIR /
+
+
+# Setup CRAN mirror
+COPY Rprofile.site /opt/PortableR/lib/R/etc
+
+# install R packages listed in 
 ADD install_packages.R /
-
 RUN R -f /install_packages.R
 
 
 # python modules
 
-RUN apt install -y pypy
 
-RUN apt install -y python3-pip
+#RUN pip3 install numba==0.48.0
 
-RUN pip3 install numba==0.48.0
+RUN pip3 install numba
 
 RUN pip3 install librosa
 RUN pip3 install pandas
@@ -91,10 +132,14 @@ ADD scripts/praat_cc /bin
 RUN chmod +x /bin/praat_cc
 
 # 3rd octave wit praat
-ADD scripts/3rd_octave /bin
-RUN chmod +x /bin/3rd_octave
-ADD scripts/3rd_octave_single /bin
-RUN chmod +x /bin/3rd_octave_single
+ADD scripts/3rd_octave_singlecore /bin
+RUN chmod +x /bin/3rd_octave_singlecore
+
+ADD scripts/3rd_octave_multicore /bin
+RUN chmod +x /bin/3rd_octave_multicore
+
+ADD scripts/3rd_octave_singlecore_vpiccola /bin
+RUN chmod +x /bin/3rd_octave_singlecore_vpiccola
 
 
 
