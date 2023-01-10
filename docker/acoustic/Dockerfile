@@ -30,6 +30,7 @@ RUN apt install praat -y
 RUN apt install -y lib32stdc++6
 RUN apt install -y sox
 RUN apt install -y ffmpeg
+RUN apt install -y libimage-exiftool-perl
 
 # RUN apt-get install openjdk-8-jre -y
 # RUN apt-get install weka -y
