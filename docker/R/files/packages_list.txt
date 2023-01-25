@@ -70,6 +70,7 @@ nimbleSCR
 nlme
 OpenImageR
 parallelDist
+pdist
 permute
 pkgconfig
 plyr
@@ -83,7 +84,9 @@ RANN
 raster
 Rcpp
 RcppArmadillo
+RcppCNPy
 RcppProgress
+rdist
 readr
 reshape2
 rgdal
@@ -99,6 +102,7 @@ smacof
 soundecology
 soundgen
 sp
+spaa
 stars
 stringr
 tclust
