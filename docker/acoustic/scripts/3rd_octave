@@ -48,7 +48,6 @@ import math
 import pathlib
 import sys
 import os
-import concurrent.futures
 import parselmouth
 from parselmouth.praat import call
 
@@ -113,9 +112,6 @@ if args.cpu:
     except:
         print("CPU must be an integer")
         sys.exit(5)
-else:
-    print("No CPU")
-    sys.exit(5)
 
 if args.pattern:
     pattern = args.pattern
@@ -124,8 +120,6 @@ else:
 
 
 def third_octave(file_name):
-
-    print(args.initial_silence)
 
     if args.initial_silence or args.final_silence:
         dummy_sound = parselmouth.Sound(str(file_name))
@@ -187,13 +181,19 @@ file_name_list = [x for x in pathlib.Path(args.directory).glob(pattern)]
 
 
 print(f"\nProcessing {len(file_name_list)} files...", file=sys.stderr)
-with concurrent.futures.ProcessPoolExecutor(max_workers=MAX_WORKER) as executor:
-    results = executor.map(third_octave, file_name_list)
+if CPU > 1:
+    import concurrent.futures
 
-for result in sorted(results):
-    # print(result)
-    if result:
-        out += "\t".join([str(x) for x in result]) + "\n"
+    with concurrent.futures.ProcessPoolExecutor(max_workers=MAX_WORKER) as executor:
+        results = executor.map(third_octave, file_name_list)
+
+    for result in sorted(results):
+        # print(result)
+        if result:
+            out += "\t".join([str(x) for x in result]) + "\n"
+else:
+    for file_name in sorted(file_name_list):
+        out += ("\t".join([str(x) for x in third_octave(file_name)])) + "\n"
 
 if args.output:
     try:

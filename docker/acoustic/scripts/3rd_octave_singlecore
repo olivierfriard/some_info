@@ -1,43 +1,42 @@
-#!/usr/bin/python3
 """
 3rd octave single core
 """
 
 FREQ_INTERVALS = [
-(11.2, 14.1),
-(14.1, 17.8),
-(17.8, 22.4),
-(22.4, 28.2),
-(28.2, 35.5),
-(35.5, 44.7),
-(44.7, 56.2),
-(56.2, 70.8),
-(70.8, 89.1),
-(89.1, 112),
-(112, 141),
-(141, 178),
-(178, 224),
-(224, 282),
-(282, 355),
-(355, 447),
-(447, 562),
-(562, 708),
-(708, 891),
-(891, 1122),
-(1122, 1413),
-(1413, 1778),
-(1778, 2239),
-(2239, 2818),
-(2818, 3548),
-(3548, 4467),
-(4467, 5623),
-(5623, 7079),
-(7079, 8913),
-(8913, 11220),
-(11220, 14130),
-(14130, 17780),
-(17780, 22390)
- ]
+    (11.2, 14.1),
+    (14.1, 17.8),
+    (17.8, 22.4),
+    (22.4, 28.2),
+    (28.2, 35.5),
+    (35.5, 44.7),
+    (44.7, 56.2),
+    (56.2, 70.8),
+    (70.8, 89.1),
+    (89.1, 112),
+    (112, 141),
+    (141, 178),
+    (178, 224),
+    (224, 282),
+    (282, 355),
+    (355, 447),
+    (447, 562),
+    (562, 708),
+    (708, 891),
+    (891, 1122),
+    (1122, 1413),
+    (1413, 1778),
+    (1778, 2239),
+    (2239, 2818),
+    (2818, 3548),
+    (3548, 4467),
+    (4467, 5623),
+    (5623, 7079),
+    (7079, 8913),
+    (8913, 11220),
+    (11220, 14130),
+    (14130, 17780),
+    (17780, 22390),
+]
 
 __version__ = "2"
 __version_date__ = "2022-12-22"
@@ -50,29 +49,46 @@ import concurrent.futures
 import parselmouth
 from parselmouth.praat import call
 
-parser = argparse.ArgumentParser(prog="3rd_octave_singlecore",
-                                 usage="\n3rd_octave_singlecore -d sounds_directory_path -o OUTPUT.tsv -p 'PATTERN'",
-                                 description="3rd octave with Praat (single core)")
-parser.add_argument("-d", "--directory", required=True, action="store", dest="directory", help="Set directory of WAVE files")
+parser = argparse.ArgumentParser(
+    prog="3rd_octave_singlecore",
+    usage="\n3rd_octave_singlecore -d sounds_directory_path -o OUTPUT.tsv -p 'PATTERN'",
+    description="3rd octave with Praat (single core)",
+)
+parser.add_argument(
+    "-d", "--directory", required=True, action="store", dest="directory", help="Set directory of WAVE files"
+)
 # parser.add_argument("-c", "--cpu", action="store", dest="cpu", default=1, type=int, help="Set number of CPU/cores to use (default 1)")
 parser.add_argument("-o", "--output", action="store", dest="output", help="Set path for the output file")
 parser.add_argument("-p", "--pattern", action="store", dest="pattern", help="file selection pattern")
-parser.add_argument("-v", "--version", action='version', version=f"%(prog)s v.{__version__} {__version_date__}")
-parser.add_argument("-i", "--initial-silence", action='store', dest="initial_silence", default=0, type=float,
-                    help="indicate the silence duration (in s) at the beginning of the sound")
-parser.add_argument("-f", "--final-silence", action='store', dest="final_silence", default=0, type=float,
-                    help="indicate the silence duration (in s) at the end of the sound")
-
+parser.add_argument("-v", "--version", action="version", version=f"%(prog)s v.{__version__} {__version_date__}")
+parser.add_argument(
+    "-i",
+    "--initial-silence",
+    action="store",
+    dest="initial_silence",
+    default=0,
+    type=float,
+    help="indicate the silence duration (in s) at the beginning of the sound",
+)
+parser.add_argument(
+    "-f",
+    "--final-silence",
+    action="store",
+    dest="final_silence",
+    default=0,
+    type=float,
+    help="indicate the silence duration (in s) at the end of the sound",
+)
 
 
 args = parser.parse_args()
 
 if not args.directory:
-    print('Sounds directory not found!')
+    print("Sounds directory not found!")
     sys.exit(3)
 
 if not args.pattern:
-    pattern = '*.wav'
+    pattern = "*.wav"
 else:
     pattern = args.pattern
 
@@ -84,7 +100,7 @@ def third_octave(sound):
     for interval in FREQ_INTERVALS:
 
         try:
-            energy = 20 * math.log10(sound_spectrum.get_band_energy(interval[0], interval[1])/0.00002)
+            energy = 20 * math.log10(sound_spectrum.get_band_energy(interval[0], interval[1]) / 0.00002)
             energy_values.append(round(energy, 2))
         except:
             print(f"Error on {file_name.stem} ", file=sys.stderr)
@@ -106,16 +122,24 @@ print(f"{len(files_list)} wav files", file=sys.stderr)
 for file_name in files_list:
 
     if args.initial_silence or args.final_silence:
-        dummy_sound = parselmouth.Sound(str(file_name)) 
+        dummy_sound = parselmouth.Sound(str(file_name))
         try:
-            sound = dummy_sound.extract_part(args.initial_silence,
-                                             dummy_sound.duration - args.final_silence,
-                                             parselmouth.WindowShape.RECTANGULAR, 1, False)
+            sound = dummy_sound.extract_part(
+                args.initial_silence,
+                dummy_sound.duration - args.final_silence,
+                parselmouth.WindowShape.RECTANGULAR,
+                1,
+                False,
+            )
 
         except Exception:
-            print((f"Error on {file_name.stem} parselmouth.PraatError: Extracted Sound would contain no samples. "
-                   " Sound: part not extracted."),
-                   file=sys.stderr)
+            print(
+                (
+                    f"Error on {file_name.stem} parselmouth.PraatError: Extracted Sound would contain no samples. "
+                    " Sound: part not extracted."
+                ),
+                file=sys.stderr,
+            )
             sys.exit(4)
     else:
         sound = parselmouth.Sound(str(file_name))
@@ -126,5 +150,4 @@ for file_name in files_list:
             print(file_output)
         else:
             with open(args.output, "a") as f_out:
-                f_out.write(file_output + '\n')
-
+                f_out.write(file_output + "\n")
