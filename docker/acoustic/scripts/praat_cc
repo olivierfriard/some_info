@@ -9,7 +9,6 @@ praat_cc -d SOUNDS_DIR_PATH -c N_CORES -o results.tsv
 """
 
 
-
 import argparse
 import concurrent.futures
 import glob
@@ -26,22 +25,42 @@ __version__ = "1"
 __version_date__ = "2020-01-14"
 
 
-parser = argparse.ArgumentParser(prog="praat_cc",
-                                 usage="\npraat_cc -d sounds_directory_path -c N_CORES -o OUTPUT.tsv",
-                                 description="Cross-correlation with Praat")
-parser.add_argument("-d", "--directory", required=True, action="store", dest="directory", help="Set directory of WAVE files")
-parser.add_argument("-c", "--cpu", action="store", dest="cpu", default=1, type=int, help="Set number of CPU/cores to use (default 1)")
+parser = argparse.ArgumentParser(
+    prog="praat_cc",
+    usage="\npraat_cc -d sounds_directory_path -c N_CORES -o OUTPUT.tsv",
+    description="Cross-correlation with Praat",
+)
+parser.add_argument(
+    "-d", "--directory", required=True, action="store", dest="directory", help="Set directory of WAVE files"
+)
+parser.add_argument(
+    "-c", "--cpu", action="store", dest="cpu", default=1, type=int, help="Set number of CPU/cores to use (default 1)"
+)
 parser.add_argument("-o", "--output", action="store", dest="output", help="Set path for the output file")
-parser.add_argument("-v", "--version", action='version', version=f"%(prog)s v.{__version__} {__version_date__}")
-parser.add_argument("-i", "--initial-silence", action='store', dest="initial_silence", default=0, type=float,
-                    help="indicate the silence duration (in s) at the beginning of the sound")
-parser.add_argument("-f", "--final-silence", action='store', dest="final_silence", default=0, type=float,
-                    help="indicate the silence duration (in s) at the end of the sound")
+parser.add_argument("-v", "--version", action="version", version=f"%(prog)s v.{__version__} {__version_date__}")
+parser.add_argument(
+    "-i",
+    "--initial-silence",
+    action="store",
+    dest="initial_silence",
+    default=0,
+    type=float,
+    help="indicate the silence duration (in s) at the beginning of the sound",
+)
+parser.add_argument(
+    "-f",
+    "--final-silence",
+    action="store",
+    dest="final_silence",
+    default=0,
+    type=float,
+    help="indicate the silence duration (in s) at the end of the sound",
+)
 
 args = parser.parse_args()
 
 if not args.directory:
-    print('Sounds directory not found!')
+    print("Sounds directory not found!")
     sys.exit(3)
 
 if not os.path.isdir(args.directory):
@@ -83,9 +102,9 @@ sounds_dict = {}
 for file_name in files_list:
     if args.initial_silence or args.final_silence:
         sound = parselmouth.Sound(str(file_name))
-        sound_cut = sound.extract_part(args.initial_silence,
-                                       sound.duration - args.final_silence,
-                                       parselmouth.WindowShape.RECTANGULAR, 1, False)
+        sound_cut = sound.extract_part(
+            args.initial_silence, sound.duration - args.final_silence, parselmouth.WindowShape.RECTANGULAR, 1, False
+        )
 
         sounds_dict[file_name.stem] = sound_cut
     else:
