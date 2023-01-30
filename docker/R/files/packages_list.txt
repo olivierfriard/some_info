@@ -8,6 +8,7 @@ assertthat
 audio
 bayesdfa
 bindrcpp
+Boruta
 car
 caret
 caTools
@@ -23,10 +24,13 @@ dendextend
 devtools
 digest
 diptest
+doParallel
 dplyr
 dtw
 dtwclust
 dygraphs
+e1071
+ellipse
 factoextra
 FactoMineR
 fasterize
@@ -59,6 +63,7 @@ mclust
 MCMCglmm
 MetBrewer
 mgcv
+mlbench
 ModelMetrics
 monitoR
 move
@@ -94,6 +99,8 @@ rgeos
 rlang
 Rmisc
 robustbase
+ROCR
+RSNNS
 R.utils
 scales
 seewave
