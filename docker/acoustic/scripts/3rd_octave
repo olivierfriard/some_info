@@ -54,7 +54,7 @@ from parselmouth.praat import call
 
 
 parser = argparse.ArgumentParser(
-    prog="3rd_octave_mp",
+    prog="3rd_octave",
     usage="\n3rd_octave -d SOUNDS_DIRECTORY_PATH [-p 'PATTERN'] [-c NUMBER_OF_CPU] -o OUTPUT",
     description="3rd octave with Parselmouth and multiprocessing",
 )
@@ -74,7 +74,6 @@ parser.add_argument(
     type=str,
     help="Set pattern for WAV file selection (default is *.wav)",
 )
-
 
 parser.add_argument("-o", "--output", action="store", dest="output", help="Set path for the output file")
 parser.add_argument("-v", "--version", action="version", version=f"%(prog)s v.{__version__} {__version_date__}")
