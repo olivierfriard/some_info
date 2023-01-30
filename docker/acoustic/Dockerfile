@@ -139,9 +139,6 @@ ADD scripts/3rd_octave /bin
 RUN chmod +x /bin/3rd_octave
 
 
-ADD scripts/3rd_octave_singlecore_vpiccola /bin
-RUN chmod +x /bin/3rd_octave_singlecore_vpiccola
-
 
 
 ## freq bin with praat
@@ -204,10 +201,10 @@ RUN chmod +x /bin/rename_audiomoth_files
 
 # acoustic indices with python
 
-RUN pip3 install pyYAML
-ADD scripts/acoustic_indices_python/acoustic_index.py /
-ADD scripts/acoustic_indices_python/compute_indice.py /
-ADD scripts/acoustic_indices_python/ai_dir.py /
+#RUN pip3 install pyYAML
+#ADD scripts/acoustic_indices_python/acoustic_index.py /
+#ADD scripts/acoustic_indices_python/compute_indice.py /
+#ADD scripts/acoustic_indices_python/ai_dir.py /
 
 
 
