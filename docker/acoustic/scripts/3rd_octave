@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 compute 3rd octave with parselmouth and the multiprocessing module
 """

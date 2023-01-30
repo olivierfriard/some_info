@@ -71,6 +71,8 @@ RUN apt -y install flac
 RUN apt -y install rename
 RUN apt -y install mmv
 
+RUN apt -y install tilde
+
 RUN apt install -y pypy
 RUN apt install -y python3-pip
 
@@ -132,12 +134,10 @@ RUN chmod +x /bin/HCopy
 ADD scripts/praat_cc /bin
 RUN chmod +x /bin/praat_cc
 
-# 3rd octave wit praat
-ADD scripts/3rd_octave_singlecore /bin
-RUN chmod +x /bin/3rd_octave_singlecore
+# 3rd octave with praat/parselmouth
+ADD scripts/3rd_octave /bin
+RUN chmod +x /bin/3rd_octave
 
-ADD scripts/3rd_octave_multicore /bin
-RUN chmod +x /bin/3rd_octave_multicore
 
 ADD scripts/3rd_octave_singlecore_vpiccola /bin
 RUN chmod +x /bin/3rd_octave_singlecore_vpiccola
