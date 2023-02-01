@@ -1,6 +1,6 @@
-R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
+R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
 
-	  Package    Version
+          Package    Version
             abind      1.4-5
              ade4     1.7-20
      adehabitatHR     0.4.20
@@ -32,7 +32,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
              blob      1.2.3
              brew      1.0-8
              brio      1.1.3
-            broom      1.0.2
+            broom      1.0.3
             bslib      0.4.2
            cachem      1.0.6
             callr      3.7.3
@@ -53,7 +53,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
               clv    0.3-2.2
           clValid        0.7
              coda     0.19-4
-       colorspace      2.0-3
+       colorspace      2.1-0
          combinat      0.0-8
        commonmark      1.8.1
        conflicted      1.1.0
@@ -66,7 +66,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
         crosstalk      1.2.0
              crul        1.3
               ctv      0.9-4
-         cubature    2.0.4.5
+         cubature    2.0.4.6
              curl      5.0.0
        data.table     1.14.6
               DBI      1.1.3
@@ -83,7 +83,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
           diptest     0.76-0
        doParallel     1.0.17
           downlit      0.4.2
-            dplyr     1.0.10
+            dplyr      1.1.0
                DT       0.27
            dtplyr      1.2.2
               dtw     1.23-1
@@ -106,14 +106,14 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
        flashClust     1.01-2
         flexclust      1.4-1
           flexmix     2.3-18
-      fontawesome      0.4.0
-          forcats      0.5.2
+      fontawesome      0.5.0
+          forcats      1.0.0
           foreach      1.5.2
          forecast       8.20
           Formula      1.2-4
               fpc     2.2-10
          fracdiff      1.5-2
-               fs      1.5.2
+               fs      1.6.0
        functional        0.6
             furrr      0.3.1
            future     1.30.0
@@ -122,7 +122,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
             gdata   2.18.0.1
           gdtools      0.3.0
          generics      0.1.3
-     GenomeInfoDb     1.34.6
+     GenomeInfoDb     1.34.7
  GenomeInfoDbData      1.2.9
          geometry    0.4.6.1
         geosphere     1.5-18
@@ -143,6 +143,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
     googlesheets4      1.0.1
             gower      1.0.1
             GPfit      1.0-8
+           gplots      3.1.3
         gridExtra        2.3
               gsw      1.1-1
            gtable      0.3.1
@@ -177,7 +178,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
          jsonlite      1.8.4
           kernlab     0.9-31
              klaR      1.7-1
-            knitr       1.41
+            knitr       1.42
          labeling      0.4.2
          labelled     2.10.0
             later      1.3.0
@@ -196,7 +197,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
  longitudinalData      2.4.1
               loo      2.5.1
           lpSolve     5.6.17
-        lubridate      1.9.0
+        lubridate      1.9.1
            lwgeom     0.2-11
             magic      1.6-1
          magrittr      2.0.3
@@ -212,7 +213,8 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
            miniUI    0.1.1.1
             minqa      1.2.5
            misc3d      0.9-1
-        modeldata      1.0.1
+          mlbench      2.1-3
+        modeldata      1.1.0
          modelenv      0.1.0
      ModelMetrics    1.2.2.2
            modelr     0.1.10
@@ -296,8 +298,8 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
      RcppParallel      5.1.6
      RcppProgress      0.4.2
        RcppThread      2.1.3
-         RcppTOML      0.2.0
-            RCurl   1.98-1.9
+         RcppTOML      0.2.2
+            RCurl  1.98-1.10
            RDaisy        1.0
             rdist      0.0.5
             readr      2.1.3
@@ -308,7 +310,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
           remotes      2.4.2
            reprex      2.0.2
          reshape2      1.4.4
-       reticulate       1.27
+       reticulate       1.28
             rgdal      1.6-4
             rgeos      0.6-1
               rgl      1.0.1
@@ -320,9 +322,11 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
         rmarkdown       2.20
             Rmisc      1.5.1
        robustbase     0.95-0
+             ROCR     1.0-11
          roxygen2      7.2.3
         rprojroot      2.0.3
           rsample      1.1.1
+            RSNNS     0.4-15
          RSpectra     0.16-1
             rstan     2.21.8
        rstantools      2.2.0
@@ -332,7 +336,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
             rvest      1.0.3
                s2      1.1.2
         S4Vectors     0.36.1
-             sass      0.4.4
+             sass      0.4.5
            scales      1.2.1
     scatterplot3d     0.3-42
           seewave      2.2.0
@@ -361,19 +365,19 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
       systemfonts      1.0.4
            tclust      1.5-2
           tensorA     0.36.2
-            terra     1.6-53
+            terra      1.7-3
          testthat      3.1.6
       textshaping      0.3.6
            tibble      3.1.8
        tidymodels      1.0.0
-            tidyr      1.2.1
+            tidyr      1.3.0
        tidyselect      1.2.0
         tidyverse      1.3.2
              tiff     0.1-11
        timechange      0.2.0
          timeDate   4022.108
           tinytex       0.43
-              TMB      1.9.1
+              TMB      1.9.2
         triebeard      0.3.0
       trimcluster      0.1-5
           TSclust      1.3.1
@@ -392,7 +396,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
           usethis      2.1.6
              utf8      1.2.2
              uuid      1.1-0
-            vctrs      0.5.1
+            vctrs      0.5.2
             vegan      2.6-4
          vegclust      2.0.2
           viridis      0.6.2
@@ -414,7 +418,7 @@ R packages installed on OCCAM (updated to 2022-07-26) (R v. 4.2.0)
            xtable      1.8-4
               xts     0.12.2
           XVector     0.38.0
-             yaml      2.3.6
+             yaml      2.3.7
         yardstick      1.1.0
               zip      2.2.2
          zlibbioc     1.44.0
