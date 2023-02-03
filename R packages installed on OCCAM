@@ -30,6 +30,7 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
             bit64      4.0.5
            bitops      1.0-7
              blob      1.2.3
+           Boruta      8.0.0
              brew      1.0-8
              brio      1.1.3
             broom      1.0.3
@@ -48,7 +49,7 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
               cli      3.6.0
             clipr      0.8.0
             clock      0.6.1
-             clue     0.3-63
+             clue     0.3-64
       clustertend        1.6
               clv    0.3-2.2
           clValid        0.7
@@ -56,7 +57,7 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
        colorspace      2.1-0
          combinat      0.0-8
        commonmark      1.8.1
-       conflicted      1.1.0
+       conflicted      1.2.0
           corpcor     1.6.10
          corrplot       0.92
           cowplot      1.1.1
@@ -89,7 +90,7 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
               dtw     1.23-1
          dtwclust     5.5.11
          dygraphs    1.1.1.6
-            e1071     1.7-12
+            e1071     1.7-13
           ellipse      0.4.3
          ellipsis      0.3.2
           emmeans    1.8.4-1
@@ -116,13 +117,13 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
                fs      1.6.0
        functional        0.6
             furrr      0.3.1
-           future     1.30.0
+           future     1.31.0
      future.apply     1.10.0
-           gargle      1.2.1
+           gargle      1.3.0
             gdata   2.18.0.1
           gdtools      0.3.0
          generics      0.1.3
-     GenomeInfoDb     1.34.7
+     GenomeInfoDb     1.34.8
  GenomeInfoDbData      1.2.9
          geometry    0.4.6.1
         geosphere     1.5-18
@@ -176,7 +177,7 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
              jpeg     0.1-10
         jquerylib      0.1.4
          jsonlite      1.8.4
-          kernlab     0.9-31
+          kernlab     0.9-32
              klaR      1.7-1
             knitr       1.42
          labeling      0.4.2
@@ -190,13 +191,12 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
         lifecycle      1.0.3
           linprog      0.9-4
           listenv      0.9.0
-          littler     0.3.17
              lme4     1.1-31
            lmtest     0.9-40
            locpol      0.8.0
  longitudinalData      2.4.1
               loo      2.5.1
-          lpSolve     5.6.17
+          lpSolve     5.6.18
         lubridate      1.9.1
            lwgeom     0.2-11
             magic      1.6-1
@@ -276,7 +276,7 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
          quadprog      1.5-8
          quantmod     0.4.20
          quantreg       5.94
-        questionr      0.7.7
+        questionr      0.7.8
           R.cache     0.16.0
       R.methodsS3      1.8.2
              R.oo     1.25.0
@@ -330,7 +330,7 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
          RSpectra     0.16-1
             rstan     2.21.8
        rstantools      2.2.0
-          rstatix      0.7.1
+          rstatix      0.7.2
        rstudioapi       0.14
         rversions      2.1.2
             rvest      1.0.3
@@ -351,7 +351,7 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
            smacof      2.1-5
      soundecology      1.3.3
          soundgen      2.5.3
-      sourcetools      0.1.7
+      sourcetools    0.1.7-1
                sp      1.6-0
              spaa      0.2.2
           SparseM       1.81
@@ -376,25 +376,25 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
              tiff     0.1-11
        timechange      0.2.0
          timeDate   4022.108
-          tinytex       0.43
+          tinytex       0.44
               TMB      1.9.2
         triebeard      0.3.0
       trimcluster      0.1-5
           TSclust      1.3.1
            TSdist      3.7.1
-          tseries    0.10-52
+          tseries    0.10-53
               TTR     0.24.3
              tune      1.0.1
             tuneR      1.4.2
              tzdb      0.3.0
-             umap    0.2.9.0
+             umap   0.2.10.0
             units      0.8-1
          unmarked      1.2.5
              urca      1.3-3
        urlchecker      1.0.1
          urltools      1.7.3
           usethis      2.1.6
-             utf8      1.2.2
+             utf8      1.2.3
              uuid      1.1-0
             vctrs      0.5.2
             vegan      2.6-4
@@ -412,7 +412,7 @@ R packages installed on OCCAM (updated to 2023-01-20) (R v. 4.2.1)
         wordcloud        2.6
         workflows      1.1.2
      workflowsets      1.0.0
-             xfun       0.36
+             xfun       0.37
              xml2      1.3.3
             xopen      1.0.0
            xtable      1.8-4
