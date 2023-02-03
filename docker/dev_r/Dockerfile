@@ -98,6 +98,8 @@ CMD ["bash"]
 # ARG R_REMOTES_NO_ERRORS_FROM_WARNINGS=false
 
 
+COPY files/Boruta_8.0.0.tar.gz /
+
 COPY files/install_packages.R /
 COPY files/packages_list.txt /
 RUN Rscript /install_packages.R
