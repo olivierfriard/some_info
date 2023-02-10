@@ -174,6 +174,15 @@ RUN chmod +x /bin/adi
 ADD scripts/adi_multi /bin
 RUN chmod +x /bin/adi_multi
 
+
+# Bioacoustic index with R
+ADD scripts/bioacoust_index /bin
+RUN chmod +x /bin/bioacoust_index
+
+
+
+
+
 # NDSI with R
 ADD scripts/ndsi /bin
 RUN chmod +x /bin/ndsi
