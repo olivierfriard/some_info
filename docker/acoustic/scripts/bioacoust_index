@@ -18,11 +18,11 @@ option_list = list(
                 help="Output file name [default= %default]", metavar="character"),
 
     make_option(c("--min_freq"), type="integer", default=2000, 
-                help="miminum frequency to use when calculating the value (default: NA)",
+                help="miminum frequency to use when calculating the value (default: 2000)",
                 metavar="number"),
 
     make_option(c("--max_freq"), type="integer", default=8000, 
-                help="maximum frequency to use when calculating the value (default: NA)",
+                help="maximum frequency to use when calculating the value (default: 8000)",
                 metavar="number"),
 
     make_option(c("-f", "--fft_w"), type="integer", default=512, 
