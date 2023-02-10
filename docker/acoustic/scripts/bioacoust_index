@@ -14,14 +14,14 @@ option_list = list(
     make_option(c("-d", "--directory"), type="character", default=NULL, 
                 help="Sounds directory path", metavar="character"),
 
-    make_option(c("-o", "--output"), type="character", default="aci_out.tsv", 
+    make_option(c("-o", "--output"), type="character", default="bioacoustic_out.tsv", 
                 help="Output file name [default= %default]", metavar="character"),
 
-    make_option(c("--min_freq"), type="integer", default=NA, 
+    make_option(c("--min_freq"), type="integer", default=2000, 
                 help="miminum frequency to use when calculating the value (default: NA)",
                 metavar="number"),
 
-    make_option(c("--max_freq"), type="integer", default=NA, 
+    make_option(c("--max_freq"), type="integer", default=8000, 
                 help="maximum frequency to use when calculating the value (default: NA)",
                 metavar="number"),
 
@@ -50,5 +50,4 @@ multiple_sounds(directory=opt$directory,
                 max_freq=opt$max_freq,
                 fft_w=opt$fft_w,
                 no_cores=opt$cpu)
-
 
