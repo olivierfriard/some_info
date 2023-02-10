@@ -1,0 +1,54 @@
+#!/usr/bin/Rscript
+
+# run Bioacoustic Index  from the Soundecology package
+
+# version = '1'  # 2023-02-10
+
+
+library("optparse")
+library("soundecology")
+library("tuneR")
+
+option_list = list(
+
+    make_option(c("-d", "--directory"), type="character", default=NULL, 
+                help="Sounds directory path", metavar="character"),
+
+    make_option(c("-o", "--output"), type="character", default="aci_out.tsv", 
+                help="Output file name [default= %default]", metavar="character"),
+
+    make_option(c("--min_freq"), type="integer", default=NA, 
+                help="miminum frequency to use when calculating the value (default: NA)",
+                metavar="number"),
+
+    make_option(c("--max_freq"), type="integer", default=NA, 
+                help="maximum frequency to use when calculating the value (default: NA)",
+                metavar="number"),
+
+    make_option(c("-f", "--fft_w"), type="integer", default=512, 
+                help="FFT window to use (default: 512)",
+                metavar="number"),
+
+    make_option(c("-c", "--cpu"), type="integer", default=1, 
+                help="Number of cores to use", metavar="number")
+); 
+ 
+opt_parser = OptionParser(option_list=option_list);
+opt = parse_args(opt_parser);
+
+if (is.null(opt$directory)){
+  print_help(opt_parser)
+  stop("You must supply a directory", call.=FALSE)
+}
+
+
+
+multiple_sounds(directory=opt$directory,
+                resultfile=opt$output,
+                soundindex="bioacoustic_index",
+                min_freq=opt$min_freq,
+                max_freq=opt$max_freq,
+                fft_w=opt$fft_w,
+                no_cores=opt$cpu)
+
+
