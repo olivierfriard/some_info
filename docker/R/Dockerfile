@@ -93,6 +93,9 @@ COPY BUILD_COMMIT /BUILD_COMMIT
 # Define default command.
 CMD ["bash"]
 
+# R package exceptions
+COPY files/Boruta_8.0.0.tar.gz /
+
 # install packages
 COPY files/install_packages.R /
 COPY files/packages_list.txt /
