@@ -1,0 +1,7 @@
+
+github:Cdevenish/hardRain hardRain
+monitoR
+optparse
+seewave
+soundecology
+
