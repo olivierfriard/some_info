@@ -4,8 +4,9 @@
 # python: pandas, numpy, matplotlib, scipy, librosa, parselmouth, opencv
 # R 4.2.2: soundecology, seewave, hardRain
 
-
 FROM ubuntu:22.04
+
+ARG r_version=4.2.2
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -56,7 +57,6 @@ RUN apt install -y tk8.6-dev
 RUN apt install -y libpcre2-dev
 RUN apt install -y libxml2-dev
 
-
 RUN apt -y install libgdal-dev
 RUN apt -y install libxml2-dev libssl-dev libcurl4-openssl-dev
 RUN apt -y install libsndfile1-dev
@@ -79,10 +79,10 @@ RUN apt install -y python3-pip
 
 # Compile and install an R in portable version
 WORKDIR /tmp
-RUN wget https://cran.r-project.org/src/base/R-4/R-4.2.2.tar.gz -O R-4.2.2.tar.gz
+RUN wget https://cran.r-project.org/src/base/R-4/R-${r_version}.tar.gz -O R-${r_version}.tar.gz
 
-RUN tar zxf R-4.2.2.tar.gz
-WORKDIR R-4.2.2
+RUN tar zxf R-${r_version}.tar.gz
+WORKDIR R-${r_version}
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
 RUN make -j 8
@@ -98,13 +98,11 @@ COPY Rprofile.site /opt/PortableR/lib/R/etc
 
 # install R packages listed in 
 ADD install_packages.R /
+ADD packages_list.txt /
 RUN R -f /install_packages.R
 
 
 # python modules
-
-
-#RUN pip3 install numba==0.48.0
 
 RUN pip3 install numba
 
@@ -117,7 +115,6 @@ RUN pip3 install praat-parselmouth
 RUN pip3 install scikit-maad
 
 RUN pip3 install opencv-python-headless
-
 
 
 # dtwave dist
@@ -179,10 +176,6 @@ RUN chmod +x /bin/adi_multi
 ADD scripts/bioacoust_index /bin
 RUN chmod +x /bin/bioacoust_index
 
-
-
-
-
 # NDSI with R
 ADD scripts/ndsi /bin
 RUN chmod +x /bin/ndsi
@@ -193,7 +186,6 @@ RUN chmod +x /bin/ndsi_multi
 # AR with R (seewave)
 ADD scripts/ar /bin
 RUN chmod +x /bin/ar
-
 
 # Total Entropy( (h) with R (seewave and soundecology)
 ADD scripts/h /bin

@@ -1,18 +1,6 @@
-Boruta_8.0.0.tar.gz
-caret
-corrplot
-doParallel
-dplyr
-e1071
-ellipse
-ggplot2
-mlbench
-plyr
-randomForest
-reshape2
-ROCR
-RSNNS
-tidymodels
-tidyr
-tidyverse
+local:Boruta_8.0.0.tar.gz Boruta
+bioconductor:phyloseq phyloseq
+github:swager/randomForestCI randomForestCI
+vegan
+
 

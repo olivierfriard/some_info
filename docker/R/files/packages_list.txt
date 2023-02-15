@@ -51,6 +51,7 @@ gmp
 gridExtra
 gtable
 gtools
+github:Cdevenish/hardRain hardRain
 kernlab
 lattice
 lazyeval
@@ -79,6 +80,7 @@ pdist
 permute
 pkgconfig
 plyr
+bioconductor:phyloseq phyloseq
 prabclus
 purrr
 pvclust
