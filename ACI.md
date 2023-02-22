@@ -24,6 +24,9 @@ Options:
 	-o CHARACTER, --output=CHARACTER
 		output file name [default= aci_out.tsv]
 
+	-j NUMBER, --cluster_size
+		Cluster size in seconds  (default: 5)
+
 	-h, --help
 		Show this help message and exit
 ```
@@ -31,7 +34,7 @@ Options:
 ```
 Usage:
 
-aci -d SOUNDS_DIRECTORY_PATH [--pattern "*.wav"] [-o OUTPUT.TSV] [-c N_CORES] [-f FFT_window] [--min_freq MIN_FREQ] [--max_freq MAX_FREQ]
+aci -d SOUNDS_DIRECTORY_PATH [--pattern "*.wav"] [-o OUTPUT.TSV] [-c N_CORES] [-f FFT_window] [--cluster_size CLUSTER_SIZE] [--min_freq MIN_FREQ] [--max_freq MAX_FREQ]
 ```
 
 The arguments between square brackets are optionnal. If missing the default values will be used.
@@ -40,7 +43,7 @@ The arguments between square brackets are optionnal. If missing the default valu
 **Examples of use on OCCAM**
 
 ```
-occam-run -nnodeXX ofriard/acoustic aci -d my_sounds_archive --pattern *.WAV -o my_ACI_results.tsv 
+occam-run -nnodeXX ofriard/acoustic aci -d my_sounds_archive --pattern *.WAV -j 10 -o my_ACI_results.tsv 
 
 occam-run -nnodeXX ofriard/acoustic aci -d my_sounds_archive --min_freq 1000 --max_freq 15000 -o my_ACI_results.tsv 
 ```

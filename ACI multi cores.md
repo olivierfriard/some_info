@@ -19,6 +19,9 @@ Options:
 	-o CHARACTER, --output=CHARACTER
 		output file name [default= aci_out.tsv]
 
+	-j NUMBER, --cluster_size
+		Cluster size in seconds  (default: 5)
+
 	-c NUMBER, --cpu=NUMBER
 		Number of cores to use (default: 1)
 
@@ -29,7 +32,7 @@ Options:
 ```
 Usage:
 
-aci_multi -d SOUNDS_DIRECTORY_PATH [-o OUTPUT.TSV] [-c N_CORES] [-f FFT_window] [--min_freq MIN_FREQ] [--max_freq MAX_FREQ]
+aci_multi -d SOUNDS_DIRECTORY_PATH [-o OUTPUT.TSV] [-c N_CORES] [-f FFT_window] [--min_freq MIN_FREQ] [--max_freq MAX_FREQ] [--cluster_size CLUSTER_SIZE]
 ```
 The arguments between square brackets are optionnal
 
@@ -37,7 +40,7 @@ The arguments between square brackets are optionnal
 **Examples of use on OCCAM**
 
 ```
-occam-run -nnodeXX ofriard/acoustic aci_multi -d my_sounds_archive -c 6 -o my_ACI_results.tsv 
+occam-run -nnodeXX ofriard/acoustic aci_multi -d my_sounds_archive -c 6 -j 10 -o my_ACI_results.tsv 
 
 occam-run -nnodeXX ofriard/acoustic aci_multi -d my_sounds_archive -c 6 --min_freq 1000 --max_freq 15000 -o my_ACI_results.tsv 
 ```
