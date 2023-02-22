@@ -54,7 +54,7 @@ multiple_sounds(directory=opt$directory,
                 min_freq=opt$min_freq,
                 max_freq=opt$max_freq,
                 fft_w=opt$fft_w,
-                j=opt$j,
+                j=opt$cluster_size,
                 no_cores=opt$cpu)
 
 
