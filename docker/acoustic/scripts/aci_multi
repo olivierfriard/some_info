@@ -30,6 +30,11 @@ option_list = list(
                 help="FFT window to use (default: 512)",
                 metavar="number"),
 
+    make_option(c("-j", "--cluster_size"), type="integer", default=5, 
+                help="Cluster size in seconds (default: 5)",
+                metavar="number"),
+
+
     make_option(c("-c", "--cpu"), type="integer", default=1, 
                 help="Number of cores to use", metavar="number")
 ); 
@@ -43,13 +48,13 @@ if (is.null(opt$directory)){
 }
 
 
-
 multiple_sounds(directory=opt$directory,
                 resultfile=opt$output,
                 soundindex="acoustic_complexity",
                 min_freq=opt$min_freq,
                 max_freq=opt$max_freq,
                 fft_w=opt$fft_w,
+                j=opt$j,
                 no_cores=opt$cpu)
 
 
