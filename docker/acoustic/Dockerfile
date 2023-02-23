@@ -137,6 +137,9 @@ RUN chmod +x /bin/praat_cc
 ADD scripts/3rd_octave /bin
 RUN chmod +x /bin/3rd_octave
 
+ADD scripts/3rd_octave_singlecore_vpiccola /bin
+RUN chmod +x /bin/3rd_octave_singlecore_vpiccola
+
 
 
 ## freq bin with praat
