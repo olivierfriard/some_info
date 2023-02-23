@@ -117,6 +117,8 @@ RUN pip3 install scikit-maad
 RUN pip3 install opencv-python-headless
 
 
+RUN pip3 install pykanto
+
 # dtwave dist
 ADD scripts/dtwave_dist /bin
 RUN chmod +x /bin/dtwave_dist
@@ -134,7 +136,6 @@ RUN chmod +x /bin/praat_cc
 # 3rd octave with praat/parselmouth
 ADD scripts/3rd_octave /bin
 RUN chmod +x /bin/3rd_octave
-
 
 
 
