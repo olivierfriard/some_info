@@ -79,7 +79,7 @@ RUN ln -s /opt/PortableR/bin/* .
 WORKDIR /
 
 # Setup CRAN mirror
-COPY files/Rprofile.site /opt/PortableR/lib/R/etc
+# COPY files/Rprofile.site /opt/PortableR/lib/R/etc
 
 #RUN /opt/PortableR/bin/R --version
 #RUN /opt/PortableR/bin/R -e "install.packages('littler')" && cd /bin && ln -s /opt/PortableR/lib/R/library/littler/bin/r .

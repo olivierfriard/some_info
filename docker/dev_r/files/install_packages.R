@@ -1,3 +1,12 @@
+# instal R packages from a list in packages_list.txt using remotes
+
+local({
+  r <- getOption("repos")
+  r["CRAN"] <- "http://cran.mirror.garr.it/mirrors/CRAN/"
+  options(repos = r)
+})
+
+
 install.packages("remotes")
 
 p = read.delim("/packages_list.txt", header=FALSE)
