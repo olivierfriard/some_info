@@ -36,6 +36,7 @@ FactoMineR
 fasterize
 FD
 flexmix
+fossil
 foreach
 fpc
 fs
@@ -52,6 +53,7 @@ gridExtra
 gtable
 gtools
 github:Cdevenish/hardRain hardRain
+hopkins
 kernlab
 lattice
 lazyeval
