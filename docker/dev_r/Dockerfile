@@ -102,4 +102,9 @@ COPY files/install_packages.R /
 COPY files/packages_list.txt /
 RUN Rscript /install_packages.R
 
+# list of installed packages
+
+RUN echo 'ip <- as.data.frame(installed.packages()[,c(1,3:4)]); rownames(ip) <- NULL; ip <- ip[is.na(ip$Priority),1:2,drop=FALSE]; print(ip, row.names=FALSE)' | R --vanilla --quiet --no-echo > /installed_packages.txt
+
+
 

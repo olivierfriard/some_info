@@ -14,7 +14,7 @@ caret
 caTools
 class
 clue
-cluster
+github:pimentel/cluster
 clustertend
 clValid
 coda
