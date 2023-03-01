@@ -1,4 +1,14 @@
 
+# install packages from packages_list.txt with remotes
+
+options(Ncpus=24)
+
+local({
+  r <- getOption("repos")
+  r["CRAN"] <- "http://cran.mirror.garr.it/mirrors/CRAN/"
+  options(repos = r)
+})
+
 
 install.packages("remotes")
 

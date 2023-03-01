@@ -97,6 +97,12 @@ CMD ["bash"]
 COPY files/Boruta_8.0.0.tar.gz /
 
 # install packages
+
+RUN export MAKE="make -j20"
+
+#RUN export CC="ccache gcc"
+#RUN export CXX="ccache g++"
+
 COPY files/install_packages.R /
 COPY files/packages_list.txt /
 RUN Rscript /install_packages.R

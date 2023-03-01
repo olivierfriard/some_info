@@ -1,3 +1,7 @@
+
+options(Ncpus=20)
+
+
 install.packages("remotes")
 
 p = read.delim("/packages_list.txt", header=FALSE)
@@ -19,6 +23,7 @@ for (i in seq_along(p$V1))
             # test
             print(paste0('testing installation of ', package_name))
             library(package_name, character.only=TRUE)
+            detach(paste0('package:', package_name))
             }
 
         else if (grepl('github:', p$V1[i]))  # from github  (github:foo/bar bar)
@@ -34,6 +39,7 @@ for (i in seq_along(p$V1))
             # test
             print(paste0('testing installation of ', package_name))
             library(package_name, character.only=TRUE)
+	    detach(paste0('package:', package_name))
             }
 
         else if (grepl('bioconductor:', p$V1[i]))  # from BioConductor  (bioconductor:foo foo)
@@ -49,6 +55,7 @@ for (i in seq_along(p$V1))
             # test
             print(paste0('testing installation of ', package_name))
             library(package_name, character.only=TRUE)
+            detach(paste0('package:', package_name))
             }
 
 

@@ -94,9 +94,11 @@ WORKDIR /
 
 
 # Setup CRAN mirror
-COPY Rprofile.site /opt/PortableR/lib/R/etc
+# COPY Rprofile.site /opt/PortableR/lib/R/etc
 
-# install R packages listed in 
+# install R packages listed in
+RUN export MAKE="make -j24"
+
 ADD install_packages.R /
 ADD packages_list.txt /
 RUN R -f /install_packages.R

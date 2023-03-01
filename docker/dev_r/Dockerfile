@@ -96,7 +96,7 @@ CMD ["bash"]
 # install packages
 
 # ARG R_REMOTES_NO_ERRORS_FROM_WARNINGS=false
-
+RUN export MAKE="make -j24" 
 
 COPY files/install_packages.R /
 COPY files/packages_list.txt /
