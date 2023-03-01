@@ -17,8 +17,8 @@ for (i in seq_along(p$V1))
             package_file = strsplit(package_file_name, ' ')[[1]][1]   # -> Boruta_8.0.0.tar.gz
             package_name = strsplit(package_file_name, ' ')[[1]][2]   # -> Boruta
 
-            print(paste0('install from local copy: ', package_file))
-            remotes::install_local(paste0('/', package_file) , build_manual=FALSE, build_vignettes=FALSE)
+            print(paste0('install from local copy: ', package_name))
+            remotes::install_local(paste0('/', package_name) , build_manual=FALSE, build_vignettes=FALSE)
 
             # test
             print(paste0('testing installation of ', package_name))
