@@ -1,25 +1,3 @@
-lme4
-bayestestR
-tidyverse
 brms
-lubridate
-sp
-ggplot2
-broom
-naniar
-coda
-merTools
-bayesplot
-glmmTMB
-loo
-performance
-sjPlot
-sjmisc
-tidybayes
-purrr
-forcats
-sjlabelled
-rstan
-magrittr
-
+bayestestR
 
