@@ -53,11 +53,20 @@ RUN apt-get install -y libgmp3-dev
 RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
 
-# for sf / stars
-RUN apt-get install -y libudunits2-dev
+RUN apt -y install apt-utils
+RUN apt -y install libxml2-dev libssl-dev libcurl4-openssl-dev
+RUN apt -y install libsndfile1-dev
+RUN apt -y install libfftw3-dev
+RUN apt -y install libtiff-dev
+RUN apt -y install libgmp3-dev
 
-# for rgdal
-RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
+RUN apt -y install libcairo2-dev
+RUN apt -y install libmagick++-dev
+RUN apt -y install libpoppler-cpp-dev
+RUN apt -y install libglu1-mesa-dev
+RUN apt -y install unixodbc-dev
+RUN apt -y install cmake
+
 
 # download R sources
 RUN apt-get install -y wget

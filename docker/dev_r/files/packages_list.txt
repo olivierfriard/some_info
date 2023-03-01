@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 bayesplot
 bayestestR
 brms
@@ -21,3 +22,8 @@ sjPlot
 sp
 tidybayes
 tidyverse
+=======
+brms
+bayestestR
+
+>>>>>>> 6e1a70637dd278e000b44b394708616e5da0a1f1
