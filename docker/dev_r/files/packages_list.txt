@@ -1,29 +1,2 @@
-<<<<<<< HEAD
-bayesplot
-bayestestR
-brms
-broom
-coda
-forcats
-ggplot2
-glmmTMB
-lme4
-loo
-lubridate
-magrittr
-merTools
-naniar
-performance
-purrr
-rstan
-sjlabelled
-sjmisc
-sjPlot
-sp
-tidybayes
-tidyverse
-=======
 brms
 bayestestR
-
->>>>>>> 6e1a70637dd278e000b44b394708616e5da0a1f1
