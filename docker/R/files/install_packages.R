@@ -18,12 +18,12 @@ for (i in seq_along(p$V1))
             package_name = strsplit(package_file_name, ' ')[[1]][2]   # -> Boruta
 
             print(paste0('install from local copy: ', package_name))
-            remotes::install_local(paste0('/', package_name) , build_manual=FALSE, build_vignettes=FALSE)
+            remotes::install_local(paste0('/', package_file) , build_manual=FALSE, build_vignettes=FALSE)
 
             # test
             print(paste0('testing installation of ', package_name))
             library(package_name, character.only=TRUE)
-            detach(paste0('package:', package_name))
+            detach(paste0('package:', package_name), character.only = TRUE, force=TRUE)
             }
 
         else if (grepl('github:', p$V1[i]))  # from github  (github:foo/bar bar)
@@ -39,7 +39,7 @@ for (i in seq_along(p$V1))
             # test
             print(paste0('testing installation of ', package_name))
             library(package_name, character.only=TRUE)
-	    detach(paste0('package:', package_name))
+	    detach(paste0('package:', package_name), character.only = TRUE, force=TRUE)
             }
 
         else if (grepl('bioconductor:', p$V1[i]))  # from BioConductor  (bioconductor:foo foo)
@@ -55,7 +55,7 @@ for (i in seq_along(p$V1))
             # test
             print(paste0('testing installation of ', package_name))
             library(package_name, character.only=TRUE)
-            detach(paste0('package:', package_name))
+            detach(paste0('package:', package_name), character.only = TRUE, force=TRUE)
             }
 
 
