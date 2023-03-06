@@ -94,7 +94,7 @@ WORKDIR /
 
 
 # Setup CRAN mirror
-# COPY Rprofile.site /opt/PortableR/lib/R/etc
+COPY Rprofile.site /opt/PortableR/lib/R/etc
 
 # install R packages listed in
 RUN export MAKE="make -j24"
@@ -117,7 +117,6 @@ RUN pip3 install praat-parselmouth
 RUN pip3 install scikit-maad
 
 RUN pip3 install opencv-python-headless
-
 
 RUN pip3 install pykanto
 
