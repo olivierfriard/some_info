@@ -118,7 +118,10 @@ RUN pip3 install scikit-maad
 
 RUN pip3 install opencv-python-headless
 
+RUN pip3 install soundsig
 RUN pip3 install pykanto
+RUN pip3 install pytz
+RUN pip3 install exifread
 
 # dtwave dist
 ADD scripts/dtwave_dist /bin
