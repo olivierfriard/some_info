@@ -1,12 +1,12 @@
 # Docker for acoustic analysis
 
 # dtwave, praat, sox, ffmpeg, ffprobe
-# python: pandas, numpy, matplotlib, scipy, librosa, parselmouth, opencv
-# R 4.2.2: soundecology, seewave, hardRain
+# python: pandas, numpy, matplotlib, scipy, librosa, parselmouth, opencv, pykanto, soundsig ...
+# R 4.2.3: soundecology, seewave, hardRain
 
 FROM ubuntu:22.04
 
-ARG r_version=4.2.2
+ARG r_version=4.2.3
 
 ENV DEBIAN_FRONTEND noninteractive
 
