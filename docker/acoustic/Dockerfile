@@ -123,6 +123,10 @@ RUN pip3 install pykanto
 RUN pip3 install pytz
 RUN pip3 install exifread
 
+# yamnet
+RUN pip3 install tensorflow==2.11.1
+RUN pip3 install tensorflow-hub==0.13.0
+
 # dtwave dist
 ADD scripts/dtwave_dist /bin
 RUN chmod +x /bin/dtwave_dist
