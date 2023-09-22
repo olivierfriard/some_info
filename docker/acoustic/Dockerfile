@@ -184,6 +184,11 @@ ADD scripts/adi_multi /bin
 RUN chmod +x /bin/adi_multi
 
 
+# Evenness with R
+ADD scripts/evenness_multi /bin
+RUN chmod +x /bin/evenness_multi
+
+
 # Bioacoustic index with R
 ADD scripts/bioacoust_index /bin
 RUN chmod +x /bin/bioacoust_index
