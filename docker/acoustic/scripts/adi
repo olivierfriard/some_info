@@ -80,7 +80,7 @@ for(i in 1:length(file.names)){
         {channels = 1}
 
     r = tryCatch(
-            {acoustic_diversity(sound, max_freq = opt$max_freq, db_threshold = opt$db_treshold, freq_step = opt$freq_step, shannon = shannon)},
+            {acoustic_diversity(sound, max_freq=opt$max_freq, db_threshold=opt$db_treshold, freq_step=opt$freq_step, shannon=shannon)},
             error = function(e) 
                         {
                         x = list()

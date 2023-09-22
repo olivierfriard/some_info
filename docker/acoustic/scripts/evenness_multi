@@ -1,10 +1,10 @@
 #!/usr/bin/Rscript
 
 
-# run Acoustic Diversity Index (ADI)
+# run Acoustic Evenness
 
 # read sounds directory as argument
-# example: adi -d /home/sounds -o adi.tsv -c 2
+# example: evenness -d /home/sounds -o adi.tsv -c 2
 
 library("optparse")
 library("soundecology")
@@ -26,9 +26,6 @@ option_list = list(
     make_option(c("-b", "--freq_step"), type="integer", default=1000, 
                 help="Size of frequency bands", metavar="number"),
 
-    make_option(c("-s", "--shannon"), type="logical", default=TRUE, 
-                help="Use the Shannon's diversity index to calculate the ADI", metavar="number"),
-
     make_option(c("-c", "--cpu"), type="integer", default=1, 
                 help="Number of cores to use", metavar="number")
 ); 
@@ -47,17 +44,13 @@ if (is.null(opt$shannon)) {
     shannon = opt$shannon
 }
 
-#print(opt$shannon)
-#print(shannon)
-#print(opt$max_freq)
 
 multiple_sounds(directory=opt$directory,
                 resultfile=opt$output,
-                soundindex="acoustic_diversity",
+                soundindex="acoustic_evenness",
                 max_freq=opt$max_freq,
                 db_threshold=opt$db_treshold,
-                freq_step=opt$freq_step,
-                shannon=shannon,
+		freq_step=opt$freq_step,
                 no_cores=opt$cpu)
 
 
