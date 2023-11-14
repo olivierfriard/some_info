@@ -63,6 +63,7 @@ matrixStats
 mcclust
 mclust
 MCMCglmm
+mcmcplots
 MetBrewer
 mgcv
 mlbench
