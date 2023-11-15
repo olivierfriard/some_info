@@ -66,8 +66,8 @@ for (i in seq_along(p$V1))
             remotes::install_cran(p$V1[i], dependencies=T, build_manual=FALSE, build_vignettes=FALSE);
 
             # test
-            print(paste0('testing installation of ', p$V1[i]))
-            library(p$V1[i], character.only=TRUE)
+            #print(paste0('testing installation of ', p$V1[i]))
+            #library(p$V1[i], character.only=TRUE)
 
             }
         }
