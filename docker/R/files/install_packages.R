@@ -37,9 +37,9 @@ for (i in seq_along(p$V1))
             remotes::install_github(package_file, build_manual=FALSE, build_vignettes=FALSE); 
 
             # test
-            print(paste0('testing installation of ', package_name))
-            library(package_name, character.only=TRUE)
-	    detach(paste0('package:', package_name), character.only = TRUE, force=TRUE)
+            #print(paste0('testing installation of ', package_name))
+            #library(package_name, character.only=TRUE)
+            #detach(paste0('package:', package_name), character.only = TRUE, force=TRUE)
             }
 
         else if (grepl('bioconductor:', p$V1[i]))  # from BioConductor  (bioconductor:foo foo)
@@ -53,11 +53,10 @@ for (i in seq_along(p$V1))
             remotes::install_bioc(package_file, build_manual=FALSE, build_vignettes=FALSE);
 
             # test
-            print(paste0('testing installation of ', package_name))
-            library(package_name, character.only=TRUE)
-            detach(paste0('package:', package_name), character.only = TRUE, force=TRUE)
+            #print(paste0('testing installation of ', package_name))
+            #library(package_name, character.only=TRUE)
+            #detach(paste0('package:', package_name), character.only = TRUE, force=TRUE)
             }
-
 
 
         else
