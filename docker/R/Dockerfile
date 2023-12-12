@@ -64,10 +64,10 @@ RUN apt-get install -y wget
 
 # Compile and install an R in portable version
 WORKDIR /tmp
-RUN wget https://cran.r-project.org/src/base/R-4/R-4.2.2.tar.gz -O R-4.2.2.tar.gz
+RUN wget https://cran.r-project.org/src/base/R-4/R-4.3.2.tar.gz -O R-4.3.2.tar.gz
 
-RUN tar zxf R-4.2.2.tar.gz
-WORKDIR R-4.2.2
+RUN tar zxf R-4.3.2.tar.gz
+WORKDIR R-4.3.2
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
 RUN make
