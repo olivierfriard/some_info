@@ -59,8 +59,6 @@ RUN apt-get install -y libudunits2-dev
 # for rgdal
 RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
-# download R sources
-RUN apt-get install -y wget
 
 # Compile and install an R in portable version
 WORKDIR /tmp
