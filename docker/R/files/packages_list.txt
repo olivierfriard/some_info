@@ -52,6 +52,7 @@ gridExtra
 gtable
 gtools
 github:Cdevenish/hardRain hardRain
+Hmsc
 hopkins
 kernlab
 lattice
@@ -111,10 +112,12 @@ seewave
 sf
 sjmisc
 smacof
+snow
 soundecology
 soundgen
 sp
 spaa
+spline
 stars
 stringr
 tclust
