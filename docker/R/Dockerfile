@@ -1,5 +1,7 @@
 FROM ubuntu:22.04
 
+ARG r_version=4.3.2
+
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install base system and devel tools
@@ -62,13 +64,13 @@ RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libge
 
 # Compile and install an R in portable version
 WORKDIR /tmp
-RUN wget https://cran.r-project.org/src/base/R-4/R-4.3.2.tar.gz -O R-4.3.2.tar.gz
+RUN wget https://cran.r-project.org/src/base/R-4/R-${r_version}.tar.gz -O R-${r_version}.tar.gz
 
-RUN tar zxf R-4.3.2.tar.gz
-WORKDIR R-4.3.2
+RUN tar zxf R-${r_version}.tar.gz
+WORKDIR R-${r_version}
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
-RUN make
+RUN make -j 8
 RUN make install
 
 WORKDIR /bin
@@ -79,32 +81,20 @@ WORKDIR /
 #Setup CRAN mirror
 COPY files/Rprofile.site /opt/PortableR/lib/R/etc
 
-#RUN /opt/PortableR/bin/R --version
-#RUN /opt/PortableR/bin/R -e "install.packages('littler')" && cd /bin && ln -s /opt/PortableR/lib/R/library/littler/bin/r .
-
-# Tag the image with the actual repo commit
-COPY BUILD_COMMIT /BUILD_COMMIT
-
-# Dump all packages installed with it's version
-# RUN dpkg -l > /PKG_LIST
-
-# Define default command.
-CMD ["bash"]
 
 # R package exceptions
 COPY files/Boruta_8.0.0.tar.gz /
 
-# install packages
+# install R packages
 
 RUN export MAKE="make -j20"
-
-#RUN export CC="ccache gcc"
-#RUN export CXX="ccache g++"
 
 COPY files/install_packages.R /
 COPY files/packages_list.txt /
 RUN Rscript /install_packages.R
 
 
+# Define default command.
+CMD ["bash"]
 
 

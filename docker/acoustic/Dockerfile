@@ -103,7 +103,6 @@ ADD install_packages.R /
 ADD packages_list.txt /
 RUN R -f /install_packages.R
 
-
 # python modules
 
 RUN pip3 install numba
@@ -224,6 +223,7 @@ RUN chmod +x /bin/rename_audiomoth_files
 #ADD scripts/acoustic_indices_python/compute_indice.py /
 #ADD scripts/acoustic_indices_python/ai_dir.py /
 
-
+# Define default command.
+CMD ["bash"]
 
 
