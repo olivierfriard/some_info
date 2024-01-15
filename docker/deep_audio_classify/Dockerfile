@@ -1,6 +1,8 @@
 # Docker for Deep audio classify
 
-FROM ubuntu:22.04
+FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu22.04
+
+#FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -23,14 +25,22 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
 RUN apt install nvidia-cuda-toolkit -y
-RUN sudo apt install libcufft10
-RUN sudo apt install libcusparse11
-RUN sudo apt install libcublas11 libcublaslt11
+RUN apt install libcufft10
+RUN apt install libcusparse11
+RUN apt install libcublas11 libcublaslt11
 
 RUN apt install -y python3-pip
 
 RUN pip3 install tensorflow==2.11.0
 RUN pip3 install tensorflow-io==0.31.0
+RUN pip3 install matplotlib
 RUN pip3 install tensorRT
+
+
+RUN ln -s /usr/local/lib/python3.10/dist-packages/tensorrt_libs/libnvinfer.so.8 /usr/local/lib/python3.10/dist-packages/tensorrt_libs/libnvinfer.so.7
+RUN ln -s /usr/local/lib/python3.10/dist-packages/tensorrt_libs/libnvinfer_plugin.so.8 /usr/local/lib/python3.10/dist-packages/tensorrt_libs/libnvinfer_plugin.so.7
+
+ENV LD_LIBRARY_PATH=/usr/local/lib/python3.10/dist-packages/tensorrt_libs/
+
 
 
