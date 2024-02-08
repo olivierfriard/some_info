@@ -1,2 +1,4 @@
-rgdal
+nimble
+nimbleSCR
+R.utils
 
