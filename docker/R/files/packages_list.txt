@@ -99,7 +99,6 @@ RcppProgress
 rdist
 readr
 reshape2
-rgdal
 rgeos
 rlang
 Rmisc
