@@ -1,4 +1,8 @@
+# R Docker
+
 FROM ubuntu:22.04
+
+ARG r_version=4.3.2
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -27,7 +31,7 @@ ENV LANG en_US.UTF-8
 RUN apt-get install -y openmpi-*
 RUN apt-get install -y gfortran
 ##RUN apt-get install -y xpdf  # No available in 20.04
-# RUN apt-get install -y firefox
+##RUN apt-get install -y firefox
 RUN apt-get install -y libreadline-dev
 #RUN apt-get install -y texlive-latex-base
 #RUN apt-get install -y texlive-fonts-recommended
@@ -52,34 +56,24 @@ RUN apt-get install -y libfftw3-dev
 RUN apt-get install -y libgmp3-dev
 RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
+RUN apt-get install -y libglpk-dev
 
-RUN apt -y install apt-utils
-RUN apt -y install libxml2-dev libssl-dev libcurl4-openssl-dev
-RUN apt -y install libsndfile1-dev
-RUN apt -y install libfftw3-dev
-RUN apt -y install libtiff-dev
-RUN apt -y install libgmp3-dev
+# for sf / stars
+RUN apt-get install -y libudunits2-dev
 
-RUN apt -y install libcairo2-dev
-RUN apt -y install libmagick++-dev
-RUN apt -y install libpoppler-cpp-dev
-RUN apt -y install libglu1-mesa-dev
-RUN apt -y install unixodbc-dev
-RUN apt -y install cmake
+# for rgdal
+RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
-
-# download R sources
-RUN apt-get install -y wget
 
 # Compile and install an R in portable version
 WORKDIR /tmp
-RUN wget https://cran.r-project.org/src/base/R-4/R-4.2.2.tar.gz -O R-4.2.2.tar.gz
+RUN wget https://cran.r-project.org/src/base/R-4/R-${r_version}.tar.gz -O R-${r_version}.tar.gz
 
-RUN tar zxf R-4.2.2.tar.gz
-WORKDIR R-4.2.2
+RUN tar zxf R-${r_version}.tar.gz
+WORKDIR R-${r_version}
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
-RUN make
+RUN make -j 8
 RUN make install
 
 WORKDIR /bin
@@ -87,33 +81,21 @@ RUN ln -s /opt/PortableR/bin/* .
 
 WORKDIR /
 
-# Setup CRAN mirror
+#Setup CRAN mirror
 COPY files/Rprofile.site /opt/PortableR/lib/R/etc
 
-#RUN /opt/PortableR/bin/R --version
-#RUN /opt/PortableR/bin/R -e "install.packages('littler')" && cd /bin && ln -s /opt/PortableR/lib/R/library/littler/bin/r .
 
-# Tag the image with the actual repo commit
-COPY BUILD_COMMIT /BUILD_COMMIT
 
-# Dump all packages installed with it's version
-# RUN dpkg -l > /PKG_LIST
+# install R packages
 
-# Define default command.
-CMD ["bash"]
-
-# install packages
-
-# ARG R_REMOTES_NO_ERRORS_FROM_WARNINGS=false
-RUN export MAKE="make -j24" 
+RUN export MAKE="make -j20"
 
 COPY files/install_packages.R /
 COPY files/packages_list.txt /
 RUN Rscript /install_packages.R
 
-# list of installed packages
 
-# RUN echo 'ip <- as.data.frame(installed.packages()[,c(1,3:4)]); rownames(ip) <- NULL; ip <- ip[is.na(ip$Priority),1:2,drop=FALSE]; print(ip, row.names=FALSE)' | R --vanilla --quiet --no-echo > /installed_packages.txt
-
+# Define default command.
+CMD ["bash"]
 
 
