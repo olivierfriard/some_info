@@ -6,7 +6,6 @@ apcluster
 ape
 assertthat
 audio
-BAT
 bayesdfa
 bindrcpp
 local:Boruta_8.0.0.tar.gz Boruta
@@ -41,7 +40,6 @@ foreach
 fpc
 fs
 functional
-gawdis
 gdtools
 geometry
 ggplot2
