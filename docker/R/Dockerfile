@@ -1,6 +1,6 @@
 # R Docker
 
-FROM ubuntu:22.04.3
+FROM ubuntu:22.04
 
 ARG r_version=4.3.2
 
