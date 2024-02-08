@@ -1,3 +1,5 @@
+# R Docker
+
 FROM ubuntu:22.04
 
 ARG r_version=4.3.2
@@ -54,6 +56,7 @@ RUN apt-get install -y libfftw3-dev
 RUN apt-get install -y libgmp3-dev
 RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
+RUN apt-get install -y libglpk-dev
 
 # for sf / stars
 RUN apt-get install -y libudunits2-dev
