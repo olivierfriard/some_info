@@ -115,7 +115,7 @@ soundecology
 soundgen
 sp
 spaa
-spline2
+splines2
 stars
 stringr
 tclust
