@@ -1,3 +1,6 @@
 advclust: Package ‘advclust’ was removed from the CRAN repository https://cran.r-project.org/web/packages/advclust/index.html
 SDMtools: was removed from the CRAN repository https://cran.r-project.org/web/packages/advclust/index.html
 
+
+gdal: Package ‘rgeos’ was removed from the CRAN repository. Archived on 2023-10-16 at the request of the maintainer. Consider using 'sf' or 'terra' instead. 
+rgeos: Package ‘rgeos’ was removed from the CRAN repository. Archived on 2023-10-16 at the request of the maintainer. Consider using 'sf' or 'terra' instead. 

@@ -99,7 +99,6 @@ RcppProgress
 rdist
 readr
 reshape2
-rgeos
 rlang
 Rmisc
 robustbase
@@ -116,7 +115,7 @@ soundecology
 soundgen
 sp
 spaa
-spline
+splines2
 stars
 stringr
 tclust
