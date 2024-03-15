@@ -6,7 +6,7 @@
 
 ### Date
 
-Le date vengono scritte in formato ISO 8601, cioè seguento lo schema seguente::
+Le date vengono scritte in formato ISO 8601, cioè seguento lo schema seguente:
 
 ```
 AAAA-MM-GG 
@@ -26,7 +26,7 @@ AAAA-MM-GG_HHMMSS
 ```
     
 Usate il sistema a 24 ore.
-Per esempio le 14:36:45 del 12 ottobre 2023 saranno scritte::
+Per esempio le 14:36:45 del 12 ottobre 2023 saranno scritte:
 
 ```
 2023-10-12_143645
@@ -44,7 +44,7 @@ I file contenenti spazi nel loro nome sono difficili da gestire utilizzando prog
 Gli spazi possono essere sostituiti dal carattere _ (underscore).
 
 
-Sono da evitare anche caratteri come::
+Sono da evitare anche caratteri come:
 
 ```
 / \ | :
@@ -97,7 +97,7 @@ oppure
 
 Usate il punto (.) come fanno gli anglo-sassoni e non la virgola (,) come in Italia.
 
-Ad esempio::
+Ad esempio:
 ```
 1.2
 12.334
@@ -106,7 +106,6 @@ Ad esempio::
 Questa pratica faciliterà lo scambio di dati tra i vari programmi che potrete utilizzare.
 
 Avete la possibilità di impostare il vostro computer perché usi il punto al posto della virgola (impostazione di default se usate la lingua italiana).
-
 
 
 
