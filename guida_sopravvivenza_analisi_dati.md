@@ -37,9 +37,11 @@ Non utilizzate i 2 punti (:) per separare ore, minuti e secondi perché alcuni *
     
 ### Nomi dei file
 
-**Non utilizzate spazi nei nomi dei file.**
+**Non utilizzate spazi nei nomi dei file!**
 
 I file contenenti spazi nel loro nome sono difficili da gestire utilizzando programmi in command-line (nella bash ad esempio).
+
+Gli spazi possono essere sostituiti dal carattere _ (underscore).
 
 
 Sono da evitare anche caratteri come::
@@ -48,7 +50,49 @@ Sono da evitare anche caratteri come::
 / \ | :
 ```
 
-### Separatore decimale dei numeri
+Usate lo 0 come _left-padding_
+
+```
+1
+2
+...
+9
+10
+11
+```
+
+ma 
+
+```
+01
+02
+...
+09
+10
+11
+```
+
+
+oppure 
+
+```
+001
+002
+...
+009
+010
+011
+...
+099
+100
+101
+```
+
+
+
+### Dati numerici
+
+#### Separatore decimale dei numeri
 
 
 Usate il punto (.) come fanno gli anglo-sassoni e non la virgola (,) come in Italia.
@@ -62,7 +106,6 @@ Ad esempio::
 Questa pratica faciliterà lo scambio di dati tra i vari programmi che potrete utilizzare.
 
 Avete la possibilità di impostare il vostro computer perché usi il punto al posto della virgola (impostazione di default se usate la lingua italiana).
-
 
 
 
