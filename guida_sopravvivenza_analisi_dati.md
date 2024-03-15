@@ -60,7 +60,7 @@ Sono da evitare anche caratteri come:
 / \ | :
 ```
 
-Usate lo 0 come _left-padding_
+Usate lo 0 come _left-padding_ usando il numero di digit necessario:
 
 ```
 1
