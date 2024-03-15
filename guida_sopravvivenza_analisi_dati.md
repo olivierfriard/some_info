@@ -39,9 +39,19 @@ Non utilizzate i 2 punti (:) per separare ore, minuti e secondi perché alcuni *
 
 **Non utilizzate spazi nei nomi dei file!**
 
-I file contenenti spazi nel loro nome sono difficili da gestire utilizzando programmi in command-line (nella bash ad esempio).
+I file contenenti spazi nel loro nome sono più difficili da gestire utilizzando programmi in command-line (nella bash ad esempio).
 
 Gli spazi possono essere sostituiti dal carattere _ (underscore).
+
+```
+Comando per un nome di file senza spazi:
+wc -l nome_file
+
+Comando per un nome di file con uno spazio:
+wc -l "nome file"
+
+```
+
 
 
 Sono da evitare anche caratteri come:
