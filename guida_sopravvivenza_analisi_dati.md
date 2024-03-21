@@ -119,4 +119,25 @@ Avete la possibilità di impostare il vostro computer perché usi il punto al po
 
 
 
+## Uso della bash
+
+
+La bash (o terminale di Linux) permette di eseguire operazioni su file molto velocemente. E' in grado di manipolare file di grandi dimensioni o un umero di file molto elevato.
+
+
+
+https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
+
+
+## Excel 
+
+https://www.forbes.com/sites/timworstall/2013/02/13/microsofts-excel-might-be-the-most-dangerous-software-on-the-planet/?sh=5dab7d27633d
+
+
+https://arstechnica.com/science/2024/01/we-keep-making-the-same-mistakes-with-spreadsheets-despite-bad-consequences/
+
+
+
+
+
 
