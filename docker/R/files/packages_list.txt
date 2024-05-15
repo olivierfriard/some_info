@@ -55,6 +55,7 @@ github:Cdevenish/hardRain hardRain
 Hmsc
 hopkins
 kernlab
+landscapemetrics
 lattice
 lazyeval
 lubridate
@@ -74,9 +75,11 @@ move
 multcompView
 mvtnorm
 NbClust
+ncdf4
 nimble
 nimbleSCR
 nlme
+MuMIn
 OpenImageR
 parallelDist
 pdist
@@ -92,6 +95,7 @@ randomForest
 ranger
 RANN
 raster
+rasterVis
 Rcpp
 RcppArmadillo
 RcppCNPy
@@ -104,6 +108,7 @@ Rmisc
 robustbase
 ROCR
 RSNNS
+RSQLite
 R.utils
 scales
 seewave
@@ -129,6 +134,7 @@ TSdist
 tuneR
 umap
 unmarked
+usdm
 vegan
 vegclust
 warbleR
