@@ -95,6 +95,25 @@ COPY files/install_packages.R /
 RUN Rscript /install_packages.R
 
 
+# RUN echo 'install.packages("remotes")' | R --no-save
+# RUN echo 'remotes::install_cran("vegan")' | R --no-save
+# RUN echo 'remotes::install_cran("dplyr")' | R --no-save
+# RUN echo 'remotes::install_cran("writexl")' | R --no-save
+# RUN echo 'remotes::install_cran("xlsx")' | R --no-save
+# RUN echo 'remotes::install_cran("readxl")' | R --no-save
+# RUN echo 'remotes::install_cran("tidyr")' | R --no-save
+# RUN echo 'remotes::install_cran("tibble")' | R --no-save
+
+
+# RUN echo 'remotes::install_bioc("dada2", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+# RUN echo 'remotes::install_bioc("Biostrings", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+# RUN echo 'remotes::install_bioc("phyloseq", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+# RUN echo 'remotes::install_bioc("microbiomeMarker", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+# RUN echo 'remotes::install_bioc("microbiomeutilities", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+# RUN echo 'remotes::install_bioc("microeco", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+# RUN echo 'remotes::install_bioc("MicrobiotaProcess", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+
+
 # Define default command.
 CMD ["bash"]
 
