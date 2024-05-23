@@ -1,4 +1,2 @@
-nimble
-nimbleSCR
-R.utils
+bioconductor:dada2 dada2
 
