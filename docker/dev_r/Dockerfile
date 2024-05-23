@@ -73,7 +73,7 @@ RUN tar zxf R-${r_version}.tar.gz
 WORKDIR R-${r_version}
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
-RUN make -j 8
+RUN make -j 20
 RUN make install
 
 WORKDIR /bin
@@ -91,7 +91,7 @@ COPY files/Rprofile.site /opt/PortableR/lib/R/etc
 RUN export MAKE="make -j20"
 
 COPY files/install_packages.R /
-COPY files/packages_list.txt /
+#COPY files/packages_list.txt /
 RUN Rscript /install_packages.R
 
 
