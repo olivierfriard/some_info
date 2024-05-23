@@ -117,6 +117,8 @@ Questa pratica faciliterà lo scambio di dati tra i vari programmi che potrete u
 
 Avete la possibilità di impostare il vostro computer perché usi il punto al posto della virgola (impostazione di default se usate la lingua italiana).
 
+Per impostare il separatore decimale su Windows 11: https://www.youtube.com/watch?v=fAJdRS323h0
+
 
 
 ## Uso della bash
