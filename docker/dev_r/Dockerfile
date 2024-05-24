@@ -94,17 +94,18 @@ RUN export MAKE="make -j20"
 
 RUN echo 'install.packages("remotes")' | R --no-save
 
-RUN echo 'remotes::install_cran("vegan", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("vegan", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
 
-RUN echo 'remotes::install_cran("dplyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("writexl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("xlsx", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("readxl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("dplyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("writexl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("xlsx", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("readxl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
 
-RUN echo 'remotes::install_cran("tidyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("tibble", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("tidyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("tibble", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
 #RUN echo 'remotes::install_cran("magick", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-#RUN echo 'remotes::install_bioc("ggtree", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+
+##RUN echo 'remotes::install_bioc("ggtree", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
 
 
 #RUN echo 'remotes::install_bioc("dada2", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
