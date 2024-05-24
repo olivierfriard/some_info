@@ -31,8 +31,6 @@ ENV LANG en_US.UTF-8
 RUN apt-get install -y openmpi-*
 RUN apt-get install -y gfortran
 RUN apt-get install -y libreadline-dev
-
-
 RUN apt-get install -y xorg-dev
 RUN apt-get install -y libbz2-dev
 RUN apt-get install -y liblzma-dev
@@ -59,7 +57,7 @@ RUN apt-get install -y libavfilter-dev
 RUN apt-get install -y libudunits2-dev
 
 # for rgdal
-# RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
+#RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
 
 # Compile and install an R in portable version
@@ -79,44 +77,43 @@ RUN ln -s /opt/PortableR/bin/* .
 WORKDIR /
 
 #Setup CRAN mirror
-COPY files/Rprofile.site /opt/PortableR/lib/R/etc
-
-
+COPY Rprofile.site /opt/PortableR/lib/R/etc
 
 # install R packages
 
 RUN export MAKE="make -j20"
 
-#COPY files/install_packages.R /
-#COPY files/packages_list.txt /
-#RUN Rscript /install_packages.R
+RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+
+RUN R -e "p='vegan'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='dplyr'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='writexl'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='xlsx'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='readxl'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='tidyr'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='tibble'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='magick'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='magick'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+
+RUN R -e "p='dada2'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='Biostrings'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='phyloseq'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p=''; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p=''; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p=''; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+
+RUN R -e "p='microbiome/microbiome'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='microsud/microbiomeutilities'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='ChiLiubio/microeco'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 
-RUN echo 'install.packages("remotes")' | R --no-save
+RUN apt install -y libmpfr-dev
+RUN apt install -y libgsl-dev
 
-RUN echo 'remotes::install_cran("vegan", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+RUN R -e "p='ggtree'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
-RUN echo 'remotes::install_cran("dplyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("writexl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("xlsx", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("readxl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-
-RUN echo 'remotes::install_cran("tidyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("tibble", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-#RUN echo 'remotes::install_cran("magick", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-#RUN echo 'remotes::install_bioc("ggtree", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-
-
-#RUN echo 'remotes::install_bioc("dada2", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-#RUN echo 'remotes::install_bioc("Biostrings", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-#RUN echo 'remotes::install_bioc("phyloseq", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-
-#RUN echo 'remotes::install_github("microbiome/microbiome", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-#RUN echo 'remotes::install_github("microsud/microbiomeutilities", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-#RUN echo 'remotes::install_github("ChiLiubio/microeco", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-#RUN echo 'remotes::install_bioc("microbiomeMarker", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-
-#RUN echo 'remotes::install_bioc("MicrobiotaProcess", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+RUN R -e "p='microbiomeMarker'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='MicrobiotaProcess'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 
 # Define default command.
