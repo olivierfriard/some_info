@@ -30,14 +30,9 @@ ENV LANG en_US.UTF-8
 #
 RUN apt-get install -y openmpi-*
 RUN apt-get install -y gfortran
-##RUN apt-get install -y xpdf  # No available in 20.04
-##RUN apt-get install -y firefox
 RUN apt-get install -y libreadline-dev
-#RUN apt-get install -y texlive-latex-base
-#RUN apt-get install -y texlive-fonts-recommended
-#RUN apt-get install -y texlive-fonts-extra
-#RUN apt-get install -y texlive-latex-extra
-#RUN apt-get install -y texinfo
+
+
 RUN apt-get install -y xorg-dev
 RUN apt-get install -y libbz2-dev
 RUN apt-get install -y liblzma-dev
@@ -58,13 +53,13 @@ RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
 RUN apt-get install -y libglpk-dev
 RUN apt-get install -y libpoppler-cpp-dev
-
+RUN apt-get install -y libavfilter-dev
 
 # for sf / stars
 RUN apt-get install -y libudunits2-dev
 
 # for rgdal
-RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
+# RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
 
 # Compile and install an R in portable version
@@ -99,13 +94,15 @@ RUN export MAKE="make -j20"
 
 RUN echo 'install.packages("remotes")' | R --no-save
 
-#RUN echo 'remotes::install_cran("vegan", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-#RUN echo 'remotes::install_cran("dplyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-#RUN echo 'remotes::install_cran("writexl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-#RUN echo 'remotes::install_cran("xlsx", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-#RUN echo 'remotes::install_cran("readxl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-#RUN echo 'remotes::install_cran("tidyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-#RUN echo 'remotes::install_cran("tibble", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+RUN echo 'remotes::install_cran("vegan", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+
+RUN echo 'remotes::install_cran("dplyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+RUN echo 'remotes::install_cran("writexl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+RUN echo 'remotes::install_cran("xlsx", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+RUN echo 'remotes::install_cran("readxl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+
+RUN echo 'remotes::install_cran("tidyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+RUN echo 'remotes::install_cran("tibble", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
 #RUN echo 'remotes::install_cran("magick", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
 #RUN echo 'remotes::install_bioc("ggtree", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
 
