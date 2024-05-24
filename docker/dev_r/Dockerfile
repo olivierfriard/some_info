@@ -92,15 +92,18 @@ RUN R -e "p='xlsx'; install.packages(p, dependencies=TRUE); if (!library(p, char
 RUN R -e "p='readxl'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='tidyr'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='tibble'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-RUN R -e "p='magick'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+
 
 RUN R -e "p='dada2'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='Biostrings'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='phyloseq'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
-RUN R -e "p='microbiome/microbiome'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-RUN R -e "p='microsud/microbiomeutilities'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-RUN R -e "p='ChiLiubio/microeco'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+
+RUN R -e "p='microbiome/microbiome'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library("microbiome", logical.return=T)) quit(status=10)"
+
+
+RUN R -e "p='microsud/microbiomeutilities'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library("microbiomeutilities", logical.return=T)) quit(status=10)"
+RUN R -e "p='ChiLiubio/microeco'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library("microeco", logical.return=T)) quit(status=10)"
 
 
 RUN apt install -y libmpfr-dev
@@ -109,10 +112,10 @@ RUN apt install -y libgsl-dev
 RUN R -e "p='ggtree'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 RUN R -e "p='microbiomeMarker'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+
 RUN R -e "p='MicrobiotaProcess'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 
 # Define default command.
 CMD ["bash"]
-
 
