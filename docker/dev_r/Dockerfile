@@ -98,9 +98,6 @@ RUN R -e "p='magick'; install.packages(p, dependencies=TRUE); if (!library(p, ch
 RUN R -e "p='dada2'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='Biostrings'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='phyloseq'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-RUN R -e "p=''; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-RUN R -e "p=''; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-RUN R -e "p=''; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 RUN R -e "p='microbiome/microbiome'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='microsud/microbiomeutilities'; remotes::install_github(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
