@@ -1,2 +1,18 @@
 bioconductor:dada2 dada2
+bioconductor:Biostrings Biostrings
+bioconductor:phyloseq phyloseq
+vegan
+bioconductor:microbiome microbiome
+ggplot2
+dplyr
+writexl
+xlsx
+readxl
+tidyr
+tibble
+bioconductor:microbiomeMarker microbiomeMarker
+bioconductor:microbiomeutilities microbiomeutilities
+bioconductor:microeco microeco
+bioconductor:MicrobiotaProcess MicrobiotaProcess
+
 

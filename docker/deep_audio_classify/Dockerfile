@@ -1,8 +1,11 @@
 # Docker for Deep audio classify
 
-FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu22.04
+FROM nvidia/cuda:12.3.1-runtime-ubuntu22.04
 
-#FROM ubuntu:22.04
+# FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu22.04
+
+# FROM nvidia/cuda:12.3.1-devel-ubi8
+
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -28,6 +31,7 @@ RUN apt install nvidia-cuda-toolkit -y
 RUN apt install libcufft10
 RUN apt install libcusparse11
 RUN apt install libcublas11 libcublaslt11
+RUN apt install libcublas11 libmp3lame0 libmp3lame-dev
 
 RUN apt install -y python3-pip
 

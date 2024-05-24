@@ -2,7 +2,7 @@
 
 FROM ubuntu:22.04
 
-ARG r_version=4.3.2
+ARG r_version=4.3.3
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -57,6 +57,8 @@ RUN apt-get install -y libgmp3-dev
 RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
 RUN apt-get install -y libglpk-dev
+RUN apt-get install -y libpoppler-cpp-dev
+
 
 # for sf / stars
 RUN apt-get install -y libudunits2-dev
@@ -96,22 +98,28 @@ RUN export MAKE="make -j20"
 
 
 RUN echo 'install.packages("remotes")' | R --no-save
-RUN echo 'remotes::install_cran("vegan", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("dplyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("writexl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("xlsx", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("readxl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("tidyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
-RUN echo 'remotes::install_cran("tibble", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+
+#RUN echo 'remotes::install_cran("vegan", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("dplyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("writexl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("xlsx", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("readxl", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("tidyr", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("tibble", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_cran("magick", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
+#RUN echo 'remotes::install_bioc("ggtree", dependencies=T, build_manual=FALSE, build_vignettes=FALSE)' | R --no-save
 
 
-RUN echo 'remotes::install_bioc("dada2", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-RUN echo 'remotes::install_bioc("Biostrings", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-RUN echo 'remotes::install_bioc("phyloseq", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-RUN echo 'remotes::install_bioc("microbiomeMarker", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-RUN echo 'remotes::install_bioc("microbiomeutilities", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-RUN echo 'remotes::install_bioc("microeco", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
-RUN echo 'remotes::install_bioc("MicrobiotaProcess", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+#RUN echo 'remotes::install_bioc("dada2", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+#RUN echo 'remotes::install_bioc("Biostrings", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+#RUN echo 'remotes::install_bioc("phyloseq", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+
+#RUN echo 'remotes::install_github("microbiome/microbiome", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+#RUN echo 'remotes::install_github("microsud/microbiomeutilities", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+#RUN echo 'remotes::install_github("ChiLiubio/microeco", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+#RUN echo 'remotes::install_bioc("microbiomeMarker", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
+
+#RUN echo 'remotes::install_bioc("MicrobiotaProcess", build_manual=FALSE, build_vignettes=FALSE, upgrade="always")' | R --no-save
 
 
 # Define default command.
