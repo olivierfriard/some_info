@@ -93,7 +93,6 @@ RUN R -e "p='readxl'; install.packages(p, dependencies=TRUE); if (!library(p, ch
 RUN R -e "p='tidyr'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='tibble'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='magick'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-RUN R -e "p='magick'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 RUN R -e "p='dada2'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='Biostrings'; remotes::install_bioc(p, build_manual=FALSE, build_vignettes=FALSE, upgrade='always'); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
