@@ -85,7 +85,7 @@ RUN export MAKE="make -j20"
 
 RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
-RUN R -e "p='sf'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='sf'; new.packages <- list.of.packages[!(c(p) %in% installed.packages()[,'Package'])]; if (length(new.packages)) install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='ggplot'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 RUN R -e "p='osmextract'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 

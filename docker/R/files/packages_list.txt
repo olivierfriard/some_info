@@ -30,7 +30,6 @@ dtwclust
 dygraphs
 e1071
 ellipse
-extractosm
 factoextra
 FactoMineR
 fasterize
@@ -82,6 +81,7 @@ nimbleSCR
 nlme
 MuMIn
 OpenImageR
+osmextract
 parallelDist
 pdist
 permute
