@@ -57,7 +57,7 @@ RUN apt-get install -y libavfilter-dev
 RUN apt-get install -y libudunits2-dev
 
 # for rgdal
-#RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
+RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
 
 # Compile and install an R in portable version
