@@ -2,7 +2,7 @@
 
 FROM ubuntu:22.04
 
-ARG r_version=4.3.3
+ARG r_version=4.3.2
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -30,7 +30,14 @@ ENV LANG en_US.UTF-8
 #
 RUN apt-get install -y openmpi-*
 RUN apt-get install -y gfortran
+##RUN apt-get install -y xpdf  # No available in 20.04
+##RUN apt-get install -y firefox
 RUN apt-get install -y libreadline-dev
+#RUN apt-get install -y texlive-latex-base
+#RUN apt-get install -y texlive-fonts-recommended
+#RUN apt-get install -y texlive-fonts-extra
+#RUN apt-get install -y texlive-latex-extra
+#RUN apt-get install -y texinfo
 RUN apt-get install -y xorg-dev
 RUN apt-get install -y libbz2-dev
 RUN apt-get install -y liblzma-dev
@@ -50,8 +57,6 @@ RUN apt-get install -y libgmp3-dev
 RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
 RUN apt-get install -y libglpk-dev
-RUN apt-get install -y libpoppler-cpp-dev
-RUN apt-get install -y libavfilter-dev
 
 # for sf / stars
 RUN apt-get install -y libudunits2-dev
@@ -68,7 +73,7 @@ RUN tar zxf R-${r_version}.tar.gz
 WORKDIR R-${r_version}
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
-RUN make -j 20
+RUN make -j 8
 RUN make install
 
 WORKDIR /bin
@@ -77,7 +82,8 @@ RUN ln -s /opt/PortableR/bin/* .
 WORKDIR /
 
 #Setup CRAN mirror
-COPY Rprofile.site /opt/PortableR/lib/R/etc
+COPY files/Rprofile.site /opt/PortableR/lib/R/etc
+
 
 # install R packages
 
@@ -85,9 +91,10 @@ RUN export MAKE="make -j20"
 
 RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
-RUN R -e "p='sf'; new.packages <- list.of.packages[!(c(p) %in% installed.packages()[,'Package'])]; if (length(new.packages)) install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-RUN R -e "p='ggplot'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-RUN R -e "p='osmextract'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='osmextract'; list.of.packages <- c(p); new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,'Package'])]; if (length(new.packages)) install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='sf'; list.of.packages <- c(p); new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,'Package'])]; if (length(new.packages)) install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='ggplot2'; list.of.packages <- c(p); new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,'Package'])]; if (length(new.packages)) install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+
 
 
 # Define default command.
