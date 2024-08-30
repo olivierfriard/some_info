@@ -62,8 +62,12 @@ for (i in seq_along(p$V1))
 
         else
             {
-            print(paste0('install from CRAN: ', p$V1[i]))
-            remotes::install_cran(p$V1[i], dependencies=T, build_manual=FALSE, build_vignettes=FALSE);
+            new.packages <- list.of.packages[!(c(p$V1[i]) %in% installed.packages()[,'Package'])]
+            if (length(new.packages))
+                {
+                print(paste0('install from CRAN: ', p$V1[i]))
+                remotes::install_cran(p$V1[i], dependencies=T, build_manual=FALSE, build_vignettes=FALSE);
+                }
 
             # test
             print(paste0('testing installation of ', p$V1[i]))
