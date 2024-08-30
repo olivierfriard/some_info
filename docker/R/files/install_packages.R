@@ -62,7 +62,8 @@ for (i in seq_along(p$V1))
 
         else
             {
-            new.packages <- list.of.packages[!(c(p$V1[i]) %in% installed.packages()[,'Package'])]
+            list.of.packages <- c(p$V1[i]);
+            new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,'Package'])]
             if (length(new.packages))
                 {
                 print(paste0('install from CRAN: ', p$V1[i]))
