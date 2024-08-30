@@ -30,6 +30,7 @@ dtwclust
 dygraphs
 e1071
 ellipse
+extractosm
 factoextra
 FactoMineR
 fasterize
