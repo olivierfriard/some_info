@@ -64,6 +64,9 @@ RUN apt-get install -y libudunits2-dev
 # for rgdal
 RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
+# for rjags
+RUN apt-get install -y jags
+
 
 # Compile and install an R in portable version
 WORKDIR /tmp
