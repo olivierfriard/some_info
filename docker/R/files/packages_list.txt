@@ -52,6 +52,7 @@ gridExtra
 gtable
 gtools
 github:Cdevenish/hardRain hardRain
+jagsUI
 Hmsc
 hopkins
 kernlab
@@ -91,6 +92,7 @@ bioconductor:phyloseq phyloseq
 prabclus
 purrr
 pvclust
+R2jags
 R6
 randomForest
 ranger
@@ -111,6 +113,7 @@ ROCR
 RSNNS
 RSQLite
 R.utils
+runjags
 scales
 seewave
 sf
