@@ -1,7 +1,7 @@
 
 options(Ncpus=20)
 
-
+# install "remotes" for installing all other packages
 install.packages("remotes")
 
 p = read.delim("/packages_list.txt", header=FALSE)

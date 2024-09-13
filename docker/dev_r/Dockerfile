@@ -2,7 +2,7 @@
 
 FROM ubuntu:22.04
 
-ARG r_version=4.3.2
+ARG r_version=4.4.1
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -89,6 +89,7 @@ COPY files/Rprofile.site /opt/PortableR/lib/R/etc
 
 RUN export MAKE="make -j20"
 
+# install "remotes" for installing all other packages
 RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 RUN R -e "p='osmextract'; list.of.packages <- c(p); new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,'Package'])]; if (length(new.packages)) install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
