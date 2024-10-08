@@ -103,6 +103,8 @@ RUN bash /install_r_package.bash sf
 
 RUN bash /install_r_package.bash ggplot2
 
+RUN bash /install_r_package_from_github.bash pimentel/cluster
+
 # RUN R -e "p='R2jags'; list.of.packages <- c(p); new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,'Package'])]; if (length(new.packages)) remotes::install_version(p, "0.7.1.1", dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 # RUN R -e "p='sf'; list.of.packages <- c(p); new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,'Package'])]; if (length(new.packages)) install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
