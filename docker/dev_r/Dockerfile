@@ -97,7 +97,7 @@ COPY  install_r_package_version.bash /
 COPY  install_r_package.bash /
 
 
-RUN bash /install_r_package_version.bash R2jags 0.7.1.1
+#RUN bash /install_r_package_version.bash R2jags 0.7.1.1
 
 RUN bash /install_r_package.bash sf
 
