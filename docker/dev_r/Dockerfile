@@ -92,12 +92,16 @@ RUN export MAKE="make -j20"
 # install "remotes" for installing all other packages
 RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
+COPY  install_r_package_version.bash /
 
-RUN bash install_r_package_version.bash R2jags 0.7.1.1
+COPY  install_r_package.bash /
 
-RUN bash install_r_package.bash sf
 
-RUN bash install_r_package.bash ggplot2
+RUN bash /install_r_package_version.bash R2jags 0.7.1.1
+
+RUN bash /install_r_package.bash sf
+
+RUN bash /install_r_package.bash ggplot2
 
 # RUN R -e "p='R2jags'; list.of.packages <- c(p); new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,'Package'])]; if (length(new.packages)) remotes::install_version(p, "0.7.1.1", dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
