@@ -97,6 +97,8 @@ COPY  install_r_package_version.bash /
 
 COPY  install_r_package.bash /
 
+COPY  install_r_package_from github.bash /
+
 RUN export MAKE="make -j20"
 
 COPY files/install_packages.R /
