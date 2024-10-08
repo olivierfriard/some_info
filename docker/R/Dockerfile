@@ -93,6 +93,10 @@ COPY files/Boruta_8.0.0.tar.gz /
 
 # install R packages
 
+COPY  install_r_package_version.bash /
+
+COPY  install_r_package.bash /
+
 RUN export MAKE="make -j20"
 
 COPY files/install_packages.R /
