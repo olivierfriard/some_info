@@ -17,6 +17,7 @@ clue
 clustertend
 clValid
 coda
+correctR
 corrplot
 ctv
 dendextend
