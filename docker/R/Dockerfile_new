@@ -101,7 +101,7 @@ COPY  install_r_package_version.bash /
 
 COPY  install_r_package.bash /
 
-COPY  install_r_package_from github.bash /
+COPY  install_r_package_from_github.bash /
 
 RUN export MAKE="make -j20"
 

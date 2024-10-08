@@ -96,7 +96,7 @@ COPY  install_r_package_version.bash /
 
 COPY  install_r_package.bash /
 
-COPY  install_r_package_from github.bash /
+COPY  install_r_package_from_github.bash /
 
 
 #RUN bash /install_r_package_version.bash R2jags 0.7.1.1
