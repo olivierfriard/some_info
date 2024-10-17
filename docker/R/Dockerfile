@@ -97,6 +97,10 @@ COPY files/Boruta_8.0.0.tar.gz /
 
 # install R packages
 
+# install "remotes" for installing all other packages
+RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+
+
 COPY  install_r_package_version.bash /
 
 COPY  install_r_package.bash /
