@@ -88,6 +88,10 @@ WORKDIR /
 COPY files/Rprofile.site /opt/PortableR/lib/R/etc
 
 
+# Define default command.
+CMD ["bash"]
+
+
 # R package exceptions
 COPY files/Boruta_8.0.0.tar.gz /
 
@@ -97,16 +101,163 @@ COPY  install_r_package_version.bash /
 
 COPY  install_r_package.bash /
 
-COPY  install_r_package_from github.bash /
+COPY  install_r_package_from_github.bash /
 
 RUN export MAKE="make -j20"
 
-COPY files/install_packages.R /
-COPY files/packages_list.txt /
-RUN Rscript /install_packages.R
+RUN bash /install_r_package.bash abind
+RUN bash /install_r_package.bash ade4
+RUN bash /install_r_package.bash adehabitatHR
+RUN bash /install_r_package.bash agricolae
+RUN bash /install_r_package.bash apcluster
+RUN bash /install_r_package.bash ape
+RUN bash /install_r_package.bash assertthat
+RUN bash /install_r_package.bash audio
+RUN bash /install_r_package.bash bayesdfa
+RUN bash /install_r_package.bash bindrcpp
+RUN bash /install_r_package.bash car
+RUN bash /install_r_package.bash caret
+RUN bash /install_r_package.bash caTools
+RUN bash /install_r_package.bash class
+RUN bash /install_r_package.bash clue
+RUN bash /install_r_package.bash clustertend
+RUN bash /install_r_package.bash clValid
+RUN bash /install_r_package.bash coda
+RUN bash /install_r_package.bash correctR
+RUN bash /install_r_package.bash corrplot
+RUN bash /install_r_package.bash ctv
+RUN bash /install_r_package.bash dendextend
+RUN bash /install_r_package.bash devtools
+RUN bash /install_r_package.bash digest
+RUN bash /install_r_package.bash diptest
+RUN bash /install_r_package.bash doParallel
+RUN bash /install_r_package.bash dplyr
+RUN bash /install_r_package.bash dtw
+RUN bash /install_r_package.bash dtwclust
+RUN bash /install_r_package.bash dygraphs
+RUN bash /install_r_package.bash e1071
+RUN bash /install_r_package.bash ellipse
+RUN bash /install_r_package.bash factoextra
+RUN bash /install_r_package.bash FactoMineR
+RUN bash /install_r_package.bash fasterize
+RUN bash /install_r_package.bash FD
+RUN bash /install_r_package.bash flexmix
+RUN bash /install_r_package.bash fossil
+RUN bash /install_r_package.bash foreach
+RUN bash /install_r_package.bash fpc
+RUN bash /install_r_package.bash fs
+RUN bash /install_r_package.bash functional
+RUN bash /install_r_package.bash gdtools
+RUN bash /install_r_package.bash geometry
+RUN bash /install_r_package.bash ggplot2
+RUN bash /install_r_package.bash ggpubr
+RUN bash /install_r_package.bash ggrepel
+RUN bash /install_r_package.bash ggthemes
+RUN bash /install_r_package.bash glue
+RUN bash /install_r_package.bash gmp
+RUN bash /install_r_package.bash gridExtra
+RUN bash /install_r_package.bash gtable
+RUN bash /install_r_package.bash gtools
+RUN bash /install_r_package.bash jagsUI
+RUN bash /install_r_package.bash Hmsc
+RUN bash /install_r_package.bash hopkins
+RUN bash /install_r_package.bash kernlab
+RUN bash /install_r_package.bash landscapemetrics
+RUN bash /install_r_package.bash lattice
+RUN bash /install_r_package.bash lazyeval
+RUN bash /install_r_package.bash lubridate
+RUN bash /install_r_package.bash magrittr
+RUN bash /install_r_package.bash MASS
+RUN bash /install_r_package.bash matrixStats
+RUN bash /install_r_package.bash mcclust
+RUN bash /install_r_package.bash mclust
+RUN bash /install_r_package.bash MCMCglmm
+RUN bash /install_r_package.bash mcmcplots
+RUN bash /install_r_package.bash MetBrewer
+RUN bash /install_r_package.bash mgcv
+RUN bash /install_r_package.bash mlbench
+RUN bash /install_r_package.bash ModelMetrics
+RUN bash /install_r_package.bash monitoR
+RUN bash /install_r_package.bash move
+RUN bash /install_r_package.bash multcompView
+RUN bash /install_r_package.bash mvtnorm
+RUN bash /install_r_package.bash NbClust
+RUN bash /install_r_package.bash ncdf4
+RUN bash /install_r_package.bash nimble
+RUN bash /install_r_package.bash nimbleSCR
+RUN bash /install_r_package.bash nlme
+RUN bash /install_r_package.bash MuMIn
+RUN bash /install_r_package.bash OpenImageR
+RUN bash /install_r_package.bash osmextract
+RUN bash /install_r_package.bash parallelDist
+RUN bash /install_r_package.bash pdist
+RUN bash /install_r_package.bash permute
+RUN bash /install_r_package.bash pkgconfig
+RUN bash /install_r_package.bash plyr
+RUN bash /install_r_package.bash prabclus
+RUN bash /install_r_package.bash purrr
+RUN bash /install_r_package.bash pvclust
+RUN bash /install_r_package.bash R2jags
+RUN bash /install_r_package.bash R6
+RUN bash /install_r_package.bash randomForest
+RUN bash /install_r_package.bash ranger
+RUN bash /install_r_package.bash RANN
+RUN bash /install_r_package.bash raster
+RUN bash /install_r_package.bash rasterVis
+RUN bash /install_r_package.bash Rcpp
+RUN bash /install_r_package.bash RcppArmadillo
+RUN bash /install_r_package.bash RcppCNPy
+RUN bash /install_r_package.bash RcppProgress
+RUN bash /install_r_package.bash rdist
+RUN bash /install_r_package.bash readr
+RUN bash /install_r_package.bash reshape2
+RUN bash /install_r_package.bash rlang
+RUN bash /install_r_package.bash Rmisc
+RUN bash /install_r_package.bash robustbase
+RUN bash /install_r_package.bash ROCR
+RUN bash /install_r_package.bash RSNNS
+RUN bash /install_r_package.bash RSQLite
+RUN bash /install_r_package.bash R.utils
+RUN bash /install_r_package.bash runjags
+RUN bash /install_r_package.bash scales
+RUN bash /install_r_package.bash seewave
+RUN bash /install_r_package.bash sf
+RUN bash /install_r_package.bash sjmisc
+RUN bash /install_r_package.bash smacof
+RUN bash /install_r_package.bash snow
+RUN bash /install_r_package.bash soundecology
+RUN bash /install_r_package.bash soundgen
+RUN bash /install_r_package.bash sp
+RUN bash /install_r_package.bash spaa
+RUN bash /install_r_package.bash splines2
+RUN bash /install_r_package.bash stars
+RUN bash /install_r_package.bash stringr
+RUN bash /install_r_package.bash tclust
+RUN bash /install_r_package.bash tibble
+RUN bash /install_r_package.bash tidymodels
+RUN bash /install_r_package.bash tidyr
+RUN bash /install_r_package.bash tidyverse
+RUN bash /install_r_package.bash trimcluster
+RUN bash /install_r_package.bash TSclust
+RUN bash /install_r_package.bash TSdist
+RUN bash /install_r_package.bash tuneR
+RUN bash /install_r_package.bash umap
+RUN bash /install_r_package.bash unmarked
+RUN bash /install_r_package.bash usdm
+RUN bash /install_r_package.bash vegan
+RUN bash /install_r_package.bash vegclust
+RUN bash /install_r_package.bash warbleR
+RUN bash /install_r_package.bash xts
+
+RUN bash /install_r_package_from_github.bash pimentel/cluster
+RUN bash /install_r_package_from_github.bash Cdevenish/hardRain
+
+#RUN bash /install_r_package.bash local:Boruta_8.0.0.tar.gz Boruta
+#RUN bash /install_r_package.bash bioconductor:phyloseq phyloseq
 
 
-# Define default command.
-CMD ["bash"]
+
+
+
 
 
