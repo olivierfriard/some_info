@@ -123,8 +123,13 @@ RUN pip3 install pytz
 RUN pip3 install exifread
 
 # yamnet
-RUN pip3 install tensorflow==2.11.1
+RUN pip3 install tensorflow==2.15.0
 RUN pip3 install tensorflow-hub==0.13.0
+
+# birdnet
+RUN pip3 install resampy
+
+RUN pip3 install birdnet
 
 # dtwave dist
 ADD scripts/dtwave_dist /bin
