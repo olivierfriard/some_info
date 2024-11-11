@@ -220,6 +220,9 @@ RUN chmod +x /bin/h_multi
 ADD scripts/rename_audiomoth_files /bin
 RUN chmod +x /bin/rename_audiomoth_files
 
+RUN apt install git -y
+RUN git clone https://github.com/kahst/BirdNET-Analyzer.git
+
 
 # acoustic indices with python
 
