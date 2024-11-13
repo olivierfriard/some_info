@@ -1,4 +1,4 @@
-# Docker for acoustic analysis
+# Docker for Francesca Terranova
 
 # dtwave, praat, sox, ffmpeg, ffprobe
 # python: pandas, numpy, matplotlib, scipy, librosa, parselmouth, opencv, pykanto, soundsig ...
