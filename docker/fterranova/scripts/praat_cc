@@ -1,0 +1,132 @@
+#!/usr/bin/python3
+"""
+Cross-correlation with Praat using the parselmouth module
+
+usage:
+
+praat_cc -d SOUNDS_DIR_PATH -c N_CORES -o results.tsv
+
+"""
+
+
+import argparse
+import concurrent.futures
+import glob
+import itertools as it
+import sys
+import os
+import pathlib
+
+import pandas as pd
+import parselmouth
+from parselmouth.praat import call
+
+__version__ = "1"
+__version_date__ = "2020-01-14"
+
+
+parser = argparse.ArgumentParser(
+    prog="praat_cc",
+    usage="\npraat_cc -d sounds_directory_path -c N_CORES -o OUTPUT.tsv",
+    description="Cross-correlation with Praat",
+)
+parser.add_argument(
+    "-d", "--directory", required=True, action="store", dest="directory", help="Set directory of WAVE files"
+)
+parser.add_argument(
+    "-c", "--cpu", action="store", dest="cpu", default=1, type=int, help="Set number of CPU/cores to use (default 1)"
+)
+parser.add_argument("-o", "--output", action="store", dest="output", help="Set path for the output file")
+parser.add_argument("-v", "--version", action="version", version=f"%(prog)s v.{__version__} {__version_date__}")
+parser.add_argument(
+    "-i",
+    "--initial-silence",
+    action="store",
+    dest="initial_silence",
+    default=0,
+    type=float,
+    help="indicate the silence duration (in s) at the beginning of the sound",
+)
+parser.add_argument(
+    "-f",
+    "--final-silence",
+    action="store",
+    dest="final_silence",
+    default=0,
+    type=float,
+    help="indicate the silence duration (in s) at the end of the sound",
+)
+
+args = parser.parse_args()
+
+if not args.directory:
+    print("Sounds directory not found!")
+    sys.exit(3)
+
+if not os.path.isdir(args.directory):
+    print(f"{args.directory} is not a directory")
+    sys.exit(1)
+
+print(f"Sound files directory path: {args.directory}")
+
+if args.cpu:
+    try:
+        CPU = int(args.cpu)
+        print(f"Number of CPU to use: {CPU}")
+        MAX_WORKER = CPU
+    except:
+        print("cpu must be an integer")
+        sys.exit(5)
+else:
+    print("No CPU")
+    sys.exit(5)
+
+if args.initial_silence or args.final_silence:
+    print(f"Initial silence: {args.initial_silence} s Final silence: {args.final_silence} s")
+
+
+def cc_sound_mp(sounds):
+    cross_correlated = sounds_dict[sounds[0]].cross_correlate(sounds_dict[sounds[1]], "NORMALIZE", "ZERO")
+    cc_max = parselmouth.praat.call(cross_correlated, "Get maximum", 0, 0, "Sinc70")
+    return sounds_list.index(sounds[0]), sounds_list.index(sounds[1]), cc_max
+
+
+files_list = pathlib.Path(args.directory).glob("*.wav")
+
+if not files_list:
+    print(f"No WAV files found in {args.directory}")
+    sys.exit(5)
+
+sounds_dict = {}
+
+for file_name in files_list:
+    if args.initial_silence or args.final_silence:
+        sound = parselmouth.Sound(str(file_name))
+        sound_cut = sound.extract_part(
+            args.initial_silence, sound.duration - args.final_silence, parselmouth.WindowShape.RECTANGULAR, 1, False
+        )
+
+        sounds_dict[file_name.stem] = sound_cut
+    else:
+        sounds_dict[file_name.stem] = parselmouth.Sound(str(file_name))
+
+sounds_list = sorted(list(sounds_dict.keys()))
+
+print(f"\nProcessing {len(sounds_list)} files...")
+with concurrent.futures.ProcessPoolExecutor(max_workers=MAX_WORKER) as executor:
+    results = executor.map(cc_sound_mp, it.combinations_with_replacement(sounds_list, 2))
+
+df = pd.DataFrame(index=sounds_list, columns=sounds_list)
+for result in results:
+    df.iloc[result[0], result[1]] = result[2]
+    df.iloc[result[1], result[0]] = result[2]
+
+
+if args.output:
+    try:
+        df.to_csv(args.output, sep="\t")
+    except Exception:
+        print(f"\nError saving results in {args.output}.\nFile default_output.tsv created.")
+        df.to_csv("default_output.tsv", sep="\t")
+else:
+    print(df)

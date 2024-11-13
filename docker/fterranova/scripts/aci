@@ -1,0 +1,94 @@
+#!/usr/bin/Rscript
+
+
+# run Acoustic Complexity Index (ACI) from the Soundecology package
+# test file one by one in case of problem using the multiple_sounds function
+
+# version 2  (2020-06-08)
+#  added trycatch
+
+
+library("optparse")
+library("tuneR")
+library("soundecology")
+
+option_list = list(
+
+    make_option(c("-d", "--directory"), type="character", default=NULL, 
+                help="Sounds directory path", metavar="character"),
+
+    make_option(c("--pattern"), type="character", default="*.wav",
+                help="pattern for selecting files (default: *.wav)",
+                metavar="character"),
+
+    make_option(c("-o", "--output"), type="character", default="aci_out.tsv", 
+                help="Output file name [default= %default]", metavar="character"),
+
+    make_option(c("--min_freq"), type="integer", default=NA, 
+                help="miminum frequency to use when calculating the value (default: NA)",
+                metavar="number"),
+
+    make_option(c("--max_freq"), type="integer", default=NA, 
+                help="maximum frequency to use when calculating the value (default: NA)",
+                metavar="number"),
+
+    make_option(c("-f", "--fft_w"), type="integer", default=512, 
+                help="FFT window to use (default: 512)",
+                metavar="number"),
+
+    make_option(c("-j", "--cluster_size"), type="integer", default=5, 
+                help="Cluster size in seconds (default: 5)",
+                metavar="number"),
+
+
+    make_option(c("-c", "--cpu"), type="integer", default=1, 
+                help="Number of cores to use", metavar="number")
+); 
+ 
+opt_parser = OptionParser(option_list=option_list);
+opt = parse_args(opt_parser);
+
+if (is.null(opt$directory)){
+  print_help(opt_parser)
+  stop("You must supply a directory", call.=FALSE)
+}
+
+
+file.names <- Sys.glob(paste(opt$directory, opt$pattern, sep="/"))
+
+
+# header
+sink(opt$output)
+cat(paste("file name",
+          "ACI Tot All left", "ACI Tot All by min left", 
+          "ACI Tot All right", "ACI Tot All by min right",
+          sep=";"))
+cat("\n")
+sink()
+
+
+for(i in 1:length(file.names)){
+
+    sound = readWave(file.names[i])
+
+    r = tryCatch(
+            {acoustic_complexity(sound, min_freq = opt$min_freq, max_freq = opt$max_freq, j = opt$cluster_size, fft_w = opt$fft_w)},
+            error = function(e) 
+                        {
+                        x = list()
+                        x$AciTotAll_left = NA
+                        x$AciTotAll_right = NA
+                        x$AciTotAll_left_bymin = NA
+                        x$AciTotAll_right_bymin = NA
+                        return(x)
+                        }
+                )
+
+    sink(opt$output, append=TRUE)
+    cat(paste(basename(file.names[i]),
+              r$AciTotAll_left, r$AciTotAll_left_bymin,
+              r$AciTotAll_right, r$AciTotAll_right_bymin,
+              sep=";"))
+    cat("\n")
+    sink()
+}

@@ -1,0 +1,42 @@
+#!/usr/bin/Rscript
+
+
+# verify WAV in directory with tuneR readWave function
+
+
+library("optparse")
+library("tuneR")
+
+option_list = list(
+
+    make_option(c("-d", "--directory"), type="character", default=NULL, 
+                help="Sounds directory path", metavar="character"),
+
+    make_option(c("-o", "--output"), type="character", default="aci_out.tsv", 
+                help="Output file name [default= %default]", metavar="character")
+
+); 
+ 
+opt_parser = OptionParser(option_list=option_list);
+opt = parse_args(opt_parser);
+
+if (is.null(opt$directory)){
+  print_help(opt_parser)
+  stop("You must supply a directory", call.=FALSE)
+}
+
+# testing if files are wav (RIFF)
+
+file.names <- dir(opt$directory, pattern =".wav")
+for(i in 1:length(file.names)){
+
+    t = try(readWave(paste(opt$directory, file.names[i], sep="/")))
+    if (class(t) == "try-error") {
+          print(paste(file.names[i], "ERROR"), sep=" ")
+      } else {
+         print(paste(file.names[i], "OK"), sep=" ")
+      }
+
+}
+
+
