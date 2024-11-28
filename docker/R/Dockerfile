@@ -109,7 +109,6 @@ COPY  install_r_package_from_github.bash /
 
 RUN export MAKE="make -j20"
 
-(amt) library(moveHMM)
 
 RUN bash /install_r_package.bash abind; bash /install_r_package.bash ade4; bash /install_r_package.bash adehabitatHR; bash /install_r_package.bash agricolae; bash /install_r_package.bash amt; bash /install_r_package.bash apcluster; bash /install_r_package.bash ape; bash /install_r_package.bash assertthat; bash /install_r_package.bash audio
 
@@ -134,14 +133,15 @@ RUN bash /install_r_package.bash gmp
 RUN bash /install_r_package.bash gridExtra
 RUN bash /install_r_package.bash gtable
 RUN bash /install_r_package.bash gtools
+
 RUN bash /install_r_package.bash jagsUI
-RUN bash /install_r_package.bash Hmsc
-RUN bash /install_r_package.bash hopkins
+
+RUN bash /install_r_package.bash Hmsc; bash /install_r_package.bash hopkins
+
 RUN bash /install_r_package.bash kernlab
-RUN bash /install_r_package.bash landscapemetrics
-RUN bash /install_r_package.bash lattice
-RUN bash /install_r_package.bash lazyeval
-RUN bash /install_r_package.bash lubridate
+
+RUN bash /install_r_package.bash landscapemetrics; bash /install_r_package.bash lattice; bash /install_r_package.bash lazyeval; bash /install_r_package.bash lubridate
+
 RUN bash /install_r_package.bash magrittr
 RUN bash /install_r_package.bash MASS
 RUN bash /install_r_package.bash matrixStats
@@ -155,8 +155,10 @@ RUN bash /install_r_package.bash mlbench
 RUN bash /install_r_package.bash ModelMetrics
 RUN bash /install_r_package.bash monitoR
 RUN bash /install_r_package.bash move
+RUN bash /install_r_package.bash moveHMM
 RUN bash /install_r_package.bash multcompView
 RUN bash /install_r_package.bash mvtnorm
+
 RUN bash /install_r_package.bash NbClust
 RUN bash /install_r_package.bash ncdf4
 RUN bash /install_r_package.bash nimble
