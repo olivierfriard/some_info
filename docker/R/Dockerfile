@@ -109,48 +109,20 @@ COPY  install_r_package_from_github.bash /
 
 RUN export MAKE="make -j20"
 
-RUN bash /install_r_package.bash abind
-RUN bash /install_r_package.bash ade4
-RUN bash /install_r_package.bash adehabitatHR
-RUN bash /install_r_package.bash agricolae
-RUN bash /install_r_package.bash apcluster
-RUN bash /install_r_package.bash ape
-RUN bash /install_r_package.bash assertthat
-RUN bash /install_r_package.bash audio
-RUN bash /install_r_package.bash bayesdfa
-RUN bash /install_r_package.bash bindrcpp
-RUN bash /install_r_package.bash car
-RUN bash /install_r_package.bash caret
-RUN bash /install_r_package.bash caTools
-RUN bash /install_r_package.bash class
-RUN bash /install_r_package.bash clue
-RUN bash /install_r_package.bash clustertend
-RUN bash /install_r_package.bash clValid
-RUN bash /install_r_package.bash coda
-RUN bash /install_r_package.bash correctR
-RUN bash /install_r_package.bash corrplot
-RUN bash /install_r_package.bash ctv
-RUN bash /install_r_package.bash dendextend
-RUN bash /install_r_package.bash devtools
-RUN bash /install_r_package.bash digest
-RUN bash /install_r_package.bash diptest
-RUN bash /install_r_package.bash doParallel
-RUN bash /install_r_package.bash dplyr
-RUN bash /install_r_package.bash dtw
-RUN bash /install_r_package.bash dtwclust
-RUN bash /install_r_package.bash dygraphs
-RUN bash /install_r_package.bash e1071
-RUN bash /install_r_package.bash ellipse
-RUN bash /install_r_package.bash factoextra
-RUN bash /install_r_package.bash FactoMineR
-RUN bash /install_r_package.bash fasterize
-RUN bash /install_r_package.bash FD
-RUN bash /install_r_package.bash flexmix
-RUN bash /install_r_package.bash fossil
-RUN bash /install_r_package.bash foreach
-RUN bash /install_r_package.bash fpc
-RUN bash /install_r_package.bash fs
-RUN bash /install_r_package.bash functional
+(amt) library(moveHMM)
+
+RUN bash /install_r_package.bash abind; bash /install_r_package.bash ade4; bash /install_r_package.bash adehabitatHR; bash /install_r_package.bash agricolae; bash /install_r_package.bash amt; bash /install_r_package.bash apcluster; bash /install_r_package.bash ape; bash /install_r_package.bash assertthat; bash /install_r_package.bash audio
+
+RUN bash /install_r_package.bash bayesdfa; bash /install_r_package.bash bindrcpp; bash /install_r_package.bash car
+
+RUN bash /install_r_package.bash caret; bash /install_r_package.bash caTools; bash /install_r_package.bash class; bash /install_r_package.bash clue; bash /install_r_package.bash clustertend; bash /install_r_package.bash clValid; bash /install_r_package.bash coda; bash /install_r_package.bash correctR; bash /install_r_package.bash corrplot; bash /install_r_package.bash ctv
+
+RUN bash /install_r_package.bash dendextend; bash /install_r_package.bash devtools; bash /install_r_package.bash digest; bash /install_r_package.bash diptest; bash /install_r_package.bash doParallel; bash /install_r_package.bash dplyr; bash /install_r_package.bash dtw; bash /install_r_package.bash dtwclust; bash /install_r_package.bash dygraphs
+
+RUN bash /install_r_package.bash e1071; bash /install_r_package.bash ellipse; bash /install_r_package.bash factoextra
+
+RUN bash /install_r_package.bash FactoMineR; bash /install_r_package.bash fasterize; bash /install_r_package.bash FD; bash /install_r_package.bash flexmix; bash /install_r_package.bash fossil; bash /install_r_package.bash foreach; bash /install_r_package.bash fpc; bash /install_r_package.bash fs; bash /install_r_package.bash functional
+
 RUN bash /install_r_package.bash gdtools
 RUN bash /install_r_package.bash geometry
 RUN bash /install_r_package.bash ggplot2
