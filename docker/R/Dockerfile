@@ -58,6 +58,8 @@ RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
 RUN apt-get install -y libglpk-dev
 
+
+
 # for sf / stars
 RUN apt-get install -y libudunits2-dev
 
@@ -66,6 +68,10 @@ RUN apt-get install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libge
 
 # for rjags
 RUN apt-get install -y jags
+
+# for amt
+RUN apt-get install -y libmpfr-dev; apt-get install -y libgsl-dev
+
 
 
 # Compile and install an R in portable version
@@ -76,8 +82,7 @@ RUN tar zxf R-${r_version}.tar.gz
 WORKDIR R-${r_version}
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
-RUN make -j 8
-RUN make install
+RUN make -j 8; make install
 
 WORKDIR /bin
 RUN ln -s /opt/PortableR/bin/* .
@@ -142,40 +147,15 @@ RUN bash /install_r_package.bash kernlab
 
 RUN bash /install_r_package.bash landscapemetrics; bash /install_r_package.bash lattice; bash /install_r_package.bash lazyeval; bash /install_r_package.bash lubridate
 
-RUN bash /install_r_package.bash magrittr
-RUN bash /install_r_package.bash MASS
-RUN bash /install_r_package.bash matrixStats
-RUN bash /install_r_package.bash mcclust
-RUN bash /install_r_package.bash mclust
-RUN bash /install_r_package.bash MCMCglmm
-RUN bash /install_r_package.bash mcmcplots
-RUN bash /install_r_package.bash MetBrewer
-RUN bash /install_r_package.bash mgcv
-RUN bash /install_r_package.bash mlbench
-RUN bash /install_r_package.bash ModelMetrics
-RUN bash /install_r_package.bash monitoR
-RUN bash /install_r_package.bash move
-RUN bash /install_r_package.bash moveHMM
-RUN bash /install_r_package.bash multcompView
-RUN bash /install_r_package.bash mvtnorm
+RUN bash /install_r_package.bash magrittr; bash /install_r_package.bash MASS; bash /install_r_package.bash matrixStats; bash /install_r_package.bash mcclust; bash /install_r_package.bash mclust ;bash /install_r_package.bash MCMCglmm; bash /install_r_package.bash mcmcplots; bash /install_r_package.bash MetBrewer; bash /install_r_package.bash mgcv; bash /install_r_package.bash mlbench; bash /install_r_package.bash ModelMetrics; bash /install_r_package.bash monitoR; bash /install_r_package.bash move; bash /install_r_package.bash moveHMM; bash /install_r_package.bash multcompView; bash /install_r_package.bash mvtnorm
 
-RUN bash /install_r_package.bash NbClust
-RUN bash /install_r_package.bash ncdf4
-RUN bash /install_r_package.bash nimble
-RUN bash /install_r_package.bash nimbleSCR
-RUN bash /install_r_package.bash nlme
+RUN bash /install_r_package.bash NbClust; bash /install_r_package.bash ncdf4; bash /install_r_package.bash nimble; bash /install_r_package.bash nimbleSCR; bash /install_r_package.bash nlme
+
 RUN bash /install_r_package.bash MuMIn
-RUN bash /install_r_package.bash OpenImageR
-RUN bash /install_r_package.bash osmextract
-RUN bash /install_r_package.bash parallelDist
-RUN bash /install_r_package.bash pdist
-RUN bash /install_r_package.bash permute
-RUN bash /install_r_package.bash pkgconfig
-RUN bash /install_r_package.bash plyr
-RUN bash /install_r_package.bash prabclus
-RUN bash /install_r_package.bash purrr
-RUN bash /install_r_package.bash pvclust
-RUN bash /install_r_package.bash R2jags
+RUN bash /install_r_package.bash OpenImageR; bash /install_r_package.bash osmextract
+
+RUN bash /install_r_package.bash parallelDist; bash /install_r_package.bash pdist; bash /install_r_package.bash permute; bash /install_r_package.bash pkgconfig; bash /install_r_package.bash plyr; bash /install_r_package.bash prabclus; bash /install_r_package.bash purrr; bash /install_r_package.bash pvclust; bash /install_r_package.bash R2jags
+
 RUN bash /install_r_package.bash R6
 RUN bash /install_r_package.bash randomForest
 RUN bash /install_r_package.bash ranger
@@ -197,6 +177,7 @@ RUN bash /install_r_package.bash RSNNS
 RUN bash /install_r_package.bash RSQLite
 RUN bash /install_r_package.bash R.utils
 RUN bash /install_r_package.bash runjags
+
 RUN bash /install_r_package.bash scales
 RUN bash /install_r_package.bash seewave
 RUN bash /install_r_package.bash sf
@@ -210,6 +191,7 @@ RUN bash /install_r_package.bash spaa
 RUN bash /install_r_package.bash splines2
 RUN bash /install_r_package.bash stars
 RUN bash /install_r_package.bash stringr
+
 RUN bash /install_r_package.bash tclust
 RUN bash /install_r_package.bash tibble
 RUN bash /install_r_package.bash tidymodels
@@ -222,13 +204,13 @@ RUN bash /install_r_package.bash tuneR
 RUN bash /install_r_package.bash umap
 RUN bash /install_r_package.bash unmarked
 RUN bash /install_r_package.bash usdm
-RUN bash /install_r_package.bash vegan
-RUN bash /install_r_package.bash vegclust
-RUN bash /install_r_package.bash warbleR
+
+RUN bash /install_r_package.bash vegan; bash /install_r_package.bash vegclust; bash /install_r_package.bash warbleR
+
 RUN bash /install_r_package.bash xts
 
-RUN bash /install_r_package_from_github.bash pimentel/cluster
-RUN bash /install_r_package_from_github.bash Cdevenish/hardRain
+#RUN bash /install_r_package_from_github.bash pimentel/cluster
+#RUN bash /install_r_package_from_github.bash Cdevenish/hardRain
 
 #RUN bash /install_r_package.bash local:Boruta_8.0.0.tar.gz Boruta
 #RUN bash /install_r_package.bash bioconductor:phyloseq phyloseq
