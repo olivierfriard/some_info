@@ -147,48 +147,18 @@ RUN bash /install_r_package.bash kernlab
 
 RUN bash /install_r_package.bash landscapemetrics; bash /install_r_package.bash lattice; bash /install_r_package.bash lazyeval; bash /install_r_package.bash lubridate
 
-<<<<<<< HEAD
 RUN bash /install_r_package.bash magrittr; bash /install_r_package.bash MASS; bash /install_r_package.bash matrixStats; bash /install_r_package.bash mcclust; bash /install_r_package.bash mclust ;bash /install_r_package.bash MCMCglmm; bash /install_r_package.bash mcmcplots; bash /install_r_package.bash MetBrewer; bash /install_r_package.bash mgcv; bash /install_r_package.bash mlbench; bash /install_r_package.bash ModelMetrics; bash /install_r_package.bash monitoR; bash /install_r_package.bash move; bash /install_r_package.bash moveHMM; bash /install_r_package.bash multcompView; bash /install_r_package.bash mvtnorm
 
 RUN bash /install_r_package.bash NbClust; bash /install_r_package.bash ncdf4; bash /install_r_package.bash nimble; bash /install_r_package.bash nimbleSCR; bash /install_r_package.bash nlme
-=======
-RUN bash /install_r_package.bash magrittr; bash /install_r_package.bash MASS; bash /install_r_package.bash matrixStats; bash /install_r_package.bash mcclust; bash /install_r_package.bash mclust; bash /install_r_package.bash MCMCglmm; bash /install_r_package.bash mcmcplots; bash /install_r_package.bash MetBrewer; bash /install_r_package.bash mgcv; bash /install_r_package.bash mlbench; bash /install_r_package.bash ModelMetrics; bash /install_r_package.bash monitoR; bash /install_r_package.bash move; bash /install_r_package.bash moveHMM; bash /install_r_package.bash multcompView; bash /install_r_package.bash mvtnorm
-
->>>>>>> a45d74b52c9609592a6f59a30500c4d0660f2933
 
 RUN bash /install_r_package.bash MuMIn
 RUN bash /install_r_package.bash OpenImageR; bash /install_r_package.bash osmextract
 
 RUN bash /install_r_package.bash parallelDist; bash /install_r_package.bash pdist; bash /install_r_package.bash permute; bash /install_r_package.bash pkgconfig; bash /install_r_package.bash plyr; bash /install_r_package.bash prabclus; bash /install_r_package.bash purrr; bash /install_r_package.bash pvclust; bash /install_r_package.bash R2jags
 
-RUN bash /install_r_package.bash R6
-RUN bash /install_r_package.bash randomForest
-RUN bash /install_r_package.bash ranger
-RUN bash /install_r_package.bash RANN
-RUN bash /install_r_package.bash raster
-RUN bash /install_r_package.bash rasterVis
-RUN bash /install_r_package.bash Rcpp
-RUN bash /install_r_package.bash RcppArmadillo
-RUN bash /install_r_package.bash RcppCNPy
-RUN bash /install_r_package.bash RcppProgress
-RUN bash /install_r_package.bash rdist
-RUN bash /install_r_package.bash readr
-RUN bash /install_r_package.bash reshape2
-RUN bash /install_r_package.bash rlang
-RUN bash /install_r_package.bash Rmisc
-RUN bash /install_r_package.bash robustbase
-RUN bash /install_r_package.bash ROCR
-RUN bash /install_r_package.bash RSNNS
-RUN bash /install_r_package.bash RSQLite
-RUN bash /install_r_package.bash R.utils
-RUN bash /install_r_package.bash runjags
+RUN bash /install_r_package.bash R6; bash /install_r_package.bash randomForest; bash /install_r_package.bash ranger; bash /install_r_package.bash RANN; bash /install_r_package.bash raster; bash /install_r_package.bash rasterVis; bash /install_r_package.bash Rcpp; bash /install_r_package.bash RcppArmadillo; bash /install_r_package.bash RcppCNPy; bash /install_r_package.bash RcppProgress; bash /install_r_package.bash rdist; bash /install_r_package.bash readr; bash /install_r_package.bash reshape2; bash /install_r_package.bash rlang; bash /install_r_package.bash Rmisc; bash /install_r_package.bash robustbase; bash /install_r_package.bash ROCR; bash /install_r_package.bash RSNNS; bash /install_r_package.bash RSQLite; bash /install_r_package.bash R.utils; bash /install_r_package.bash runjags
 
-RUN bash /install_r_package.bash scales
-RUN bash /install_r_package.bash seewave
-RUN bash /install_r_package.bash sf
-RUN bash /install_r_package.bash sjmisc
-RUN bash /install_r_package.bash smacof
-RUN bash /install_r_package.bash snow
+RUN bash /install_r_package.bash scales; bash /install_r_package.bash seewave; bash /install_r_package.bash sf; bash /install_r_package.bash sjmisc; bash /install_r_package.bash smacof; bash /install_r_package.bash snow
 RUN bash /install_r_package.bash soundecology
 RUN bash /install_r_package.bash soundgen
 RUN bash /install_r_package.bash sp
