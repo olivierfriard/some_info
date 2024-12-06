@@ -147,9 +147,14 @@ RUN bash /install_r_package.bash kernlab
 
 RUN bash /install_r_package.bash landscapemetrics; bash /install_r_package.bash lattice; bash /install_r_package.bash lazyeval; bash /install_r_package.bash lubridate
 
+<<<<<<< HEAD
 RUN bash /install_r_package.bash magrittr; bash /install_r_package.bash MASS; bash /install_r_package.bash matrixStats; bash /install_r_package.bash mcclust; bash /install_r_package.bash mclust ;bash /install_r_package.bash MCMCglmm; bash /install_r_package.bash mcmcplots; bash /install_r_package.bash MetBrewer; bash /install_r_package.bash mgcv; bash /install_r_package.bash mlbench; bash /install_r_package.bash ModelMetrics; bash /install_r_package.bash monitoR; bash /install_r_package.bash move; bash /install_r_package.bash moveHMM; bash /install_r_package.bash multcompView; bash /install_r_package.bash mvtnorm
 
 RUN bash /install_r_package.bash NbClust; bash /install_r_package.bash ncdf4; bash /install_r_package.bash nimble; bash /install_r_package.bash nimbleSCR; bash /install_r_package.bash nlme
+=======
+RUN bash /install_r_package.bash magrittr; bash /install_r_package.bash MASS; bash /install_r_package.bash matrixStats; bash /install_r_package.bash mcclust; bash /install_r_package.bash mclust; bash /install_r_package.bash MCMCglmm; bash /install_r_package.bash mcmcplots; bash /install_r_package.bash MetBrewer; bash /install_r_package.bash mgcv; bash /install_r_package.bash mlbench; bash /install_r_package.bash ModelMetrics; bash /install_r_package.bash monitoR; bash /install_r_package.bash move; bash /install_r_package.bash moveHMM; bash /install_r_package.bash multcompView; bash /install_r_package.bash mvtnorm
+
+>>>>>>> a45d74b52c9609592a6f59a30500c4d0660f2933
 
 RUN bash /install_r_package.bash MuMIn
 RUN bash /install_r_package.bash OpenImageR; bash /install_r_package.bash osmextract
