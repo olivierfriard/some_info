@@ -49,7 +49,7 @@ setwd(opt$directory)
 arfile <- AR(opt$directory,
              datatype="files",
              envt=opt$envt,
-             pattern = "[wav]$|[WAV]$")
+             pattern = "\\.wav$|\\.WAV$")
 
 write.table(arfile, file=opt$output, sep = "\t")
 
