@@ -224,6 +224,8 @@ RUN apt install git -y
 RUN git clone https://github.com/kahst/BirdNET-Analyzer.git
 
 
+RUN pip3 install keras_tuner
+
 # acoustic indices with python
 
 #RUN pip3 install pyYAML
