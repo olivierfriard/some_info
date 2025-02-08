@@ -1,643 +1,635 @@
-R packages installed on OCCAM (updated at 2024-02-14) (R v. 4.3.2)
+R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
 
            Package     Version
-             abind       1.4-5
+             abind       1.4-8
               ade4      1.7-22
          ade4TkGUI       0.3-1
           adegenet      2.1.10
        adegraphics      1.0-21
-      adehabitatHR      0.4.21
-      adehabitatLT      0.3.27
-      adehabitatMA      0.3.16
+      adehabitatHR      0.4.22
+      adehabitatLT      0.3.28
+      adehabitatMA      0.3.17
           adephylo      1.1-16
          agricolae       1.3-7
-         AlgDesign       1.2.1
+         AlgDesign     1.2.1.1
               alr4       1.0.6
-           anytime       0.3.9
-         apcluster      1.4.11
-               ape       5.7-1
-             areal       0.1.8
-           askpass       1.2.0
+               amt     0.2.2.0
+         apcluster      1.4.13
+               ape         5.8
+           askpass       1.2.1
         assertthat       0.2.1
              audio      0.1-11
-         backports       1.4.1
+         backports       1.5.0
          base64enc       0.1-3
     basicMCMCplots       0.2.7
-          bayesdfa       1.3.2
+          bayesdfa       1.3.3
         BayesLogit         2.1
             bayesm       3.1-6
-        bayestestR      0.13.2
+        bayestestR      0.15.0
               bcpa       1.3.2
-         bdsmatrix       1.3-6
+         bdsmatrix       1.3-7
+            Bessel       0.6-1
                 BH    1.84.0-0
-             bindr       0.1.1
+             bindr       0.1.2
           bindrcpp       0.2.3
       bioacoustics       0.2.8
-           Biobase      2.62.0
-      BiocGenerics      0.48.1
-       BiocManager     1.30.22
-        biomformat      1.30.0
-        Biostrings      2.70.2
-               bit       4.0.5
-             bit64       4.0.5
-            bitops       1.0-7
+       BiocManager     1.30.25
+               bit       4.5.0
+             bit64       4.5.2
+            bitops       1.0-9
               blob       1.2.4
-            Boruta       8.0.0
      BradleyTerry2       1.1-2
               brew      1.0-10
              brglm       0.7.2
-              brio       1.1.4
-             broom       1.0.5
-             bslib       0.6.1
+              brio       1.1.5
+             broom       1.0.7
+             bslib       0.8.0
                 ca      0.71.1
-            cachem       1.0.8
-             Cairo       1.6-2
+            cachem       1.1.0
          calibrate       1.7.7
-             callr       3.7.3
-           candisc       0.8-6
-               car       3.1-2
+             callr       3.7.6
+               car       3.1-3
            carData       3.0-5
              caret      6.0-94
-           caTools      1.18.2
+           caTools      1.18.3
         cellranger       1.1.0
-         checkmate       2.3.1
-          circlize      0.4.15
+         checkmate       2.3.2
+          circlize      0.4.16
          CircStats       0.2-6
-          circular       0.5-0
+          circular       0.5-1
           classInt      0.4-10
-               cli       3.6.2
+               cli       3.6.3
              clipr       0.8.0
-        clisymbols       1.2.0
-             clock       0.7.0
-              clue      0.3-65
+             clock       0.7.1
+              clue      0.3-66
        clustertend         1.7
                clv     0.3-2.4
            clValid         0.7
               coda    0.19-4.1
               coin       1.4-3
-          collapse       2.0.9
-        colorspace       2.1-0
+        colorspace       2.1-1
           combinat       0.0-8
-        commonmark       1.9.1
+        commonmark       1.9.2
         conflicted       1.2.0
            corpcor      1.6.10
-          corrplot        0.92
+          correctR       0.2.1
+          corrplot        0.95
               covr       3.6.4
            cowplot       1.1.3
-             cpp11       0.4.7
-            crayon       1.5.2
-       credentials       2.0.1
+             cpp11       0.5.0
+            crayon       1.5.3
+       credentials       2.0.2
          crosstalk       1.2.1
-              crul       1.4.0
-               ctv       0.9-5
-          cubature       2.1.0
-            cubble       0.3.0
-           cubelyr       1.0.2
-            Cubist     0.4.2.1
-              curl       5.2.0
+              crul       1.5.0
+              ctmm       1.2.0
+               ctv       0.9-6
+          cubature       2.1.1
+            Cubist       0.4.4
+              curl       6.0.1
          cyclocomp       1.1.1
-        data.table      1.15.0
-        datawizard       0.9.1
-               DBI       1.2.1
-            dbplyr       2.4.0
-            deldir       2.0-2
-        dendextend      1.17.1
+        data.table      1.16.2
+        datawizard      0.13.0
+               DBI       1.2.3
+           DBItest       1.8.1
+            dbplyr       2.5.0
+             decor       1.0.2
+            deldir       2.0-4
+        dendextend      1.19.0
            DendSer       1.0.2
           denstrip       1.5.4
-          DEoptimR       1.1-3
-             Deriv       4.1.3
+          DEoptimR     1.1-3-1
+             Deriv       4.1.6
               desc       1.4.3
           devtools       2.4.5
            diagram       1.6.5
-             dials       1.2.0
+             dials       1.3.0
         DiceDesign        1.10
+         dichromat     2.0-0.1
            diffobj       0.3.5
-            digest      0.6.34
-           diptest      0.77-0
+            digest      0.6.37
+           diptest      0.77-1
+    distributional       0.5.0
+              doBy      4.6.24
+          doFuture       1.0.1
              donut       1.0.3
         doParallel      1.0.17
-         dotCall64       1.1-1
-           downlit       0.4.3
+         dotCall64         1.2
+           downlit       0.4.4
              dplyr       1.1.4
-                DT        0.31
+                DT        0.33
             dtplyr       1.3.1
                dtw      1.23-1
-          dtwclust      5.5.12
+          dtwclust       6.0.0
           dygraphs     1.1.1.6
     dynamicTreeCut      1.63-1
-             e1071      1.7-14
-             earth       5.3.2
+             e1071      1.7-16
+             earth       5.3.4
            effects       4.2-2
-        effectsize       0.8.6
+        effectsize       0.8.9
                egg       0.4.5
            ellipse       0.5.0
           ellipsis       0.3.2
               EMbC       2.0.4
-           emmeans      1.10.0
-      estimability       1.4.1
-          evaluate        0.23
-     exactextractr      0.10.0
-              expm     0.999-9
+           emmeans      1.10.5
+      estimability       1.5.1
+          evaluate       1.0.1
+              expm       1.0-0
          extrafont        0.19
        extrafontdb         1.0
         factoextra       1.0.7
-        FactoMineR         2.9
+        FactoMineR        2.11
              fansi       1.0.6
-            farver       2.1.1
-         fasterize       1.0.5
-           fastICA       1.2-4
-           fastmap       1.1.1
+            farver       2.1.2
+         fasterize       1.1.0
+           fastICA     1.2-5.1
+           fastmap       1.2.0
           fasttime       1.1-0
+           fBasics     4041.97
                 FD    1.0-12.3
            feather       0.3.5
-              fftw       1.0-8
-            fields        15.2
-      fitdistrplus      1.1-11
+              fftw       1.0-9
+         fftwtools      0.9-11
+            fields        16.3
+      fitdistrplus       1.2-1
         flashClust      1.01-2
-         flexclust       1.4-1
+         flexclust       1.4-2
            flexmix      2.3-19
-               FNN       1.1.4
-           foghorn       1.5.2
-       fontawesome       0.5.2
+               FNN     1.1.4.1
+           foghorn       1.6.0
+       fontawesome       0.5.3
  fontBitstreamVera       0.1.1
     fontLiberation       0.1.0
         fontquiver       0.2.1
            forcats       1.0.0
            foreach       1.5.2
-          forecast      8.21.1
+          forecast      8.23.0
            Formula       1.2-5
             fossil       0.4.0
-               fpc      2.2-11
+               fpc      2.2-13
           fracdiff       1.5-3
-                fs       1.6.3
+                fs       1.6.5
         functional         0.6
              furrr       0.3.1
-            future      1.33.1
-      future.apply      1.11.1
-               gam      1.22-3
+            future      1.34.0
+      future.apply      1.11.3
+               gam      1.22-5
+             gamm4       0.2-6
             gargle       1.5.2
              gclus       1.3.2
-             gdata       3.0.0
-           gdtools       0.3.5
+             gdata       3.0.1
+           gdtools       0.4.1
+           geepack      1.3.12
           generics       0.1.3
-      GenomeInfoDb      1.38.6
-  GenomeInfoDbData      1.2.11
         geometries       0.2.4
-          geometry       0.4.7
+          geometry       0.5.0
               geos       0.2.4
-         geosphere      1.5-18
-              gert       2.0.1
+         geosphere      1.5-20
+              gert       2.1.4
             gfonts       0.2.0
-         ggeffects       1.4.0
-           ggforce       0.4.1
+         ggeffects       2.0.0
+           ggforce       0.4.2
              ggmap       4.0.0
-           ggplot2       3.4.4
+           ggplot2       3.5.1
             ggpubr       0.6.0
-           ggrepel       0.9.5
-             ggsci       3.0.0
+            ggraph       2.2.1
+           ggrepel       0.9.6
+             ggsci       3.2.0
           ggsignif       0.6.4
           ggthemes       5.1.0
-                gh       1.4.0
+                gh       1.4.1
+             git2r      0.35.0
           gitcreds       0.1.2
             glmnet       4.1-8
      GlobalOptions       0.1.2
-           globals      0.16.2
-              glue       1.7.0
+           globals      0.16.3
+              glue       1.8.0
             gmailr       2.0.0
            Gmedian       1.2.7
-               gmp       0.7-4
+               gmp       0.7-5
                gnm       1.1-5
-           goftest       1.2-3
        googledrive       2.1.1
      googlesheets4       1.1.1
              gower       1.0.1
              GPfit       1.0-8
-            gplots     3.1.3.1
+            gplots       3.2.0
+      graphlayouts       1.2.1
          gridExtra         2.3
-             gstat       2.1-1
-               gsw       1.1-1
-            gtable       0.3.4
+               gsl       2.1-8
+               gss       2.2-8
+               gsw       1.2-0
+            gtable       0.3.6
             gtools       3.9.5
-           hardhat       1.3.1
-          hardRain       0.1.2
+           hardhat       1.4.0
              haven       2.5.4
          heatmaply       1.5.0
-           heplots       1.6.0
               here       1.0.1
-             highr        0.10
-             Hmisc       5.1-1
+            hexbin      1.28.5
+             highr        0.11
+             Hmisc       5.2-0
                hms       1.1.3
               Hmsc      3.0-13
            hopkins         1.1
-         htmlTable       2.4.2
-         htmltools       0.5.7
+         htmlTable       2.4.3
+         htmltools     0.5.8.1
        htmlwidgets       1.6.4
           httpcode       0.3.0
-            httpuv      1.6.14
+            httpuv      1.6.15
               httr       1.4.7
-             httr2       1.0.0
-          hunspell       3.0.3
+             httr2       1.0.7
+          hunspell       3.0.5
                ids       1.0.1
-            igraph     2.0.1.1
+            igraph       2.1.1
               ineq      0.2-13
-             infer       1.0.6
+             infer       1.0.7
                ini       0.3.1
-            inline      0.3.19
-           insight      0.19.8
+            inline      0.3.20
+           insight       1.0.0
             interp       1.1-6
-         intervals      0.15.4
-             ipred      0.9-14
-           IRanges      2.36.0
+             ipred      0.9-15
            isoband       0.2.7
-              ISwR       2.0-8
          iterators      1.0.14
+            jagsUI       1.6.2
               jomo       2.7-6
               jpeg      0.1-10
          jquerylib       0.1.4
-          jsonlite       1.8.8
+          jsonlite       1.8.9
         kableExtra       1.4.0
-           kernlab      0.9-32
+           kernlab      0.9-33
               klaR       1.7-3
-             knitr        1.45
+             knitr        1.49
            kohonen      3.0.12
           labeling       0.4.3
-          labelled      2.12.0
-             later       1.3.2
+          labelled      2.13.0
+  landscapemetrics       2.1.4
+             later       1.4.1
       latticeExtra      0.6-30
-              lava       1.7.3
+              lava       1.8.0
           lazyeval       0.2.2
-           leaflet       2.2.1
+           leaflet       2.2.2
  leaflet.providers       2.0.0
-             leaps         3.1
-               lhs       1.1.6
+             leaps         3.2
+               lhs       1.2.0
            libcoin      1.0-10
            libgeos    3.11.1-2
          lifecycle       1.0.4
            linprog       0.9-4
-             lintr       3.1.1
+             lintr       3.1.2
            listenv       0.9.1
-              lme4    1.1-35.1
+              lme4    1.1-35.5
             lmtest      0.9-40
             locpol       0.8.0
-  longitudinalData     2.4.5.1
-               loo       2.6.0
-           lpSolve      5.6.20
+  longitudinalData       2.4.7
+               loo       2.8.0
+           lpSolve      5.6.22
          lubridate       1.9.3
-            lwgeom      0.2-13
              magic       1.6-1
           magrittr       2.0.3
         manipulate       1.0.1
-           mapdata       2.3.1
            mapproj      1.2.11
-              maps       3.4.2
-          markdown        1.12
+              maps     3.4.2.1
+          markdown        1.13
       MatrixModels       0.5-3
-       matrixStats       1.2.0
-            maxLik       1.5-2
+       matrixStats       1.4.1
            mcclust       1.0.1
-            mclust       6.0.1
+            mclust       6.1.1
               mcmc       0.9-8
-          MCMCglmm        2.35
-          MCMCpack       1.7-0
+          MCMCglmm        2.36
+          MCMCpack       1.7-1
          mcmcplots       0.4.3
-               mda       0.5-4
+            mcmcse       1.5-0
+               mda       0.5-5
            memoise       2.0.1
          MetBrewer       0.2.0
-              mice      3.16.0
-    microbenchmark      1.4.10
+              mice      3.17.0
+    microbenchmark       1.5.0
               mime        0.12
             miniUI     0.1.1.1
-             minqa       1.2.6
+             minqa       1.2.8
             misc3d       0.9-1
-         miscTools      0.6-28
              mitml       0.4-5
            mitools         2.4
-           mlbench     2.1-3.1
-         MLmetrics       1.1.1
+           mlbench       2.1-5
+         MLmetrics       1.1.3
             mnormt       2.1.1
            mockery       0.4.4
              mockr       0.2.1
-         modeldata       1.3.0
-          modelenv       0.1.1
+           modeest       2.4.0
+         modeldata       1.4.0
+          modelenv       0.2.0
       ModelMetrics     1.2.2.2
             modelr      0.1.11
         modeltools      0.2-23
            moments      0.14.1
            monitoR       1.0.7
-              move       4.2.4
+              move       4.2.6
+           moveHMM         1.9
           MPsychoR      0.10-8
-               msm       1.7.1
-          multcomp      1.4-25
-      multcompView       0.1-9
-          multtest      2.58.0
-           munsell       0.5.0
-           mvtnorm       1.2-4
+               msm       1.8.2
+          multcomp      1.4-26
+      multcompView      0.1-10
+        multitaper      1.0-17
+             MuMIn      1.48.4
+           munsell       0.5.1
+           mvtnorm       1.3-2
+         nanoarrow       0.6.0
       NatureSounds       1.0.4
            NbClust       3.0.1
-             ncdf4        1.22
-          ncdfgeom       1.1.6
-            ncmeta       0.3.6
+             ncdf4        1.23
     NeuralNetTools       1.5.3
-            nimble       1.1.0
+            nimble       1.2.1
          nimbleSCR       0.2.1
-            nloptr       2.0.3
-              nnls         1.5
-  nonlinearTseries      0.2.12
+            nloptr       2.1.1
+              nnls         1.6
+  nonlinearTseries       0.3.1
           numDeriv  2016.8-1.1
-               oce       1.8-2
+               oce       1.8-3
         OpenImageR       1.3.0
-           openssl       2.1.1
-     OpenStreetMap       0.4.0
-           ordinal   2023.12-4
+           openssl       2.2.2
+           ordinal 2023.12-4.1
       orthopolynom     1.0-6.1
-              pamr      1.56.1
+        osmextract       0.5.2
+    palmerpenguins       0.1.1
+              pamr        1.57
                pan         1.9
             pander       0.6.5
       parallelDist       0.2.6
-        parallelly      1.36.0
-        parameters      0.21.5
+        parallelly      1.39.0
+        parameters      0.24.0
          parsedate       1.3.1
-           parsnip       1.1.1
-             party      1.3-14
-         patchwork       1.2.0
+           parsnip       1.2.1
+             party      1.3-17
+         patchwork       1.3.0
            pbapply       1.7-2
           pbivnorm       0.6.0
-          pbkrtest       0.5.2
-             PCICt     0.5-4.4
+          pbkrtest       0.5.3
                pdc       1.0.3
              pdist       1.2.1
-       performance      0.10.8
+       performance      0.12.4
            permute       0.9-7
          phonTools     0.2-2.2
          phylobase      0.8.12
-          phyloseq      1.46.0
             pillar       1.9.0
-             pingr       2.0.3
+             pingr       2.0.4
               pinp      0.0.10
-            pixmap      0.4-12
-          pkgbuild       1.4.3
+            pixmap      0.4-13
+          pkgbuild       1.4.5
          pkgconfig       2.0.3
-           pkgdown       2.0.7
-           pkgload       1.3.4
-               plm       2.6-3
+           pkgdown       2.1.1
+           pkgload       1.4.0
              plogr       0.2.0
             plotly      4.10.4
-            plotmo       3.6.2
+            plotmo       3.6.4
            plotrix       3.8-4
-               pls       2.8-3
+               pls       2.8-5
               plyr       1.8.9
                png       0.1-8
-          polyclip      1.10-6
+          polyclip      1.10-7
            polynom       1.4-1
-          prabclus       2.3-3
+         posterior       1.6.0
+          prabclus       2.3-4
             pracma       2.4.4
             praise       1.0.0
            prefmod      0.8-36
          prettydoc       0.4.1
        prettyunits       1.2.0
               pROC      1.18.5
-          processx       3.8.3
-           prodlim  2023.08.28
+          processx       3.8.4
+           prodlim  2024.06.25
       profileModel       0.6.1
-           profvis       0.3.8
+           profvis       0.4.0
           progress       1.2.3
-         progressr      0.14.0
-          promises       1.2.1
+         progressr      0.15.1
+          promises       1.3.2
              proxy      0.4-27
-                ps       1.7.6
+                ps       1.8.1
              purrr       1.0.2
            pvclust       2.2-0
                qap       0.1-2
           quadprog       1.5-8
-          quantmod      0.4.25
-          quantreg        5.97
+          quantmod      0.4.26
+          quantreg      5.99.1
          questionr       0.7.8
-          QuickJSR       1.1.3
+          QuickJSR       1.4.0
             qvcalc       1.0.3
            R.cache      0.16.0
        R.methodsS3       1.8.2
-              R.oo      1.26.0
-             R.rsp      0.45.0
+              R.oo      1.27.0
+             R.rsp      0.46.0
            R.utils      2.12.3
+            R2jags       0.8-9
+         R2WinBUGS    2.1-22.1
                 R6       2.5.1
-              ragg       1.2.7
-      randomForest     4.7-1.1
-            ranger      0.16.0
+              ragg       1.3.3
+      randomForest     4.7-1.2
+            ranger      0.17.0
         RankAggreg       0.6.6
-              RANN       2.6.1
+              RANN       2.6.2
           rappdirs       0.3.3
-            raster      3.6-26
-         rbibutils      2.2.16
+            raster      3.6-30
+         rasterVis      0.51.6
+         rbibutils         2.3
          rcmdcheck       1.4.0
       RColorBrewer       1.1-3
-              Rcpp      1.0.12
-     RcppArmadillo  0.12.8.0.0
-          RcppCNPy      0.2.12
-         RcppEigen   0.3.3.9.4
-      RcppParallel       5.1.7
+              Rcpp    1.0.13-1
+     RcppArmadillo    14.2.0-1
+          RcppCNPy      0.2.13
+         RcppEigen   0.3.4.0.2
+      RcppParallel       5.1.9
       RcppProgress       0.4.2
         RcppThread       2.1.7
           RcppTOML       0.2.2
      RcppXPtrUtils       0.1.2
-             RCurl   1.98-1.14
+             RCurl   1.98-1.16
              rdist       0.0.5
-            Rdpack         2.6
+            Rdpack       2.6.2
              readr       2.1.5
             readxl       1.4.3
-           recipes       1.0.9
+           recipes       1.1.0
           registry       0.5-1
-         relations      0.6-13
+         relations      0.6-14
             relimp       1.0-5
            rematch       2.0.0
           rematch2       2.1.2
-           remotes     2.4.2.1
-            reprex       2.1.0
+           remotes       2.5.0
+            reprex       2.1.1
           reshape2       1.4.4
-        reticulate      1.35.0
+        reticulate      1.40.0
                rex       1.2.1
-               rgl       1.2.8
-             rhdf5      2.46.1
-      rhdf5filters      1.14.1
-          Rhdf5lib      1.24.2
-              rhub       1.1.2
-               rio       1.0.1
-             rJava      1.0-11
-             rjson      0.2.21
-             rlang       1.1.3
+               rgl      1.3.14
+              rhub       2.0.0
+               rio       1.2.3
+             rjags        4-16
+             rjson      0.2.23
+             rlang       1.1.4
           rlecuyer       0.3-8
-         rmarkdown        2.25
+         rmarkdown        2.29
              Rmisc       1.5.1
+             Rmpfr       1.0-0
+            rmutil      1.1.10
               rncl       0.8.7
-           RNetCDF       2.9-1
             RNeXML      2.4.11
-        robustbase      0.99-2
+        robustbase    0.99-4-1
               ROCR      1.0-11
              RODBC      1.3-23
               ROSE       0.0-4
-             round    0.21-0.2
-          roxygen2       7.3.1
+          roxygen2       7.3.2
+            rpanel     1.1-5.2
          rprojroot       2.0.4
-           rsample       1.2.0
+           rsample       1.2.1
              RSNNS      0.4-17
-          RSpectra      0.16-1
-             rstan      2.32.5
+          RSpectra      0.16-2
+           RSQLite       2.3.8
+             rstan      2.32.6
         rstantools       2.4.0
            rstatix       0.7.2
-        rstudioapi      0.15.0
+        rstudioapi      0.17.1
           Rttf2pt1      1.3.12
+           runjags     2.2.2-4
          rversions       2.1.2
              rvest       1.0.4
-                s2       1.1.6
-         S4Vectors      0.40.2
-          sandwich       3.1-0
-              sass       0.4.8
+                s2       1.1.7
+          sandwich       3.1-1
+              sass       0.4.9
             scales       1.3.0
      scatterplot3d      0.3-44
            seewave       2.2.3
-         segmented       2.0-2
+         segmented       2.1-3
            selectr       0.4-2
             seqinr      4.2-36
-         seriation       1.5.4
+         seriation       1.5.6
        sessioninfo       1.2.2
               sets      1.0-25
-                sf      1.0-15
+                sf      1.0-19
+               sfd       0.1.0
          sfheaders       0.4.4
-           sfsmisc      1.1-17
-            sftime       0.2-0
-             shape       1.4.6
+           sfsmisc      1.1-20
+             shape     1.4.6.1
         shapefiles       0.7.2
-             shiny       1.8.0
+             shiny       1.9.1
            shinyBS      0.61.1
            shinyjs       2.1.0
-            signal       1.8-0
-      Sim.DiffProc         4.8
+            signal       1.8-1
+      Sim.DiffProc         4.9
         sjlabelled       1.2.0
-            sjmisc       2.8.9
-            sjPlot      2.8.15
-           sjstats      0.18.2
-              slam      0.1-50
-            slider       0.3.1
-            smacof       2.1-5
+            sjmisc      2.8.10
+            sjPlot      2.8.16
+           sjstats      0.19.0
+              slam      0.1-55
+            slider       0.3.2
+            smacof       2.1-7
                 sn       2.1.1
               snow       0.4-4
-         solartime       0.0.2
+         solartime       0.0.4
       soundecology       1.3.3
-          soundgen       2.6.2
+          soundgen       2.7.1
        sourcetools     0.1.7-1
-                sp       2.1-3
+                sp       2.1-4
               spaa       0.2.2
-         spacetime       1.3-1
-              spam      2.10-0
-           SparseM        1.81
-          spatstat       3.0-7
-     spatstat.data       3.0-4
-  spatstat.explore       3.2-6
-     spatstat.geom       3.2-8
-   spatstat.linnet       3.1-4
-    spatstat.model      3.2-10
-   spatstat.random       3.2-2
-   spatstat.sparse       3.0-3
-    spatstat.utils       3.0-4
-            spData       2.3.0
-             spdep       1.3-3
-          spelling       2.2.1
-           splancs     2.01-44
-          splines2       0.5.1
+              spam      2.11-0
+           SparseM      1.84-2
+     spatstat.data       3.1-4
+    spatstat.utils       3.1-1
+            spData       2.3.3
+             spdep       1.3-7
+          spelling       2.3.1
+           splancs     2.01-45
+          splines2       0.5.3
               spls       2.2-3
            SQUAREM      2021.1
-       StanHeaders      2.32.5
-             stars       0.6-4
+            stable       1.1.6
+        stabledist       0.7-2
+       StanHeaders     2.32.10
+             stars       0.6-7
+            statip       0.2.3
            statmod       1.5.0
         stringdist      0.9.12
-           stringi       1.8.3
+           stringi       1.8.4
            stringr       1.5.1
-       strucchange       1.5-3
-            styler      1.10.2
-         subselect      0.15.5
-          suntools       1.0.0
+       strucchange       1.5-4
+            styler      1.10.3
+           suncalc       0.5.1
+          suntools       1.0.1
            superpc        1.12
-            survey       4.2-1
+            survey       4.4-2
            svglite       2.1.3
-               sys       3.4.2
-       systemfonts       1.0.5
-            tclust       1.5-6
-     TeachingDemos      2.12.1
-            tensor         1.5
+               sys       3.4.3
+       systemfonts       1.1.0
+            tclust       2.0-5
            tensorA    0.36.2.1
-             terra      1.7-71
-          testthat       3.2.1
-       textshaping       0.3.7
+             terra      1.7-83
+          testthat     3.2.1.1
+       textshaping       0.4.0
            TH.data       1.1-2
             themis       1.0.2
             tibble       3.2.1
-        tidymodels       1.1.1
+         tidygraph       1.3.1
+        tidymodels       1.2.0
              tidyr       1.3.1
-        tidyselect       1.2.0
+        tidyselect       1.2.1
          tidyverse       2.0.0
               tiff      0.1-12
         timechange       0.3.0
-          timeDate    4032.109
+          timeDate    4041.110
+        timeSeries    4041.111
           tinytest       1.4.1
-           tinytex        0.49
+           tinytex        0.54
            tkrplot      0.0-27
-               TMB      1.9.10
+               TMB      1.9.15
          triebeard       0.4.1
        trimcluster       0.1-5
          truncnorm       1.0-9
            TSclust       1.3.1
             TSdist       3.7.1
-           tseries     0.10-55
-           tsibble       1.1.4
+           tseries     0.10-58
                TSP       1.2-4
                TTR      0.24.4
-              tune       1.1.2
-             tuneR       1.4.6
-            tweenr       2.0.2
+              tune       1.2.1
+             tuneR       1.4.7
+            tweenr       2.0.3
               tzdb       0.4.0
-            ucminf       1.2.1
+            ucminf       1.2.2
               umap    0.2.10.0
              units       0.8-5
-          unmarked       1.4.1
-              urca       1.3-3
+          unmarked       1.4.3
+              urca       1.3-4
         urlchecker       1.0.1
           urltools       1.7.3
-           usethis       2.2.2
+              usdm       2.1-7
+           usethis       3.1.0
               utf8       1.2.4
-              uuid       1.2-0
+              uuid       1.2-1
+                V8       6.0.0
              vctrs       0.6.5
-            vdiffr       1.0.7
-             vegan       2.6-4
+            vdiffr       1.0.8
+             vegan       2.6-8
           vegclust       2.0.2
            viridis       0.6.5
        viridisLite       0.4.2
              vroom       1.6.5
-             waldo       0.5.2
-           warbleR      1.1.30
+             waldo       0.6.1
+           warbleR      1.1.32
               warp       0.2.1
-          waveslim       1.8.4
-        wavethresh       4.7.2
+          waveslim       1.8.5
+        wavethresh       4.7.3
+          webfakes       1.3.1
            webshot       0.5.5
            weights       1.0.4
            whisker       0.4.1
             whoami       1.3.0
-             withr       3.0.0
-                wk       0.9.1
+             withr       3.0.2
+                wk       0.9.4
          wordcloud         2.6
-         workflows       1.1.3
-      workflowsets       1.0.1
-           writexl       1.5.0
-              xfun        0.42
-               XML 3.99-0.16.1
+         workflows       1.1.4
+      workflowsets       1.1.0
+           writexl       1.5.1
+              xfun        0.49
+               XML   3.99-0.17
               xml2       1.3.6
       xmlparsedata       1.0.5
-             xopen       1.0.0
+             xopen       1.0.1
             xtable       1.8-4
-               xts      0.13.2
-           XVector      0.42.0
-              yaml       2.3.8
-         yardstick       1.3.0
+               xts      0.14.1
+              yaml      2.3.10
+         yardstick       1.3.1
                zip       2.3.1
-          zlibbioc      1.48.0
                zoo      1.8-12
-
-
