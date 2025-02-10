@@ -2,7 +2,7 @@
 
 FROM ubuntu:22.04
 
-ARG r_version=4.4.1
+ARG r_version=4.4.2
 
 ENV DEBIAN_FRONTEND noninteractive
 
