@@ -1,10 +1,10 @@
-R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
+R packages installed on OCCAM (updated at 2025-02-09) (R v. 4.4.1)
 
            Package     Version
              abind       1.4-8
               ade4      1.7-22
          ade4TkGUI       0.3-1
-          adegenet      2.1.10
+          adegenet      2.1.11
        adegraphics      1.0-21
       adehabitatHR      0.4.22
       adehabitatLT      0.3.28
@@ -15,7 +15,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
               alr4       1.0.6
                amt     0.2.2.0
          apcluster      1.4.13
-               ape         5.8
+               ape       5.8-1
            askpass       1.2.1
         assertthat       0.2.1
              audio      0.1-11
@@ -25,17 +25,17 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
           bayesdfa       1.3.3
         BayesLogit         2.1
             bayesm       3.1-6
-        bayestestR      0.15.0
+        bayestestR      0.15.2
               bcpa       1.3.2
          bdsmatrix       1.3-7
             Bessel       0.6-1
-                BH    1.84.0-0
+                BH    1.87.0-1
              bindr       0.1.2
           bindrcpp       0.2.3
       bioacoustics       0.2.8
        BiocManager     1.30.25
-               bit       4.5.0
-             bit64       4.5.2
+               bit     4.5.0.1
+             bit64     4.6.0-1
             bitops       1.0-9
               blob       1.2.4
      BradleyTerry2       1.1-2
@@ -43,24 +43,24 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
              brglm       0.7.2
               brio       1.1.5
              broom       1.0.7
-             bslib       0.8.0
+             bslib       0.9.0
                 ca      0.71.1
             cachem       1.1.0
          calibrate       1.7.7
              callr       3.7.6
                car       3.1-3
            carData       3.0-5
-             caret      6.0-94
+             caret       7.0-1
            caTools      1.18.3
         cellranger       1.1.0
          checkmate       2.3.2
           circlize      0.4.16
          CircStats       0.2-6
           circular       0.5-1
-          classInt      0.4-10
+          classInt      0.4-11
                cli       3.6.3
              clipr       0.8.0
-             clock       0.7.1
+             clock       0.7.2
               clue      0.3-66
        clustertend         1.7
                clv     0.3-2.4
@@ -72,11 +72,11 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
         commonmark       1.9.2
         conflicted       1.2.0
            corpcor      1.6.10
-          correctR       0.2.1
+          correctR       0.3.1
           corrplot        0.95
               covr       3.6.4
            cowplot       1.1.3
-             cpp11       0.5.0
+             cpp11       0.5.1
             crayon       1.5.3
        credentials       2.0.2
          crosstalk       1.2.1
@@ -85,12 +85,12 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
                ctv       0.9-6
           cubature       2.1.1
             Cubist       0.4.4
-              curl       6.0.1
+              curl       6.2.0
          cyclocomp       1.1.1
-        data.table      1.16.2
-        datawizard      0.13.0
+        data.table      1.16.4
+        datawizard       1.0.0
                DBI       1.2.3
-           DBItest       1.8.1
+           DBItest       1.8.2
             dbplyr       2.5.0
              decor       1.0.2
             deldir       2.0-4
@@ -109,7 +109,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
             digest      0.6.37
            diptest      0.77-1
     distributional       0.5.0
-              doBy      4.6.24
+              doBy      4.6.25
           doFuture       1.0.1
              donut       1.0.3
         doParallel      1.0.17
@@ -125,14 +125,15 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
              e1071      1.7-16
              earth       5.3.4
            effects       4.2-2
-        effectsize       0.8.9
+        effectsize       1.0.0
                egg       0.4.5
            ellipse       0.5.0
           ellipsis       0.3.2
               EMbC       2.0.4
-           emmeans      1.10.5
+           emmeans      1.10.7
       estimability       1.5.1
-          evaluate       1.0.1
+          evaluate       1.0.3
+     exactextractr      0.10.0
               expm       1.0-0
          extrafont        0.19
        extrafontdb         1.0
@@ -141,7 +142,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
              fansi       1.0.6
             farver       2.1.2
          fasterize       1.1.0
-           fastICA     1.2-5.1
+           fastICA       1.2-7
            fastmap       1.2.0
           fasttime       1.1-0
            fBasics     4041.97
@@ -150,7 +151,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
               fftw       1.0-9
          fftwtools      0.9-11
             fields        16.3
-      fitdistrplus       1.2-1
+      fitdistrplus       1.2-2
         flashClust      1.01-2
          flexclust       1.4-2
            flexmix      2.3-19
@@ -181,12 +182,12 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
            geepack      1.3.12
           generics       0.1.3
         geometries       0.2.4
-          geometry       0.5.0
+          geometry       0.5.1
               geos       0.2.4
          geosphere      1.5-20
               gert       2.1.4
             gfonts       0.2.0
-         ggeffects       2.0.0
+         ggeffects       2.2.0
            ggforce       0.4.2
              ggmap       4.0.0
            ggplot2       3.5.1
@@ -209,23 +210,23 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
                gnm       1.1-5
        googledrive       2.1.1
      googlesheets4       1.1.1
-             gower       1.0.1
+             gower       1.0.2
              GPfit       1.0-8
             gplots       3.2.0
-      graphlayouts       1.2.1
+      graphlayouts       1.2.2
          gridExtra         2.3
                gsl       2.1-8
                gss       2.2-8
                gsw       1.2-0
             gtable       0.3.6
             gtools       3.9.5
-           hardhat       1.4.0
+           hardhat       1.4.1
              haven       2.5.4
          heatmaply       1.5.0
               here       1.0.1
             hexbin      1.28.5
              highr        0.11
-             Hmisc       5.2-0
+             Hmisc       5.2-2
                hms       1.1.3
               Hmsc      3.0-13
            hopkins         1.1
@@ -235,15 +236,15 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
           httpcode       0.3.0
             httpuv      1.6.15
               httr       1.4.7
-             httr2       1.0.7
+             httr2       1.1.0
           hunspell       3.0.5
                ids       1.0.1
-            igraph       2.1.1
+            igraph       2.1.4
               ineq      0.2-13
              infer       1.0.7
                ini       0.3.1
-            inline      0.3.20
-           insight       1.0.0
+            inline      0.3.21
+           insight       1.0.2
             interp       1.1-6
              ipred      0.9-15
            isoband       0.2.7
@@ -259,11 +260,11 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
              knitr        1.49
            kohonen      3.0.12
           labeling       0.4.3
-          labelled      2.13.0
-  landscapemetrics       2.1.4
+          labelled      2.14.0
+  landscapemetrics         2.2
              later       1.4.1
       latticeExtra      0.6-30
-              lava       1.8.0
+              lava       1.8.1
           lazyeval       0.2.2
            leaflet       2.2.2
  leaflet.providers       2.0.0
@@ -275,13 +276,13 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
            linprog       0.9-4
              lintr       3.1.2
            listenv       0.9.1
-              lme4    1.1-35.5
+              lme4      1.1-36
             lmtest      0.9-40
             locpol       0.8.0
   longitudinalData       2.4.7
                loo       2.8.0
-           lpSolve      5.6.22
-         lubridate       1.9.3
+           lpSolve      5.6.23
+         lubridate       1.9.4
              magic       1.6-1
           magrittr       2.0.3
         manipulate       1.0.1
@@ -289,7 +290,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
               maps     3.4.2.1
           markdown        1.13
       MatrixModels       0.5-3
-       matrixStats       1.4.1
+       matrixStats       1.5.0
            mcclust       1.0.1
             mclust       6.1.1
               mcmc       0.9-8
@@ -308,7 +309,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
             misc3d       0.9-1
              mitml       0.4-5
            mitools         2.4
-           mlbench       2.1-5
+           mlbench       2.1-6
          MLmetrics       1.1.3
             mnormt       2.1.1
            mockery       0.4.4
@@ -325,18 +326,18 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
            moveHMM         1.9
           MPsychoR      0.10-8
                msm       1.8.2
-          multcomp      1.4-26
+          multcomp      1.4-28
       multcompView      0.1-10
         multitaper      1.0-17
              MuMIn      1.48.4
            munsell       0.5.1
-           mvtnorm       1.3-2
+           mvtnorm       1.3-3
          nanoarrow       0.6.0
-      NatureSounds       1.0.4
+      NatureSounds       1.0.5
            NbClust       3.0.1
              ncdf4        1.23
     NeuralNetTools       1.5.3
-            nimble       1.2.1
+            nimble       1.3.0
          nimbleSCR       0.2.1
             nloptr       2.1.1
               nnls         1.6
@@ -344,7 +345,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
           numDeriv  2016.8-1.1
                oce       1.8-3
         OpenImageR       1.3.0
-           openssl       2.2.2
+           openssl       2.3.2
            ordinal 2023.12-4.1
       orthopolynom     1.0-6.1
         osmextract       0.5.2
@@ -353,26 +354,26 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
                pan         1.9
             pander       0.6.5
       parallelDist       0.2.6
-        parallelly      1.39.0
-        parameters      0.24.0
-         parsedate       1.3.1
+        parallelly      1.42.0
+        parameters      0.24.1
+         parsedate       1.3.2
            parsnip       1.2.1
-             party      1.3-17
+             party      1.3-18
          patchwork       1.3.0
            pbapply       1.7-2
           pbivnorm       0.6.0
           pbkrtest       0.5.3
                pdc       1.0.3
              pdist       1.2.1
-       performance      0.12.4
+       performance      0.13.0
            permute       0.9-7
          phonTools     0.2-2.2
          phylobase      0.8.12
-            pillar       1.9.0
-             pingr       2.0.4
-              pinp      0.0.10
+            pillar      1.10.1
+             pingr       2.0.5
+              pinp      0.0.11
             pixmap      0.4-13
-          pkgbuild       1.4.5
+          pkgbuild       1.4.6
          pkgconfig       2.0.3
            pkgdown       2.1.1
            pkgload       1.4.0
@@ -393,7 +394,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
          prettydoc       0.4.1
        prettyunits       1.2.0
               pROC      1.18.5
-          processx       3.8.4
+          processx       3.8.5
            prodlim  2024.06.25
       profileModel       0.6.1
            profvis       0.4.0
@@ -402,15 +403,15 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
           promises       1.3.2
              proxy      0.4-27
                 ps       1.8.1
-             purrr       1.0.2
+             purrr       1.0.4
            pvclust       2.2-0
                qap       0.1-2
           quadprog       1.5-8
           quantmod      0.4.26
-          quantreg      5.99.1
+          quantreg        6.00
          questionr       0.7.8
-          QuickJSR       1.4.0
-            qvcalc       1.0.3
+          QuickJSR       1.5.1
+            qvcalc       1.0.4
            R.cache      0.16.0
        R.methodsS3       1.8.2
               R.oo      1.27.0
@@ -425,18 +426,18 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
         RankAggreg       0.6.6
               RANN       2.6.2
           rappdirs       0.3.3
-            raster      3.6-30
+            raster      3.6-31
          rasterVis      0.51.6
          rbibutils         2.3
          rcmdcheck       1.4.0
       RColorBrewer       1.1-3
-              Rcpp    1.0.13-1
-     RcppArmadillo    14.2.0-1
+              Rcpp      1.0.14
+     RcppArmadillo    14.2.3-1
           RcppCNPy      0.2.13
          RcppEigen   0.3.4.0.2
-      RcppParallel       5.1.9
+      RcppParallel      5.1.10
       RcppProgress       0.4.2
-        RcppThread       2.1.7
+        RcppThread       2.2.0
           RcppTOML       0.2.2
      RcppXPtrUtils       0.1.2
              RCurl   1.98-1.16
@@ -445,6 +446,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
              readr       2.1.5
             readxl       1.4.3
            recipes       1.1.0
+        reformulas       0.4.0
           registry       0.5-1
          relations      0.6-14
             relimp       1.0-5
@@ -455,12 +457,12 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
           reshape2       1.4.4
         reticulate      1.40.0
                rex       1.2.1
-               rgl      1.3.14
+               rgl      1.3.17
               rhub       2.0.0
                rio       1.2.3
              rjags        4-16
              rjson      0.2.23
-             rlang       1.1.4
+             rlang       1.1.5
           rlecuyer       0.3-8
          rmarkdown        2.29
              Rmisc       1.5.1
@@ -470,7 +472,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
             RNeXML      2.4.11
         robustbase    0.99-4-1
               ROCR      1.0-11
-             RODBC      1.3-23
+             RODBC      1.3-26
               ROSE       0.0-4
           roxygen2       7.3.2
             rpanel     1.1-5.2
@@ -478,7 +480,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
            rsample       1.2.1
              RSNNS      0.4-17
           RSpectra      0.16-2
-           RSQLite       2.3.8
+           RSQLite       2.3.9
              rstan      2.32.6
         rstantools       2.4.0
            rstatix       0.7.2
@@ -496,8 +498,8 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
          segmented       2.1-3
            selectr       0.4-2
             seqinr      4.2-36
-         seriation       1.5.6
-       sessioninfo       1.2.2
+         seriation       1.5.7
+       sessioninfo       1.2.3
               sets      1.0-25
                 sf      1.0-19
                sfd       0.1.0
@@ -505,14 +507,14 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
            sfsmisc      1.1-20
              shape     1.4.6.1
         shapefiles       0.7.2
-             shiny       1.9.1
+             shiny      1.10.0
            shinyBS      0.61.1
            shinyjs       2.1.0
             signal       1.8-1
       Sim.DiffProc         4.9
         sjlabelled       1.2.0
             sjmisc      2.8.10
-            sjPlot      2.8.16
+            sjPlot      2.8.17
            sjstats      0.19.0
               slam      0.1-55
             slider       0.3.2
@@ -521,16 +523,17 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
               snow       0.4-4
          solartime       0.0.4
       soundecology       1.3.3
-          soundgen       2.7.1
+          soundgen       2.7.2
        sourcetools     0.1.7-1
-                sp       2.1-4
-              spaa       0.2.2
-              spam      2.11-0
+                sp       2.2-0
+              spaa       0.2.5
+              spam      2.11-1
            SparseM      1.84-2
+       sparsevctrs       0.2.0
      spatstat.data       3.1-4
-    spatstat.utils       3.1-1
-            spData       2.3.3
-             spdep       1.3-7
+    spatstat.utils       3.1-2
+            spData       2.3.4
+             spdep      1.3-10
           spelling       2.3.1
            splancs     2.01-45
           splines2       0.5.3
@@ -539,10 +542,10 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
             stable       1.1.6
         stabledist       0.7-2
        StanHeaders     2.32.10
-             stars       0.6-7
+             stars       0.6-8
             statip       0.2.3
            statmod       1.5.0
-        stringdist      0.9.12
+        stringdist      0.9.15
            stringi       1.8.4
            stringr       1.5.1
        strucchange       1.5-4
@@ -553,14 +556,14 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
             survey       4.4-2
            svglite       2.1.3
                sys       3.4.3
-       systemfonts       1.1.0
+       systemfonts       1.2.1
             tclust       2.0-5
            tensorA    0.36.2.1
-             terra      1.7-83
-          testthat     3.2.1.1
-       textshaping       0.4.0
-           TH.data       1.1-2
-            themis       1.0.2
+             terra      1.8-15
+          testthat       3.2.3
+       textshaping       1.0.0
+           TH.data       1.1-3
+            themis       1.0.3
             tibble       3.2.1
          tidygraph       1.3.1
         tidymodels       1.2.0
@@ -574,7 +577,7 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
           tinytest       1.4.1
            tinytex        0.54
            tkrplot      0.0-27
-               TMB      1.9.15
+               TMB      1.9.16
          triebeard       0.4.1
        trimcluster       0.1-5
          truncnorm       1.0-9
@@ -598,20 +601,20 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
            usethis       3.1.0
               utf8       1.2.4
               uuid       1.2-1
-                V8       6.0.0
+                V8       6.0.1
              vctrs       0.6.5
             vdiffr       1.0.8
-             vegan       2.6-8
+             vegan      2.6-10
           vegclust       2.0.2
            viridis       0.6.5
        viridisLite       0.4.2
              vroom       1.6.5
              waldo       0.6.1
-           warbleR      1.1.32
+           warbleR      1.1.34
               warp       0.2.1
           waveslim       1.8.5
         wavethresh       4.7.3
-          webfakes       1.3.1
+          webfakes       1.3.2
            webshot       0.5.5
            weights       1.0.4
            whisker       0.4.1
@@ -622,14 +625,14 @@ R packages installed on OCCAM (updated at 2025-02-08) (R v. 4.3.2)
          workflows       1.1.4
       workflowsets       1.1.0
            writexl       1.5.1
-              xfun        0.49
-               XML   3.99-0.17
+              xfun        0.50
+               XML   3.99-0.18
               xml2       1.3.6
       xmlparsedata       1.0.5
              xopen       1.0.1
             xtable       1.8-4
                xts      0.14.1
               yaml      2.3.10
-         yardstick       1.3.1
-               zip       2.3.1
+         yardstick       1.3.2
+               zip       2.3.2
                zoo      1.8-12
