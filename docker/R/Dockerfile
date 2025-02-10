@@ -190,7 +190,11 @@ RUN bash /install_r_package_from_github.bash pimentel/cluster
 RUN bash /install_r_package_from_github.bash Cdevenish/hardRain
 
 #RUN bash /install_r_package.bash local:Boruta_8.0.0.tar.gz Boruta
-#RUN bash /install_r_package.bash bioconductor:phyloseq phyloseq
+
+COPY install_r_package_from_bioconductor.bash /
+
+RUN bash /install_r_package_from_bioconductor.bash phyloseq
+
 
 
 
