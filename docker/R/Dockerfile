@@ -110,8 +110,6 @@ COPY  install_r_package_version.bash /
 
 COPY  install_r_package.bash /
 
-COPY  install_r_package_from_github.bash /
-
 RUN export MAKE="make -j20"
 
 
@@ -184,8 +182,12 @@ RUN bash /install_r_package.bash vegan; bash /install_r_package.bash vegclust; b
 
 RUN bash /install_r_package.bash xts
 
-#RUN bash /install_r_package_from_github.bash pimentel/cluster
-#RUN bash /install_r_package_from_github.bash Cdevenish/hardRain
+RUN bash /install_r_package.bash exactextractr
+
+COPY install_r_package_from_github.bash /
+
+RUN bash /install_r_package_from_github.bash pimentel/cluster
+RUN bash /install_r_package_from_github.bash Cdevenish/hardRain
 
 #RUN bash /install_r_package.bash local:Boruta_8.0.0.tar.gz Boruta
 #RUN bash /install_r_package.bash bioconductor:phyloseq phyloseq
