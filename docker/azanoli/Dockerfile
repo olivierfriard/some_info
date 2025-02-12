@@ -1,8 +1,8 @@
-# Docker for acoustic analysis
+# Docker for Anna Zanoli 
 
-# dtwave, praat, sox, ffmpeg, ffprobe
-# python: pandas, numpy, matplotlib, scipy, librosa, parselmouth, opencv, pykanto, soundsig ...
-# R: soundecology, seewave, hardRain
+# coral-sound-explorer v.. 1.3
+# 
+# 
 
 FROM ubuntu:22.04
 
