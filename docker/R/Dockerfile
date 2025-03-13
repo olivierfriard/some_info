@@ -125,17 +125,9 @@ RUN bash /install_r_package.bash e1071; bash /install_r_package.bash ellipse; ba
 
 RUN bash /install_r_package.bash FactoMineR; bash /install_r_package.bash fasterize; bash /install_r_package.bash FD; bash /install_r_package.bash flexmix; bash /install_r_package.bash fossil; bash /install_r_package.bash foreach; bash /install_r_package.bash fpc; bash /install_r_package.bash fs; bash /install_r_package.bash functional
 
-RUN bash /install_r_package.bash gdtools
-RUN bash /install_r_package.bash geometry
-RUN bash /install_r_package.bash ggplot2
-RUN bash /install_r_package.bash ggpubr
-RUN bash /install_r_package.bash ggrepel
-RUN bash /install_r_package.bash ggthemes
-RUN bash /install_r_package.bash glue
-RUN bash /install_r_package.bash gmp
-RUN bash /install_r_package.bash gridExtra
-RUN bash /install_r_package.bash gtable
-RUN bash /install_r_package.bash gtools
+RUN bash /install_r_package.bash gdtools; bash /install_r_package.bash geometry; bash /install_r_package.bash ggplot2; bash /install_r_package.bash ggpubr; bash /install_r_package.bash ggrepel; bash /install_r_package.bash ggthemes
+
+RUN bash /install_r_package.bash glue; bash /install_r_package.bash gmp; bash /install_r_package.bash gridExtra; bash /install_r_package.bash gtable; bash /install_r_package.bash gtools
 
 RUN bash /install_r_package.bash jagsUI
 
@@ -158,26 +150,11 @@ RUN bash /install_r_package.bash R6; bash /install_r_package.bash randomForest; 
 
 RUN bash /install_r_package.bash scales; bash /install_r_package.bash seewave; bash /install_r_package.bash sf; bash /install_r_package.bash sjmisc; bash /install_r_package.bash smacof; bash /install_r_package.bash snow
 
-RUN bash /install_r_package.bash soundecology
-RUN bash /install_r_package.bash soundgen
-RUN bash /install_r_package.bash sp
-RUN bash /install_r_package.bash spaa
-RUN bash /install_r_package.bash splines2
-RUN bash /install_r_package.bash stars
-RUN bash /install_r_package.bash stringr
+RUN bash /install_r_package.bash soundecology; bash /install_r_package.bash soundgen; bash /install_r_package.bash sp; bash /install_r_package.bash spaa; bash /install_r_package.bash splines2; bash /install_r_package.bash stars; bash /install_r_package.bash stringr
 
-RUN bash /install_r_package.bash tclust
-RUN bash /install_r_package.bash tibble
-RUN bash /install_r_package.bash tidymodels
-RUN bash /install_r_package.bash tidyr
-RUN bash /install_r_package.bash tidyverse
-RUN bash /install_r_package.bash trimcluster
-RUN bash /install_r_package.bash TSclust
-RUN bash /install_r_package.bash TSdist
-RUN bash /install_r_package.bash tuneR
-RUN bash /install_r_package.bash umap
-RUN bash /install_r_package.bash unmarked
-RUN bash /install_r_package.bash usdm
+RUN bash /install_r_package.bash tclust; bash /install_r_package.bash tibble; bash /install_r_package.bash tidymodels; bash /install_r_package.bash tidyr; bash /install_r_package.bash tidyverse; bash /install_r_package.bash trimcluster; bash /install_r_package.bash TSclust; bash /install_r_package.bash TSdist; bash /install_r_package.bash tuneR
+
+RUN bash /install_r_package.bash umap; bash /install_r_package.bash unmarked; bash /install_r_package.bash usdm
 
 RUN bash /install_r_package.bash vegan; bash /install_r_package.bash vegclust; bash /install_r_package.bash warbleR
 
