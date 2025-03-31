@@ -1,8 +1,8 @@
 # R Docker
 
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
-ARG r_version=4.4.1
+ARG r_version=4.4.3
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -101,9 +101,9 @@ COPY  install_r_package_from_github.bash /
 
 #RUN bash /install_r_package_version.bash R2jags 0.7.1.1
 
-RUN bash /install_r_package.bash sf
+#RUN bash /install_r_package.bash sf
 
-RUN bash /install_r_package.bash ggplot2
+#RUN bash /install_r_package.bash ggplot2
 
 RUN bash /install_r_package_from_github.bash pimentel/cluster
 
