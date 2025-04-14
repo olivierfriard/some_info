@@ -76,7 +76,7 @@ for interval in FREQ_INTERVALS:
     header.append(f"{interval[0]}_{interval[1]}_dB")
 out = "\t".join(header) + "\n"
 
-files_list = sorted(list(pl.Path(args.directory).glob(pattern)))
+files_list = sorted(list(pl.Path(args.directory).glob(pattern)) + list(pl.Path(args.directory).glob(pattern.upper())))
 
 print(f"{len(files_list)} wav files", file=sys.stderr)
 

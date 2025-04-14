@@ -177,7 +177,7 @@ for interval in FREQ_INTERVALS:
     header.append(f"{interval[0]}_{interval[1]}_dB")
 out = "\t".join(header) + "\n"
 
-file_name_list = [x for x in pathlib.Path(args.directory).glob(pattern)]
+file_name_list = [x for x in pathlib.Path(args.directory).glob(pattern) + pathlib.Path(args.directory).glob(pattern.upper())]
 
 
 print(f"\nProcessing {len(file_name_list)} files...", file=sys.stderr)
