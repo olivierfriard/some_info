@@ -129,7 +129,6 @@ RUN pip3 install tensorflow-hub==0.13.0
 # birdnet
 RUN pip3 install resampy
 
-RUN pip3 install birdnet
 
 # dtwave dist
 ADD scripts/dtwave_dist /bin
@@ -232,6 +231,9 @@ RUN pip3 install keras_tuner
 #ADD scripts/acoustic_indices_python/acoustic_index.py /
 #ADD scripts/acoustic_indices_python/compute_indice.py /
 #ADD scripts/acoustic_indices_python/ai_dir.py /
+
+RUN pip3 install birdnet==0.1.6
+
 
 # Define default command.
 CMD ["bash"]
