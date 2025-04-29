@@ -121,14 +121,17 @@ Per impostare il separatore decimale su Windows 11: https://www.youtube.com/watc
 
 
 
-## Uso della bash
+## Bash (terminale di Linux)
 
 
-La bash (o terminale di Linux) permette di eseguire operazioni su file molto velocemente. E' in grado di manipolare file di grandi dimensioni o un umero di file molto elevato.
+La bash permette di eseguire operazioni su file molto velocemente. E' in grado di manipolare file di grandi dimensioni o un numero di file molto elevato.
 
-
+Una semplice introduzione all'usa della bash:
 
 https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
+
+
+Se utilizzate Windows e avete bisogno di utilizzare la bash potete installare Ubuntu dentro a Windows: https://apps.microsoft.com/detail/9pdxgncfsczv?hl=en-US&gl=IT
 
 
 ## Excel 
