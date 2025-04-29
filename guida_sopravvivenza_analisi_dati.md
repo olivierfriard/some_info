@@ -139,7 +139,7 @@ https://www.forbes.com/sites/timworstall/2013/02/13/microsofts-excel-might-be-th
 https://arstechnica.com/science/2024/01/we-keep-making-the-same-mistakes-with-spreadsheets-despite-bad-consequences/
 
 
-
+https://eusprig.org/research-info/horror-stories/
 
 
 
