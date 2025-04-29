@@ -133,6 +133,30 @@ https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
 
 ## Excel 
 
+L'utilizzo dei fogli di calcolo (Excel, LibreOffice ...) è sorgente di diversi problemi noti e criticità.
+
+
+### Errori di conversione automatica
+
+Gene names: uno dei problemi storici più famosi riguarda la conversione automatica di alcuni nomi di geni in date o numeri. Ad esempio:
+
+    "MARCH1" → 1-Mar
+
+    "SEPT2" → 2-Sep
+
+Questo ha causato perdite di dati in vari database biologici e articoli pubblicati.
+
+
+### Mancanza di tracciabilità e versionamento
+
+    Excel non tiene traccia puntuale delle modifiche o dei passaggi analitici applicati ai dati.
+
+    Difficile riprodurre analisi complesse o collaborative senza un version control esterno.
+
+
+
+### Alcune risorse che elencano disastri causati da Excel
+
 https://www.forbes.com/sites/timworstall/2013/02/13/microsofts-excel-might-be-the-most-dangerous-software-on-the-planet/?sh=5dab7d27633d
 
 
