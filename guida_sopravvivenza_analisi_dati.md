@@ -149,9 +149,9 @@ Questo ha causato perdite di dati in vari database biologici e articoli pubblica
 
 ### Mancanza di tracciabilità e versionamento
 
-    Excel non tiene traccia puntuale delle modifiche o dei passaggi analitici applicati ai dati.
+Excel non tiene traccia puntuale delle modifiche o dei passaggi analitici applicati ai dati e quindi può portare alla perdità di dati.
 
-    Difficile riprodurre analisi complesse o collaborative senza un version control esterno.
+Difficile riprodurre analisi complesse o collaborative senza un version control esterno.
 
 
 
