@@ -133,7 +133,7 @@ https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
 
 ## Excel 
 
-L'utilizzo dei fogli di calcolo (Excel, LibreOffice ...) è sorgente di diversi problemi noti e criticità.
+L'utilizzo dei fogli di calcolo (Excel, LibreOffice, ecc.) è associato a diverse criticità e problematiche note.
 
 
 ### Errori di conversione automatica
