@@ -2,8 +2,6 @@
 
 FROM ubuntu:24.04
 
-ARG r_version=4.3.2
-
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install base system and devel tools
@@ -24,9 +22,7 @@ RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
-RUN apt install bwa
-
-
+RUN apt -y install bwa bcftools vcftools minimap2 samtools
 
 # Define default command.
 CMD ["bash"]

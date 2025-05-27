@@ -232,7 +232,7 @@ RUN pip3 install keras_tuner
 #ADD scripts/acoustic_indices_python/compute_indice.py /
 #ADD scripts/acoustic_indices_python/ai_dir.py /
 
-RUN pip3 install birdnet==0.1.6
+# RUN pip3 install birdnet
 
 
 # Define default command.
