@@ -127,7 +127,7 @@ RUN bash /install_r_package.bash FactoMineR; bash /install_r_package.bash faster
 
 RUN bash /install_r_package.bash gdtools; bash /install_r_package.bash geometry; bash /install_r_package.bash ggplot2; bash /install_r_package.bash ggpubr; bash /install_r_package.bash ggrepel; bash /install_r_package.bash ggthemes
 
-RUN bash /install_r_package.bash glue; bash /install_r_package.bash gmp; bash /install_r_package.bash gridExtra; bash /install_r_package.bash gtable; bash /install_r_package.bash gtools
+RUN bash /install_r_package.bash glmmTMB; bash /install_r_package.bash glue; bash /install_r_package.bash gmp; bash /install_r_package.bash gridExtra; bash /install_r_package.bash gtable; bash /install_r_package.bash gtools
 
 RUN bash /install_r_package.bash jagsUI
 
