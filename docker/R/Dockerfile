@@ -82,7 +82,7 @@ RUN tar zxf R-${r_version}.tar.gz
 WORKDIR R-${r_version}
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
-RUN make -j 8; make install
+RUN make -j 16; make install
 
 WORKDIR /bin
 RUN ln -s /opt/PortableR/bin/* .
@@ -103,7 +103,7 @@ COPY files/Boruta_8.0.0.tar.gz /
 # install R packages
 
 # install "remotes" for installing all other packages
-RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE, Ncpus=20); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 
 COPY  install_r_package_version.bash /
