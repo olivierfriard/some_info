@@ -121,6 +121,7 @@ RUN pip3 install soundsig
 RUN pip3 install pykanto
 RUN pip3 install pytz
 RUN pip3 install exifread
+RUN pip3 install textgrid
 
 # yamnet
 RUN pip3 install tensorflow==2.15.0
