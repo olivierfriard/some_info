@@ -2,7 +2,7 @@
 
 FROM ubuntu:22.04
 
-ARG r_version=4.4.2
+ARG r_version=4.5.0
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -58,7 +58,8 @@ RUN apt-get install -y libfribidi-dev
 RUN apt-get install -y libharfbuzz-dev
 RUN apt-get install -y libglpk-dev
 
-
+# for amt
+RUN apt-get install -y libmagick++-dev
 
 # for sf / stars
 RUN apt-get install -y libudunits2-dev
@@ -187,6 +188,13 @@ RUN bash /install_r_package_from_bioconductor.bash phyloseq
 
 
 RUN bash /install_r_package.bash PAMmisc
+
+RUN bash /install_r_package.bash crqa
+
+RUN apt update install -y gdal-bin libgdal-dev
+
+RUN bash /install_r_package.bash SpaDES SpaDES.core SpaDES.tools reproducible Require quickPlot NetLogoR
+
 
 
 
