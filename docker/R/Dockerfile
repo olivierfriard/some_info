@@ -191,9 +191,11 @@ RUN bash /install_r_package.bash PAMmisc
 
 RUN bash /install_r_package.bash crqa
 
-RUN apt update install -y gdal-bin libgdal-dev
+RUN apt install -y gdal-bin libgdal-dev
 
-RUN bash /install_r_package.bash SpaDES SpaDES.core SpaDES.tools reproducible Require quickPlot NetLogoR
+RUN bash /install_r_package.bash SpaDES 
+
+RUN bash /install_r_package.bash NetLogoR
 
 
 
