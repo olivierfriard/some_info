@@ -11,7 +11,7 @@ RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
   apt-get install -y apt-utils && \
-  apt-get -y upgrade && \
+  #apt-get -y upgrade && \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
   apt-get install -y curl git htop man unzip vim wget && \
@@ -28,28 +28,10 @@ ENV LANG en_US.UTF-8
 #
 # R external dependencies
 #
-RUN apt-get install -y openmpi-*
-RUN apt-get install -y gfortran
-RUN apt-get install -y libreadline-dev
-RUN apt-get install -y xorg-dev
-RUN apt-get install -y libbz2-dev
-RUN apt-get install -y liblzma-dev
-RUN apt-get install -y libpcre3-dev
-RUN apt-get install -y libcurl4-openssl-dev
-RUN apt-get install -y libtiff-dev
-RUN apt-get install -y libjpeg-dev
-RUN apt-get install -y libicu-dev
-RUN apt-get install -y libcairo-dev
-RUN apt-get install -y default-jdk
-RUN apt-get install -y tk8.6-dev
-RUN apt-get install -y libpcre2-dev
-RUN apt-get install -y libxml2-dev
-RUN apt-get install -y cmake
-RUN apt-get install -y libfftw3-dev
-RUN apt-get install -y libgmp3-dev
-RUN apt-get install -y libfribidi-dev
-RUN apt-get install -y libharfbuzz-dev
-RUN apt-get install -y libglpk-dev
+RUN apt install -y openmpi-*
+RUN apt install -y gfortran libreadline-dev xorg-dev libbz2-dev liblzma-dev libpcre3-dev libcurl4-openssl-dev
+RUN apt install -y libtiff-dev libjpeg-dev libicu-dev libcairo-dev default-jdk tk8.6-dev libpcre2-dev libxml2-dev
+RUN apt install -y cmake libfftw3-dev libgmp3-dev libfribidi-dev libharfbuzz-dev libglpk-dev
 
 # for amt
 RUN apt-get install -y libmagick++-dev
@@ -84,7 +66,7 @@ RUN ln -s /opt/PortableR/bin/* .
 WORKDIR /
 
 #Setup CRAN mirror
-COPY files/Rprofile.site /opt/PortableR/lib/R/etc
+COPY Rprofile.site /opt/PortableR/lib/R/etc
 
 
 # Define default command.
@@ -182,8 +164,6 @@ RUN bash /install_r_package_from_bioconductor.bash phyloseq
 RUN bash /install_r_package.bash PAMmisc
 
 RUN bash /install_r_package.bash crqa
-
-RUN apt install -y gdal-bin libgdal-dev
 
 RUN bash /install_r_package.bash SpaDES 
 
