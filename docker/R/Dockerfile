@@ -1,10 +1,10 @@
 # R Docker
 
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
-ARG r_version=4.5.0
+ARG r_version=4.5.2
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install base system and devel tools
 RUN \
@@ -30,14 +30,7 @@ ENV LANG en_US.UTF-8
 #
 RUN apt-get install -y openmpi-*
 RUN apt-get install -y gfortran
-##RUN apt-get install -y xpdf  # No available in 20.04
-##RUN apt-get install -y firefox
 RUN apt-get install -y libreadline-dev
-#RUN apt-get install -y texlive-latex-base
-#RUN apt-get install -y texlive-fonts-recommended
-#RUN apt-get install -y texlive-fonts-extra
-#RUN apt-get install -y texlive-latex-extra
-#RUN apt-get install -y texinfo
 RUN apt-get install -y xorg-dev
 RUN apt-get install -y libbz2-dev
 RUN apt-get install -y liblzma-dev
@@ -83,7 +76,7 @@ RUN tar zxf R-${r_version}.tar.gz
 WORKDIR R-${r_version}
 RUN ./configure --prefix=/opt/PortableR --enable-static=yes --enable-shared=yes --enable-R-shlib --with-tcltk
 
-RUN make -j 16; make install
+RUN make -j$(nproc); make install
 
 WORKDIR /bin
 RUN ln -s /opt/PortableR/bin/* .
@@ -104,11 +97,10 @@ COPY files/Boruta_8.0.0.tar.gz /
 # install R packages
 
 # install "remotes" for installing all other packages
-RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE, Ncpus=20); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
+RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE, Ncpus=parallel::detectCores()); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 
 COPY  install_r_package_version.bash /
-
 COPY  install_r_package.bash /
 
 RUN export MAKE="make -j20"
@@ -197,8 +189,12 @@ RUN bash /install_r_package.bash SpaDES
 
 RUN bash /install_r_package.bash NetLogoR
 
+RUN bash /install_r_package.bash fastmatch
 
+RUN R -q -e "install.packages('box', Ncpus=parallel::detectCores()); stopifnot(requireNamespace('box', quietly=TRUE))"
 
+RUN bash /install_r_package.bash grid
 
+RUN bash /install_r_package.bash fpCompare
 
 
