@@ -82,11 +82,14 @@ COPY files/Boruta_8.0.0.tar.gz /
 RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE, Ncpus=parallel::detectCores()); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
 
-COPY  install_r_package_version.bash /
-COPY  install_r_package.bash /
+COPY install_r_package.bash /
+COPY install_r_package.R /
+COPY install_r_package_version.bash /
+COPY install_r_package_from_github.bash /
+COPY install_r_package_from_bioconductor.bash /
+
 
 RUN export MAKE="make -j20"
-
 
 RUN bash /install_r_package.bash abind; bash /install_r_package.bash ade4; bash /install_r_package.bash adehabitatHR; bash /install_r_package.bash agricolae; bash /install_r_package.bash amt; bash /install_r_package.bash apcluster; bash /install_r_package.bash ape; bash /install_r_package.bash assertthat; bash /install_r_package.bash audio
 
@@ -145,36 +148,25 @@ RUN bash /install_r_package.bash umap; bash /install_r_package.bash unmarked; ba
 
 RUN bash /install_r_package.bash vegan; bash /install_r_package.bash vegclust; bash /install_r_package.bash warbleR
 
-RUN bash /install_r_package.bash xts
+RUN Rscript /install_r_package.R xts exactextractr
 
-RUN bash /install_r_package.bash exactextractr
 
-COPY install_r_package_from_github.bash /
+# FROM GITHUB
 
 RUN bash /install_r_package_from_github.bash pimentel/cluster
 RUN bash /install_r_package_from_github.bash Cdevenish/hardRain
 
 #RUN bash /install_r_package.bash local:Boruta_8.0.0.tar.gz Boruta
 
-COPY install_r_package_from_bioconductor.bash /
-
+# FROM BIOCONDUCTOR
 RUN bash /install_r_package_from_bioconductor.bash phyloseq
 
 
-RUN bash /install_r_package.bash PAMmisc
-
-RUN bash /install_r_package.bash crqa
-
-RUN bash /install_r_package.bash SpaDES 
-
-RUN bash /install_r_package.bash NetLogoR
-
-RUN bash /install_r_package.bash fastmatch
+RUN Rscript /install_r_package.R PAMmisc crqa SpaDES NetLogoR fastmatch grid fpCompare
 
 RUN R -q -e "install.packages('box', Ncpus=parallel::detectCores()); stopifnot(requireNamespace('box', quietly=TRUE))"
 
-RUN bash /install_r_package.bash grid
 
-RUN bash /install_r_package.bash fpCompare
+RUN Rscript /install_r_package.R dbscan univariateML
 
 
