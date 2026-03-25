@@ -65,6 +65,10 @@ RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE, Ncpus=parallel::de
 
 COPY install_r_package.R /
 
+# required for R package terra
+RUN apt install -y libudunits2-dev
+RUN apt install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
-RUN Rscript /install_r_package.R terra
+RUN Rscript /install_r_package.R terra sf tidyverse umap univariateML dbscan cluster apcluster
+ 
 
