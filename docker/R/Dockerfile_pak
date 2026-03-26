@@ -85,6 +85,9 @@ RUN R -e "pak::pkg_install(c('ade4', 'adehabitatHR', 'agricolae', 'amt', 'apclus
 
 # RUN R -e "pak::pkg_install(c('', '', '', '', '', '', '', ''), ask=FALSE)"
 
+# required by bayesdfa
+RUN R -e "pak::pkg_install(c('rstantools', 'StanHeaders', 'rstan'), ask=FALSE)"
+
 RUN R -e "pak::pkg_install(c('bayesdfa', 'bindrcpp'), ask=FALSE)"
 
 RUN R -e "pak::pkg_install(c('car', 'caret', 'caTools', 'class', 'clue',  'clustertend', 'clValid', 'coda', 'correctR',  'corrplot',  'crqa', 'ctv' ), ask=FALSE)"
