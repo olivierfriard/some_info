@@ -167,8 +167,6 @@ RUN Rscript /install_r_package.R PAMmisc crqa SpaDES NetLogoR fastmatch grid fpC
 RUN R -q -e "install.packages('box', Ncpus=parallel::detectCores()); stopifnot(requireNamespace('box', quietly=TRUE))"
 
 
-RUN R -q -e "install.packages('pak', Ncpus=parallel::detectCores()); stopifnot(requireNamespace('pak', quietly=TRUE))"
-
-RUN R -q -e 'pak::pkg_install(c("terra", "umap"), ask=FALSE)'
+RUN Rscript /install_r_package.R dbscan univariateML
 
 

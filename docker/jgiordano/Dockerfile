@@ -49,26 +49,19 @@ RUN ln -s /opt/PortableR/bin/* .
 
 WORKDIR /
 
-#Setup CRAN mirror
-COPY Rprofile.site /opt/PortableR/lib/R/etc
-
 
 # Define default command.
 CMD ["bash"]
 
-
 # install R packages
 
-# install "remotes" for installing all other packages
-RUN R -e "p='remotes'; install.packages(p, dependencies=TRUE, Ncpus=parallel::detectCores()); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
-
-
-COPY install_r_package.R /
-
-# required for R package terra
+# required for R package units
 RUN apt install -y libudunits2-dev
+# required for R package terra
 RUN apt install -y libgdal-dev gdal-bin libproj-dev proj-data proj-bin libgeos-dev
 
-RUN Rscript /install_r_package.R terra sf tidyverse umap univariateML dbscan cluster apcluster
- 
+RUN R -e "p='pak'; install.packages(p, dependencies=TRUE, Ncpus=parallel::detectCores()); if (!library(p, character.only=TRUE, logical.return=T)) quit(status=10)"
 
+RUN R -e "pak::pkg_install(c('terra', 'sf', 'tidyverse', 'umap', 'univariateML', 'dbscan', 'cluster', 'apcluster'), ask=FALSE)"
+
+RUN R -e "pak::pkg_install(c('biomod2'), ask=FALSE)"
