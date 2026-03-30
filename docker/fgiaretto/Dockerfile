@@ -48,7 +48,14 @@ RUN cd DEERFold
 
 COPY deerfold_env.yml .
 
-RUN /miniforge3/bin/mamba env create -f deerfold_env.yml
+RUN /miniforge3/bin/mamba env create -f deerfold_env.yml  -p ./env/deerfold_venv
+
+RUN conda activate ./env/deerfold_venv
+
+RUN export PATH="./env/deerfold_venv/bin:$PATH"
+
+RUN pip install setuptools==60.3.0 gsd==2.4.2 mdanalysis==2.0.0
+
 
 
 
