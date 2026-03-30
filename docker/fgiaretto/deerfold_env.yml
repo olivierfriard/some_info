@@ -35,4 +35,4 @@ dependencies:
       - pytorch_lightning==1.5.0
       - wandb==0.12.21
       - git+https://github.com/NVIDIA/dllogger.git
-      - torch=1.13.0
+      - torch==1.13.0
