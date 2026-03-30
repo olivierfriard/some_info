@@ -50,13 +50,16 @@ COPY deerfold_env.yml .
 
 RUN /miniforge3/bin/mamba env create -f deerfold_env.yml  -p ./env/deerfold_venv
 
-RUN conda activate ./env/deerfold_venv
+# RUN /miniforge3/bin/conda activate ./env/deerfold_venv
 
-RUN export PATH="./env/deerfold_venv/bin:$PATH"
+RUN apt install -y gcc g++ build-essential
 
-RUN pip install setuptools==60.3.0 gsd==2.4.2 mdanalysis==2.0.0
+RUN export PATH="./env/deerfold_venv/bin:$PATH"; pip install setuptools==60.3.0 gsd==2.4.2 mdanalysis==2.0.0
+
+RUN export PATH="./env/deerfold_venv/bin:$PATH"; pip install chilife==1.0.2
 
 
+RUN export PATH="./env/deerfold_venv/bin:$PATH"; pip install numpy==1.22.4 --force-reinstall 2>/dev/null
 
 
 
