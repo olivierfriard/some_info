@@ -41,6 +41,10 @@ RUN rm Miniforge3-Linux-x86_64.sh
 
 # RUN source /miniforge3/etc/profile.d/conda.sh
 
+# RUN source "/miniforge3/etc/profile.d/conda.sh"
+
+RUN export PATH="/miniforge3/bin:$PATH"
+
 
 RUN git clone https://github.com/CAAIPD/DEERFold.git
 
@@ -48,7 +52,7 @@ RUN cd DEERFold
 
 COPY deerfold_env.yml .
 
-RUN /miniforge3/bin/mamba env create -f deerfold_env.yml  -p ./env/deerfold_venv
+RUN export PATH="/miniforge3/bin:$PATH"; mamba env create -f deerfold_env.yml  -p ./env/deerfold_venv
 
 RUN conda activate ./env/deerfold_venv
 
@@ -56,7 +60,15 @@ RUN export PATH="./env/deerfold_venv/bin:$PATH"
 
 RUN pip install setuptools==60.3.0 gsd==2.4.2 mdanalysis==2.0.0
 
+RUN pip install chilife==1.0.2
 
+RUN pip install numpy==1.22.4 --force-reinstall 2>/dev/null
+
+# RUN wget https://zhanggroup.org/TM-score/TMscoreLinux.zip
+
+# RUN unzip TMscoreLinux.zip
+
+# RUN rm TMscoreLinux.zip
 
 
 
