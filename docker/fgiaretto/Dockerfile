@@ -72,9 +72,7 @@ RUN pip install numpy==1.22.4 --force-reinstall 2>/dev/null
 # RUN unzip TMscoreLinux.zip
 
 # RUN rm TMscoreLinux.zip
-=======
 RUN export PATH="./env/deerfold_venv/bin:$PATH"; pip install numpy==1.22.4 --force-reinstall 2>/dev/null
->>>>>>> 2f0816668d9fb9a66cfce1e932cf44378ceb04d7
 
 
 
