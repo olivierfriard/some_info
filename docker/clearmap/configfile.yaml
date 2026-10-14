@@ -1,0 +1,47 @@
+# Results path/
+data_directory: '/data/'
+#'/data01/astella/Projects/SexualImprinting/Wild_June_2026/'  #
+                   
+# mouse: use only when doing a batch analysis. Otherwise run the analysis 
+# script with subject string (ex. python analysis_CellMap.py 'F1Control')
+
+subjects : [
+  'W32_3'
+  ]
+
+# resampling parameters
+source_res : [1.626, 1.626, 5]
+sink_res : [25,25,25]
+
+# orientation of the brain
+#orientation : [1,2,3] #orientation for one hemisphere
+orientation : [3,2,1] #orientation whole brain
+
+# alignment slicing
+slice_x: None
+slice_y: None
+#slice_z: !!python/tuple [1,256] #for one hemisphere
+slice_z: None
+
+# test data parameters
+# slicing
+slice_x : !!python/tuple [2906,6357]
+slice_y : !!python/tuple [374,3279]
+slice_z : !!python/tuple [575,675]
+
+# parameters for detection
+shape_param : !!python/tuple [7,7]
+shape_detection_threshold : 3000   #Riddhi cFos threshhold= 5500 tdtom threshold=4500
+
+# parameters for filtering
+source : !!python/tuple [10,60000]
+size : !!python/tuple [10,60000]
+
+# parameters for voxelization
+method : 'sphere'
+radius : [7,7,7]
+
+# rerun and debugging options
+rerun_alignment : False
+debug_detection : True
+align_to : 'cfos'  # options: 'cfos'or 'cfos_auto'

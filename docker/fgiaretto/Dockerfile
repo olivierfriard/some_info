@@ -54,14 +54,17 @@ COPY deerfold_env.yml .
 
 RUN export PATH="/miniforge3/bin:$PATH"; mamba env create -f deerfold_env.yml  -p ./env/deerfold_venv
 
-RUN conda activate ./env/deerfold_venv
+# RUN /miniforge3/bin/conda activate ./env/deerfold_venv
 
-RUN export PATH="./env/deerfold_venv/bin:$PATH"
+RUN apt install -y gcc g++ build-essential
 
-RUN pip install setuptools==60.3.0 gsd==2.4.2 mdanalysis==2.0.0
+RUN export PATH="./env/deerfold_venv/bin:$PATH"; pip install setuptools==60.3.0 gsd==2.4.2 mdanalysis==2.0.0
+
+RUN export PATH="./env/deerfold_venv/bin:$PATH"; pip install chilife==1.0.2
 
 RUN pip install chilife==1.0.2
 
+<<<<<<< HEAD
 RUN pip install numpy==1.22.4 --force-reinstall 2>/dev/null
 
 # RUN wget https://zhanggroup.org/TM-score/TMscoreLinux.zip
@@ -69,6 +72,9 @@ RUN pip install numpy==1.22.4 --force-reinstall 2>/dev/null
 # RUN unzip TMscoreLinux.zip
 
 # RUN rm TMscoreLinux.zip
+=======
+RUN export PATH="./env/deerfold_venv/bin:$PATH"; pip install numpy==1.22.4 --force-reinstall 2>/dev/null
+>>>>>>> 2f0816668d9fb9a66cfce1e932cf44378ceb04d7
 
 
 
