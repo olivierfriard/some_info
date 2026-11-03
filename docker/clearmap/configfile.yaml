@@ -25,9 +25,9 @@ slice_z: None
 
 # test data parameters
 # slicing
-slice_x : !!python/tuple [2906,6357]
-slice_y : !!python/tuple [374,3279]
-slice_z : !!python/tuple [575,675]
+#slice_x : !!python/tuple [2906,6357]
+#slice_y : !!python/tuple [374,3279]
+#slice_z : !!python/tuple [575,675]
 
 # parameters for detection
 shape_param : !!python/tuple [7,7]
@@ -43,5 +43,5 @@ radius : [7,7,7]
 
 # rerun and debugging options
 rerun_alignment : False
-debug_detection : True
+debug_detection : False
 align_to : 'cfos'  # options: 'cfos'or 'cfos_auto'

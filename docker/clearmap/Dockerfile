@@ -14,6 +14,17 @@ RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
     ca-certificates \
+    libxcb-xinerama0 \
+    libxcb-icccm4 \
+    libxcb-image0 \
+    libxcb-keysyms1 \
+    libxcb-render-util0 \
+    libxcb-shape0 \
+    libxcb-cursor0 \
+    libxkbcommon-x11-0 \
+    libx11-xcb1 \\ 
+    libgl1 \ 
+    xvfb \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Miniconda
@@ -44,22 +55,8 @@ COPY analysis_until_alignment.py /ClearMap2/ClearMap/Scripts
 
 COPY analysis_after_alignment.py /ClearMap2/ClearMap/Scripts
 
-RUN apt update && apt install -y libgl1
 
 COPY configfile.yaml /ClearMap2/ClearMap/Scripts
-
-RUN apt-get update && apt-get install -y \
-    libxcb-xinerama0 \
-    libxcb-icccm4 \
-    libxcb-image0 \
-    libxcb-keysyms1 \
-    libxcb-render-util0 \
-    libxcb-shape0 \
-    libxcb-cursor0 \
-    libxkbcommon-x11-0 \
-    libx11-xcb1 
-
-RUN apt install  -y xvfb
 
 # Default command
 CMD ["bash"]
