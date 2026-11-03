@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
     libxcb-shape0 \
     libxcb-cursor0 \
     libxkbcommon-x11-0 \
-    libx11-xcb1 \\ 
+    libx11-xcb1 \
     libgl1 \ 
     xvfb \
     && rm -rf /var/lib/apt/lists/*
